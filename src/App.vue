@@ -1,16 +1,21 @@
 <template>
-  <template v-for="item in items" :key="item.id">
-    <div v-if="!item.soldOut" class="item" :class="{'selected-item': item.selected}" @click="item.selected = !item.selected">
-      <div>
-        <img src="./assets/logo.png" class="item-image">
+  <div class="header">
+    <img src="./assets/logo.png"/><h1>Vue.js ハンズオン</h1>
+  </div>
+  <div class="main">
+    <template v-for="item in items" :key="item.id">
+      <div v-if="!item.soldOut" class="item" :class="{'selected-item': item.selected}" @click="item.selected = !item.selected">
+        <div class="thumbnail">
+          <img :src="item.image">
+        </div>
+        <div class="description">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+          <span>￥<span class="price">{{ item.price }}</span></span>
+        </div>
       </div>
-      <div>
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
-        <span>価格: {{ item.price }}</span>
-      </div>
-    </div>
-  </template>
+    </template>
+  </div>
 </template>
 
 <script>
@@ -21,39 +26,43 @@ export default {
       items: [
         {
           id: 1,
-          name: "商品１",
-          description: "商品１の説明です",
-          price: 100,
-          selected: false
+          name: "アボガドディップバケット",
+          description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
+          price: 480,
+          selected: false,
+          image: require('./assets/item1.jpg')
         },
         {
           id: 2,
-          name: "商品２",
-          description: "商品２の説明です",
-          price: 200,
-          selected: false
+          name: "あの日夢見たホットケーキ",
+          description: "子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。",
+          price: 1180,
+          selected: false,
+          image: require('./assets/item2.jpg')
         },
         {
           id: 3,
-          name: "商品３",
-          description: "商品３の説明です",
-          price: 300,
-          selected: false
+          name: "HOP WTR",
+          description: "ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。",
+          price: 320,
+          selected: false,
+          image: require('./assets/item3.jpg')
         },
         {
           id: 4,
-          name: "商品４",
-          description: "商品４の説明です",
-          price: 400,
+          name: "チーズフレンチフライ",
+          description: "イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。",
+          price: 670,
           selected: false,
-          soldOut: true
+          image: require('./assets/item4.jpg')
         },
         {
           id: 5,
           name: "商品５",
           description: "商品５の説明です",
           price: 500,
-          selected: false
+          selected: false,
+          soldOut: true
         }
       ]
     }
@@ -61,35 +70,63 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.header {
   display: flex;
-  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.header > img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.header > h1 {
+  font-size: 80px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 80px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #242424;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+  column-gap: 24px;
+  row-gap: 24px;
 }
 
 .item {
-  width: 250px;
-  padding-bottom: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  padding: 10px;
 }
 
-.item-image {
-  width: 250px;
-  height: 250px;
+.item > div.thumbnail > img {
+  width: 100%;
+  height: calc(width);
+  object-fit: cover;
 }
 
-.item > div > p {
+.item > div.description {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.item > div.description > h3, .item > div.description > p {
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
+.item > div.description > span {
+  display: block;
+  margin-top: 10px;
+}
+
 .selected-item {
-  background-color: rgba(63, 63, 191, 0.5);
+  background: #E3F2FD;
 }
 </style>
