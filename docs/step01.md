@@ -29,10 +29,17 @@ Node.js がインストールされていない場合は、 以下のページ�
 
 - [Node.js 公式サイトのダウンロードページ](https://nodejs.org/ja/download/)
 
-もし、Node.js のバージョンを切り替て使いたい場合は、バージョンマネージャの利用を検討してください。以下は主要なバージョンマネージャへのリンクです。セットアップについては、それぞれのドキュメントを参照して下さい。
+もし、Node.js のバージョンを切り替えて使いたい場合は、バージョンマネージャの利用を検討してください。以下は主要なバージョンマネージャへのリンクです。セットアップについては、それぞれのドキュメントを参照して下さい。
+
+#### Mac でよく使われるバージョンマネージャ
 
 - [nodenv](https://github.com/nodenv/nodenv)
 - [nvm](https://github.com/nvm-sh/nvm)
+
+#### Windows でよく使われるバージョンマネージャ
+
+- [nvm-windows](https://github.com/coreybutler/nvm-windows)
+- [nodist](https://github.com/nullivex/nodist)
 
 ## Vue CLI のインストール
 
