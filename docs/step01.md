@@ -2,7 +2,7 @@
 
 ## 前提とする環境
 
-- エディタ: Visual Studio Code
+- エディタ: Visual Studio Code (以下、VSCode)
 - 開発言語: JavaScript
 - 利用するツール: Node.js, Vue CLI, Vetur
 
@@ -43,7 +43,7 @@ Node.js がインストールされていない場合は、 以下のページ�
 
 ## Vue CLI のインストール
 
-Vue.js のアプリケーション開発では、開発ツールである [Vue CLI](https://cli.vuejs.org/) を利用します（[Vite](https://vitejs.dev/) を利用する方法もありますがここでは割愛します）。
+Vue.js を使った開発を始めるにはいくつかの方法があります。ここでは、最も広く普及しており、かつ簡単な方法である [Vue CLI](https://cli.vuejs.org/) を利用した開発方法を紹介します。（[Vite](https://vitejs.dev/) を利用する方法もありますがここでは割愛します）。
 
 ターミナルから以下のコマンドを実行して `Vue CLI` をインストールします。
 
