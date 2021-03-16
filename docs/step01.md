@@ -4,7 +4,7 @@
 
 - エディタ: Visual Studio Code
 - 開発言語: JavaScript
-- 利用するツール: Node.js, Vue CLI
+- 利用するツール: Node.js, Vue CLI, Vetur
 
 ## Node.js のインストール
 
@@ -51,3 +51,9 @@ vue --version
 ```
 
 この方法は、npm の環境に `Vue CLI` がグローバルインストールされます。グローバルインストールをせずに、`npx` を利用する方法もあります。詳細は [Vue CLI 公式ドキュメント](https://cli.vuejs.org/guide/cli-service.html#using-the-binary) を参照して下さい。
+
+## Vetur のインストール
+
+Vetur は Vue.js の開発をサポートする VSCode の拡張です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Vetur 公式ドキュメント](https://vuejs.github.io/vetur/) を参照して下さい。
+
+Vetur をインストールするには、VSCode が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし `Install` ボタンをクリックします。
