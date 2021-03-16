@@ -38,7 +38,9 @@
 
 1. ブラウザに 「Welcome to Your Vue.js App」 等と表示されていれば、無事にプロジェクトの作成が成功しています。
 
-`vue create` コマンドの詳細は [Creating a Project \| Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html) を確認してください。
+    ![vue-app](images/vue-app.png)
+
+    `vue create` コマンドの詳細は [Creating a Project \| Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html) を確認してください。
 
 ---
 
