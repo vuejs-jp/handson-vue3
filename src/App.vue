@@ -11,7 +11,7 @@
         <div class="description">
           <h3>{{ item.name }}</h3>
           <p>{{ item.description }}</p>
-          <span>￥<span class="price">{{ item.price }}</span></span>
+          <span>￥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
     </template>
@@ -65,6 +65,13 @@ export default {
           soldOut: true
         }
       ]
+    }
+  },
+  methods: {
+    /** 3桁ごとのカンマ付きで返す */
+    pricePrefix(price){
+      const priceStr = String(price).replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")
+      return priceStr
     }
   }
 }
