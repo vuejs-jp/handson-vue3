@@ -74,6 +74,7 @@ export default {
 .header {
   display: flex;
   align-content: center;
+  align-items: center;
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -87,11 +88,9 @@ export default {
 .header > h1 {
   font-size: 80px;
   font-weight: bold;
-  font-style: normal;
   line-height: 80px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #242424;
 }
 
 .main {
@@ -119,11 +118,23 @@ export default {
 .item > div.description > h3, .item > div.description > p {
   margin-top: 0px;
   margin-bottom: 0px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.item > div.description > h3 {
+  font-weight: bold;
 }
 
 .item > div.description > span {
   display: block;
   margin-top: 10px;
+  font-size: 20px;
+}
+
+.item > div.description > span > .price {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .selected-item {

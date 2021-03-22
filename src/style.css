@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans JP', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans JP';
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,5 +9,5 @@ body {
   width: 90%;
   margin: 0 5%;
   text-align: center;
-  color: #2c3e50;
+  color: #242424;
 }
