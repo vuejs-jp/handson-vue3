@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
   data: () => {
     return {
       items: [
@@ -31,7 +31,7 @@ export default {
           description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
           price: 480,
           selected: false,
-          image: '/images/item1.jpg'
+          image: "/images/item1.jpg"
         },
         {
           id: 2,
@@ -39,7 +39,7 @@ export default {
           description: "子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。",
           price: 1180,
           selected: false,
-          image: '/images/item2.jpg'
+          image: "/images/item2.jpg"
         },
         {
           id: 3,
@@ -47,7 +47,7 @@ export default {
           description: "ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。",
           price: 320,
           selected: false,
-          image: '/images/item3.jpg'
+          image: "/images/item3.jpg"
         },
         {
           id: 4,
@@ -55,7 +55,7 @@ export default {
           description: "イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。",
           price: 670,
           selected: false,
-          image: '/images/item4.jpg'
+          image: "/images/item4.jpg"
         },
         {
           id: 5,
