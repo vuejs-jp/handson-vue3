@@ -10,7 +10,7 @@
           <img :src="item.image" alt="" />
         </div>
         <div class="description">
-          <h3>{{ item.name }}</h3>
+          <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
           <span>￥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
