@@ -1,12 +1,13 @@
 <template>
   <div class="header">
-    <img src="/images/logo.svg"/><h1>Vue.js ハンズオン</h1>
+    <img src="/images/logo.svg" alt="" />
+    <h1>Vue.js ハンズオン</h1>
   </div>
   <div class="main">
     <template v-for="item in items" :key="item.id">
       <div v-if="!item.soldOut" class="item" :class="{'selected-item': item.selected}" @click="item.selected = !item.selected">
         <div class="thumbnail">
-          <img :src="item.image" alt="">
+          <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h3>{{ item.name }}</h3>
