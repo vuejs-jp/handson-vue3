@@ -1,9 +1,9 @@
 <template>
-  <div class="header">
+  <header class="header">
     <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
-  </div>
-  <div class="main">
+  </header>
+  <main class="main">
     <template v-for="item in items" :key="item.id">
       <div v-if="!item.soldOut" class="item" :class="{'selected-item': item.selected}" @click="item.selected = !item.selected">
         <div class="thumbnail">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </template>
-  </div>
+  </main>
 </template>
 
 <script>
