@@ -109,6 +109,12 @@ export default {
 
 .item {
   padding: 10px;
+  cursor: pointer;
+}
+
+.item:hover {
+  transition: 0.2s transform ease-out;
+  transform: scale(1.05);
 }
 
 .item > div.thumbnail > img {
