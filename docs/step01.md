@@ -6,6 +6,23 @@
 - 開発言語: JavaScript
 - 利用するツール: Node.js, Vue CLI, Vetur
 
+## ターミナルの準備
+
+このハンズオンでは、主にターミナルを使ってコマンドを実行していきます。
+
+> ターミナルとは、コマンドと呼ばれる命令文を用いて OS やアプリケーションの操作や設定をおこなうためのツールです
+
+### Mac でのターミナル利用方法
+
+- `アプリケーション - ユーティリティ` 内に標準でインストールされている `ターミナル.app` を起動します
+- 利用方法の詳細は Google 検索で "Mac ターミナル 使い方" 等で検索して下さい
+
+### Windows でのターミナル利用方法
+
+- スタートメニューから `Windows Terminal` を選択して起動します
+- なければ、Microsoft Store からインストールします
+- 利用方法の詳細は [公式ドキュメント](https://docs.microsoft.com/ja-jp/windows/terminal/) を参照してください。
+
 ## Node.js のインストール
 
 ### 既にインストールされているかどうかの確認
@@ -66,4 +83,5 @@ Vetur は Vue.js の開発をサポートする VSCode の拡張です。`.vue` 
 Vetur をインストールするには、VSCode が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし `Install` ボタンをクリックします。
 
 ---
+
 [Next](step02.md)
