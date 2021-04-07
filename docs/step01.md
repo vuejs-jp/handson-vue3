@@ -80,9 +80,21 @@ vue --version
 
 この方法は、npm の環境に `Vue CLI` がグローバルインストールされます。グローバルインストールをせずに、`npx` を利用する方法もあります。詳細は [Vue CLI 公式ドキュメント](https://cli.vuejs.org/guide/cli-service.html#using-the-binary) を参照して下さい。
 
-## Vetur のインストール
+## VS Code のセットアップ
 
-Vetur は Vue.js の開発をサポートする VSCode の拡張です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Vetur 公式ドキュメント](https://vuejs.github.io/vetur/) を参照して下さい。
+このハンズオンでは、VS Code を使って開発していきます。
+
+> VS Code を既にお使いの場合はこのセクションは飛ばしてください。
+
+### VS Code のインストール
+
+1. [VS Code 公式ダウンロードページ](https://code.visualstudio.com/download) からお使いの OS に合わせたインストーラーをダウンロードしてください。
+1. インストーラーの指示に従ってインストールします
+   - インストールの詳細は [公式ドキュメント](https://code.visualstudio.com/docs/setup/setup-overview) を確認してください
+
+### Vetur 機能拡張のインストール
+
+Vetur は Vue.js の開発をサポートする VS Code の拡張です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Vetur 公式ドキュメント](https://vuejs.github.io/vetur/) を参照して下さい。
 
 Vetur をインストールするには、VSCode が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし `Install` ボタンをクリックします。
 
