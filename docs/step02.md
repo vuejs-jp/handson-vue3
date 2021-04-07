@@ -20,6 +20,8 @@
 
 1. 実行後のプロンプト `Please pick a preset` では、このワークショップでは以下のように `Default (Vue 3 Preview)` を選択します。
 
+   > プロンプト内では、矢印キーで移動、Space キーで選択、Enter キーで確定ができます
+
    ```sh
    ? Please pick a preset:
      Default ([Vue 2] babel, eslint)
