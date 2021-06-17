@@ -1,0 +1,7 @@
+{
+  "filters": {},
+  "rules": {
+    "detect-bad-chars": true,
+    "no-mix-dearu-desumasu": true
+  }
+}
