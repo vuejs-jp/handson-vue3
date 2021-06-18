@@ -52,21 +52,24 @@
 
 正規表現を用いて、3桁ごとにカンマを入れた表示にすることができました。
 
+**3桁ごとのカンマ表示を行うコードについての補足**
 `String(item.price).replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")`というコードについて、簡単に説明をしておきましょう。
 
 まず、`String(item.price)`という部分で`item.price`を文字列型のデータに変換しています。`String()`は引数に渡されたデータを文字列を生成する関数です。
-※[`String()`に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/String)
+
+> [`String()`に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/String)
 
 次に、`replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")`の部分です。
 文字列型のデータに変換された`item.price`に対し、`replace()`を使い、3桁ごとにカンマを入れた文字列に変換しています。
 `replace()`は第一引数に渡された文字列と一致した文字を、第二引数に渡された文字列に変換する関数です。
 
-※[`replace()`に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+> [`replace()`に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 
 今回の例では、第一引数に正規表現を使用して文字列の変換を行なっています。
 第一引数の`/(\d)(?=(\d\d\d)+$)/g`は後ろに3桁の数字がある数字のパターンを表す正規表現です。末尾の`g`オプションによって、マッチした複数の文字列を変換することができます。
 第二引数の`$1`はパターンにマッチした文字列が代入されます。今回第二引数には`"$1,"`が渡されていますので、後ろに3桁の数字がある数字を、その数字の後ろに`,`を入れた文字列に変換していることがわかります。
-※[正規表現に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+
+> [正規表現に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
 
 ## 独自の関数を定義できる`methods`オプション
 
