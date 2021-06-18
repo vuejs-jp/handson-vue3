@@ -26,3 +26,8 @@ JavaScript のビルトインクラスや正規表現など、主題と関係が
         
         本文があります。
         ```
+
+## 外部リンク先について
+- 原則として、リンク先は公式ドキュメントとします
+- 例えば、Vue.js 本体に関しては Vue.js 公式ドキュメント（ [V3](https://v3.ja.vuejs.org/guide/introduction.html) 、 [V2](https://jp.vuejs.org/v2/guide/) ）にリンクします
+- HTML、CSS、JavaScript の仕様に関しては　[MDN Web Docs](https://developer.mozilla.org/ja/docs/Web) にリンクします
