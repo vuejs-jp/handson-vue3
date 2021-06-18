@@ -140,16 +140,11 @@ export default {
   margin-top: 20px;
 }
 
-.item > div.description > h3,
 .item > div.description > p {
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 18px;
   line-height: 25px;
-}
-
-.item > div.description > h3 {
-  font-weight: bold;
 }
 
 .item > div.description > span {
