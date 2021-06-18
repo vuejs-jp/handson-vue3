@@ -11,7 +11,9 @@
       <div class="description">
         <h2>{{ item.name }}</h2>
         <p>{{ item.description }}</p>
-        <span>¥<span class="price">{{ item.price }}</span></span>
+        <span
+          >¥<span class="price">{{ item.price }}</span></span
+        >
       </div>
     </div>
   </main>
@@ -19,14 +21,15 @@
 
 <script>
 export default {
-  name: "App",
-  data(){
+  name: 'App',
+  data() {
     return {
       item: {
-        name: "アボガドディップバケット",
-        description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
+        name: 'アボガドディップバケット',
+        description:
+          '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
         price: 480,
-        image: "/images/item1.jpg"
+        image: '/images/item1.jpg'
       }
     }
   }
