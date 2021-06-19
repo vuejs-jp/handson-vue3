@@ -48,6 +48,10 @@
       "comma-dangle": [
         "error",
         "never"
+      ],
+      "comma-style": [
+        "error",
+        "last"
       ]
     }
   },
