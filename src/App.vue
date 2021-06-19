@@ -18,7 +18,7 @@
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
           <span
-            >￥<span class="price">{{ pricePrefix(item.price) }}</span></span
+            >¥<span class="price">{{ pricePrefix(item.price) }}</span></span
           >
         </div>
       </div>
