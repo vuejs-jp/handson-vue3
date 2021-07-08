@@ -12,7 +12,9 @@
         <div class="description">
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
-          <span>¥<span class="price">{{ item.price }}</span></span>
+          <span
+            >¥<span class="price">{{ item.price }}</span></span
+          >
         </div>
       </div>
     </template>
@@ -21,37 +23,41 @@
 
 <script>
 export default {
-  name: "App",
-  data(){
+  name: 'App',
+  data() {
     return {
       items: [
         {
           id: 1,
-          name: "アボガドディップバケット",
-          description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
+          name: 'アボガドディップバケット',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
           price: 480,
-          image: "/images/item1.jpg"
+          image: '/images/item1.jpg'
         },
         {
           id: 2,
-          name: "あの日夢見たホットケーキ",
-          description: "子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。",
+          name: 'あの日夢見たホットケーキ',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
           price: 1180,
-          image: "/images/item2.jpg"
+          image: '/images/item2.jpg'
         },
         {
           id: 3,
-          name: "HOP WTR",
-          description: "ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。",
+          name: 'HOP WTR',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
           price: 320,
-          image: "/images/item3.jpg"
+          image: '/images/item3.jpg'
         },
         {
           id: 4,
-          name: "チーズフレンチフライ",
-          description: "イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。",
+          name: 'チーズフレンチフライ',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
           price: 670,
-          image: "/images/item4.jpg"
+          image: '/images/item4.jpg'
         }
       ]
     }
