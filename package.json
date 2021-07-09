@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lint:text": "textlint --format pretty-error docs/**"
+    "textlint": "textlint --format pretty-error",
+    "textlint:docs": "textlint --format pretty-error docs/**"
   },
   "dependencies": {
     "core-js": "^3.6.5",

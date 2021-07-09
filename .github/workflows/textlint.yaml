@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: "14.x"
+  NODE_VERSION: '14.x'
 
 jobs:
   textlint:
@@ -24,4 +24,4 @@ jobs:
       - name: Restore Packages
         run: npm ci
       - name: Run textlint
-        run: npm run lint:text
+        run: npm run textlint:docs
