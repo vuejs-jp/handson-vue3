@@ -31,3 +31,11 @@ JavaScript のビルトインクラスや正規表現など、主題と関係が
 - 原則として、リンク先は公式ドキュメントとします
 - 例えば、Vue.js 本体に関しては Vue.js 公式ドキュメント（ [V3](https://v3.ja.vuejs.org/guide/introduction.html) 、 [V2](https://jp.vuejs.org/v2/guide/) ）にリンクします
 - HTML、CSS、JavaScript の仕様に関しては　[MDN Web Docs](https://developer.mozilla.org/ja/docs/Web) にリンクします
+
+## textlint について
+
+ドキュメントは、 [textlint](https://github.com/textlint/textlint) を使って校正を行います。校正のチェックルールは、Vue.js 日本ユーザーグループが翻訳プロジェクト等で利用している [プリセット](https://github.com/vuejs-jp/textlint-rule-preset-vuejs-jp) を参照しています。
+
+### Pull Request 時の自動チェック
+
+Pull Request を発行すると、GitHub Actions によって自動的に textlint によるルール評価が行われます。ルールに合わない場合は、
