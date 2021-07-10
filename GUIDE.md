@@ -29,13 +29,32 @@ JavaScript のビルトインクラスや正規表現など、主題と関係が
 
 ## 外部リンク先について
 - 原則として、リンク先は公式ドキュメントとします
-- 例えば、Vue.js 本体に関しては Vue.js 公式ドキュメント（ [V3](https://v3.ja.vuejs.org/guide/introduction.html) 、 [V2](https://jp.vuejs.org/v2/guide/) ）にリンクします
+- 例えば、Vue.js 本体に関しては Vue.js 公式ドキュメント（[V3](https://v3.ja.vuejs.org/guide/introduction.html) 、 [V2](https://jp.vuejs.org/v2/guide/)）にリンクします
 - HTML、CSS、JavaScript の仕様に関しては　[MDN Web Docs](https://developer.mozilla.org/ja/docs/Web) にリンクします
 
-## textlint について
+## 文章の校正( textlint )について
 
 ドキュメントは、 [textlint](https://github.com/textlint/textlint) を使って校正を行います。校正のチェックルールは、Vue.js 日本ユーザーグループが翻訳プロジェクト等で利用している [プリセット](https://github.com/vuejs-jp/textlint-rule-preset-vuejs-jp) を参照しています。
 
 ### Pull Request 時の自動チェック
 
-Pull Request を発行すると、GitHub Actions によって自動的に textlint によるルール評価が行われます。ルールに合わない場合は、
+Pull Request を発行すると、GitHub Actions によって自動的に textlint によるルール評価が行われます。ルールに合わない問題が見つかった場合は、Pull Request のステータスチェックがエラー表示になるので、対応する PR の `Checks` タブで GitHub Actions のログから `Run textlint` の詳細を展開してエラー内容を確認してください。
+
+### ローカルでのチェック方法
+
+Pull Request で textlint のエラーが出た場合や、PR 前に事前にチェックをしたい場合は、ローカルで以下のコマンドを実行して確認することができます。
+
+```bash
+npm run textlint {チェックしたいファイル名}
+```
+
+エラーが無い場合は何も表示されませんが、エラーが見つかった場合はログに問題の箇所と内容が表示されるので、ログに従って修正してください。
+
+```bash
+✓ vuejs-jp/ja-space-between-half-and-full-width: 原則として、全角文字と半角文字の間にスペースを入れます。
+/Users/miyake/repos/handson-vue3-examples/GUIDE.md:45:22
+                              v
+    44. 
+    45. Pull Request でtextlintのエラーが出た場合や、PR 前に事前にチェックをしたい場合は、ローカルで以下のコマンドを実行して確認することができます。
+    46. 
+```
