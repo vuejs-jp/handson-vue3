@@ -5,11 +5,7 @@
   </header>
   <main class="main">
     <template v-for="item in items" :key="item.id">
-      <div
-        v-if="!item.soldOut"
-        class="item"
-        :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
+      <div v-if="!item.soldOut" class="item">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
@@ -35,7 +31,6 @@ export default {
           description:
             '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
           price: 480,
-          selected: false,
           image: '/images/item1.jpg',
           soldOut: false
         },
@@ -45,7 +40,6 @@ export default {
           description:
             '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
           price: 1180,
-          selected: false,
           image: '/images/item2.jpg',
           soldOut: false
         },
@@ -55,7 +49,6 @@ export default {
           description:
             'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
           price: 320,
-          selected: false,
           image: '/images/item3.jpg',
           soldOut: false
         },
@@ -65,7 +58,6 @@ export default {
           description:
             'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
           price: 670,
-          selected: false,
           image: '/images/item4.jpg',
           soldOut: false
         },
@@ -93,7 +85,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .header {
   display: flex;
   align-content: center;
@@ -160,9 +152,5 @@ export default {
 .item > div.description > span > .price {
   font-size: 28px;
   font-weight: bold;
-}
-
-.selected-item {
-  background: #e3f2fd;
 }
 </style>
