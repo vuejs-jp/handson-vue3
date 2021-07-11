@@ -11,9 +11,7 @@
       <div class="description">
         <h2>{{ item.name }}</h2>
         <p>{{ item.description }}</p>
-        <span
-          >¥<span class="price">{{ item.price }}</span></span
-        >
+        <span>¥<span class="price">{{ item.price }}</span></span>
       </div>
     </div>
   </main>

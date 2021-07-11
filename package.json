@@ -23,34 +23,6 @@
     "eslint-plugin-vue": "^7.0.0",
     "prettier": "^2.2.1"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/prettier"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "semi": [
-        "error",
-        "never"
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "comma-dangle": [
-        "error",
-        "never"
-      ]
-    }
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
