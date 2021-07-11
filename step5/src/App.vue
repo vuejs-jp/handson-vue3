@@ -74,10 +74,12 @@ export default {
     }
   },
   methods: {
-    /** 3桁ごとのカンマ付きで返す */
+    /**
+     * 価格を3桁ごとのカンマ付きで返す
+     * @param {number} price 価格
+     */
     pricePrefix(price) {
-      const priceStr = String(price).replace(/(\d)(?=(\d\d\d)+$)/g, '$1,')
-      return priceStr
+      return price.toLocaleString()
     }
   }
 }
