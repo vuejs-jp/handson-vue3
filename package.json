@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint src step[1-6]"
+    "lint": "vue-cli-service lint",
+    "textlint": "textlint --format pretty-error",
+    "textlint:docs": "textlint --format pretty-error docs/**"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -19,6 +21,8 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
+    "textlint": "^12.0.0",
+    "textlint-rule-preset-vuejs-jp": "git+https://github.com/vuejs-jp/textlint-rule-preset-vuejs-jp.git",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
     "prettier": "^2.2.1"
