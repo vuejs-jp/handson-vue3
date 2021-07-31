@@ -191,11 +191,9 @@ body {
 
 ## 商品表示部分の説明
 　簡単ですが、商品表示部分を説明します。  
-
-`<div class="thumbnail">~</div>` の部分ではサムネイル画像を表示しています。  
- `<div class="description">~<div>` の部分では商品の名前と商品の説明を表示しています。
-
-  `<div class="price">~<div>` の部分では商品の値段を表示しています。
+`<div class="thumbnail">~</div>` の部分では商品のサムネイル画像を表示しています。  
+`<div class="description">~<div>` の部分では商品の名前と商品の説明を表示しています。  
+`<div class="price">~<div>` の部分では商品の値段を表示しています。
 
 ```html
 <div class="item">
