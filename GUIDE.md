@@ -32,6 +32,9 @@ JavaScript のビルトインクラスや正規表現など、主題と関係が
 - 例えば、Vue.js 本体に関しては Vue.js 公式ドキュメント（[V3](https://v3.ja.vuejs.org/guide/introduction.html) 、 [V2](https://jp.vuejs.org/v2/guide/)）にリンクします
 - HTML、CSS、JavaScript の仕様に関しては　[MDN Web Docs](https://developer.mozilla.org/ja/docs/Web) にリンクします
 
+## 改行について
+マークダウンでは、原則では改行されないためひとつの文章内では改行させない。改行したい場合は明示的に空行を入れて改行させるようにする
+
 ## 文章の校正( textlint )について
 
 ドキュメントは、 [textlint](https://github.com/textlint/textlint) を使って校正を行います。校正のチェックルールは、Vue.js 日本ユーザーグループが翻訳プロジェクト等で利用している [プリセット](https://github.com/vuejs-jp/textlint-rule-preset-vuejs-jp) を参照しています。
