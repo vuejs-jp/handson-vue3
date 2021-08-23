@@ -152,6 +152,6 @@ export default {
 }
 
 .selected-item {
-  background: #E3F2FD;
+  background-color: #E3F2FD;
 }
 </style>
