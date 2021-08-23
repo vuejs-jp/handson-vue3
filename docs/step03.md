@@ -1,4 +1,4 @@
-# Step 3 - ハンズオンの概要と準備
+# ハンズオンの概要と準備
 
 ## 作成するもの
 　このハンズオンでは、簡単な商品の一覧を表示し、購入する商品を選択できるプログラムを作成します。プログラムを作成する過程で、 Vue.js の基本を学ぶことができます。実際に動く物は <a href="hogehoge">こちら</a> から見れます。
@@ -6,13 +6,15 @@
    ![vue-app](images/sample.png)
 
 ## 作成の流れ
-- 1 章 ハンズオンの概要と準備
-- 2 章 コンポーネントへの書き換え
-- 3 章 data を定義し template で商品を描画する
-- 4 章 v-for で繰り返しを表現する（商品複数）
-- 5 章 v-if を使用した表示・非表示の切り替え
-- 6 章 methods で価格にカンマを入れる
-- 7 章 @click でイベントを処理する（クラスの切り替え）
+- <a href="#">開発環境の構築</a>
+- <a href="#">プロジェクトの作成</a>
+- ハンズオンの概要と準備（本ページ）
+- <a href="#">コンポーネントへの書き換え</a>
+- <a href="#">data を定義し template で商品を描画する</a>
+- <a href="#">v-for で繰り返しを表現する（商品複数）</a>
+- <a href="#">v-if を使用した表示・非表示の切り替え</a>
+- <a href="#">methods で価格にカンマを入れる</a>
+- <a href="#">@click でイベントを処理する（クラスの切り替え）</a>
 
 ## Vue.js を使わない場合
 　Vue.js でのハンズオンに入る前に Vue.js を使わないで実装した場合のプログラムを見てみましょう。実際に動く物は <a href="hogehoge">こちら</a> から確認できます。
@@ -26,12 +28,12 @@ index.html
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Vue.js ハンズオン</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but  vue3-lab doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div>
       <header class="header">
