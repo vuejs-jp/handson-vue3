@@ -1,0 +1,11 @@
+{
+  "filters": {},
+  "rules": {
+    "preset-vuejs-jp": {
+      "no-mix-dearu-desumasu": {
+        "strict": false
+      },
+    "ja-no-space-between-full-width": false
+    }
+  }
+}

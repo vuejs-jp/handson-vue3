@@ -5,11 +5,7 @@
   </header>
   <main class="main">
     <template v-for="item in items" :key="item.id">
-      <div
-        v-if="!item.soldOut"
-        class="item"
-        :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
+      <div v-if="!item.soldOut" class="item">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
@@ -36,8 +32,7 @@ export default {
             '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
           price: 480,
           image: '/images/item1.jpg',
-          soldOut: false,
-          selected: false
+          soldOut: false
         },
         {
           id: 2,
@@ -46,8 +41,7 @@ export default {
             '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
           price: 1180,
           image: '/images/item2.jpg',
-          soldOut: false,
-          selected: false
+          soldOut: false
         },
         {
           id: 3,
@@ -56,8 +50,7 @@ export default {
             'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
           price: 320,
           image: '/images/item3.jpg',
-          soldOut: false,
-          selected: false
+          soldOut: false
         },
         {
           id: 4,
@@ -66,8 +59,7 @@ export default {
             'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
           price: 670,
           image: '/images/item4.jpg',
-          soldOut: false,
-          selected: false
+          soldOut: false
         },
         {
           id: 5,
@@ -75,8 +67,8 @@ export default {
           description: '商品５の説明です',
           price: 500,
           image: '/images/item4.jpg',
-          soldOut: true,
-          selected: false
+          selected: false,
+          soldOut: true
         }
       ]
     }
@@ -93,7 +85,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .header {
   display: flex;
   align-content: center;
@@ -160,9 +152,5 @@ export default {
 .item > div.description > span > .price {
   font-size: 28px;
   font-weight: bold;
-}
-
-.selected-item {
-  background: #e3f2fd;
 }
 </style>
