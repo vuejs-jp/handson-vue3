@@ -3,7 +3,7 @@
 ## 画像ファイルの配置
 ハンズオンのファイル([vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip "vue3-lab-handson.zip")) をダウンロード及び解凍し、`iamges` ディレクトリを `public` ディレクトリ配下に配置します。
 
-## テンプレート構文
+## moustache構文 
 Vue.js では、`{{` ~ `}}` のような `moustache` 構文を使ってデータを描画することが可能です。以下の例では data 部分の message を表示しています。ちなみに、 `moustache` とは口髭をさす英語です。
 
 ```html
@@ -27,7 +27,7 @@ Welecome Vue Handson!
 ```
 
 ## コンポーネントへの書き換え
-では、商品を描画していきましょう。`App.vue` ファイルを次のように変更します。
+では、プロジェクトのファイルをを書き換えて、商品を描画していきましょう。`App.vue` ファイルを次のように変更します。
 
 ```diff
 <template>
