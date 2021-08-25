@@ -1,7 +1,7 @@
 # data を定義し template で商品を描画する
 
 ## 画像ファイルの配置
-まず、ハンズオンで使う商品の画像を用意しましょう。ハンズオンのファイル([vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip "vue3-lab-handson.zip")) をダウンロード及び解凍し、`iamges` ディレクトリを `public` ディレクトリ配下に配置します。
+まず、ハンズオンで使う商品の画像を用意しましょう。ハンズオンのファイル([vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip "vue3-lab-handson.zip")) をダウンロード及び解凍し、`images` ディレクトリを丸ごと `public` ディレクトリ配下に配置します。
 
 ## moustache 構文 
 Vue.js では、`{{` ~ `}}` のような `moustache` 構文を使ってデータを描画することが可能です。以下の例では data 部分の message を表示しています。ちなみに、 `moustache` とは口髭をさす英語です。
