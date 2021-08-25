@@ -243,14 +243,17 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
   <main class="main">
     <template v-for="item in items" :key="item.id">
       <!--  @click="item.selected = !item.selected"を追加 -->
-      <div v-if="!item.soldOut" class="item" @click="item.selected = !item.selected">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        @click="item.selected = !item.selected">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
-          <span>￥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
     </template>
