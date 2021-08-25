@@ -141,56 +141,61 @@ export default {
 <script>
 export default {
   name: 'App',
-  data: () => {
+  data() {
     return {
       items: [
         {
           id: 1,
           name: 'アボガドディップバケット',
-          description: '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
           price: 480,
-          selected: false, //selectedプロパティ追加
+          image: '/images/item1.jpg',
           soldOut: false,
-          image: '/images/item1.jpg'
+          selected: false //selectedプロパティ追加
         },
         {
           id: 2,
           name: 'あの日夢見たホットケーキ',
-          description: '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
           price: 1180,
-          selected: false, //selectedプロパティ追加
+          image: '/images/item2.jpg',
           soldOut: false,
-          image: '/images/item2.jpg'
+          selected: false //selectedプロパティ追加
         },
         {
           id: 3,
           name: 'HOP WTR',
-          description: 'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
           price: 320,
-          selected: false, //selectedプロパティ追加
+          image: '/images/item3.jpg',
           soldOut: false,
-          image: '/images/item3.jpg'
+          selected: false //selectedプロパティ追加
         },
         {
           id: 4,
           name: 'チーズフレンチフライ',
-          description: 'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
           price: 670,
-          selected: false, //selectedプロパティ追加
+          image: '/images/item4.jpg',
           soldOut: false,
-          image: '/images/item4.jpg'
+          selected: false //selectedプロパティ追加
         },
         {
           id: 5,
           name: '商品５',
           description: '商品５の説明です',
           price: 500,
-          selected: false, //selectedプロパティ追加
-          soldOut: true
+          image: '/images/item4.jpg',
+          soldOut: true,
+          selected: false //selectedプロパティ追加
         }
       ]
     }
-  }
+  },
   // 省略
 }
 </script>
