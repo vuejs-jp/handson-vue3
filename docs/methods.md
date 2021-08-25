@@ -27,7 +27,7 @@
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
           <!-- コード1 金額の表示 -->
-          <span>￥<span class="price">{{ item.price }}</span></span>
+          <span>¥<span class="price">{{ item.price }}</span></span>
         </div>
       </div>
     </template>
@@ -38,7 +38,7 @@
 金額の表示を行なっている部分は、コード 1 の部分です。
 
 ```html
-<span>￥<span class="price">{{ item.price }}</span></span>
+<span>¥<span class="price">{{ item.price }}</span></span>
 ```
 
 この部分のコードを改修して、`item.price` を 3 桁ごとにカンマを入れた表示を変えてみましょう。
@@ -48,7 +48,7 @@
 `{{ }}` の中には、値だけではなく処理を記述することができます。では、`{{ item.price }}` を書き換えて、`item.price` の値を 3 桁ごとにカンマを入れた値にする処理を記述してみましょう。
 
 ```html
-<span>￥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+<span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
 ```
 
 `pricePrefix()` という関数を用いて、3 桁ごとにカンマを入れた表示にすることができました。
@@ -70,7 +70,7 @@
 このように、`{{ }}` に直接実行したい処理を記述することもできますが、処理が長くなってしまう場合は可読性が下がってしまいます。そこで、実行したい処理を関数にして登録し、`{{ }}` にはその関数を記述するようにしてみましょう。
 そのような関数を定義する場合に使用するのが、`methods` オプションです。
 
-実際に、`item.price` を引数に渡すと、`String(item.price).replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")` の値を返す関数を作成してみましょう。
+実際に、`item.price` を引数に渡すと、`item.price.toLocaleString()` の値を返す関数を作成してみましょう。
 
 ### `methods` オプションを追加する
 
@@ -80,7 +80,7 @@
 <script>
 export default {
   name: 'App',
-  data: () => {
+  data() {
     return {
       // 省略
     }
@@ -99,7 +99,7 @@ export default {
 <script>
 export default {
   name: 'App',
-  data: () => {
+  data() {
     return {
       // 省略
     }
@@ -107,8 +107,7 @@ export default {
   methods: {
     //pricePrefix()を定義
     pricePrefix(price) {
-      const priceStr = String(price).replace(/(\d)(?=(\d\d\d)+$)/g, '$1,')
-      return priceStr
+      return price.toLocaleString()
     }
   }
 }
@@ -120,7 +119,7 @@ export default {
 `pricePrefix()` が定義できたら、実際に `{{ }}` の中で使用してみましょう。
 
 ```html
-<span>￥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+<span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
 ```
 
 関数を使用することで、可読性が向上しました。このように、Vue コンポーネントの中でデータの操作や処理を行う関数は `methods` オプションを使用するようにしましょう。
