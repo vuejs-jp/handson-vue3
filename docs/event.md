@@ -292,14 +292,18 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
   <main class="main">
     <template v-for="item in items" :key="item.id">
       <!-- :class="{'selected-item': item.selected}"を追加 -->
-      <div v-if="!item.soldOut" class="item" @click="item.selected = !item.selected" :class="{'selected-item': item.selected}">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @click="item.selected = !item.selected">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
-          <span>￥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
     </template>
@@ -310,7 +314,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 商品要素に対して、`:class` を追加しました。処理の中身を確認していきましょう。
 
 ```js
-:class="{'selected-item': item.selected}"
+:class="{ 'selected-item': item.selected }"
 ```
 
 上記のように、適用したい `class` を条件式と一緒に記述することで、その条件式が `true` の場合のみ該当の `class` を適用できます。
