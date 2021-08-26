@@ -4,7 +4,7 @@
 まず、ハンズオンで使う商品の画像を用意しましょう。ハンズオンのファイル([vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip "vue3-lab-handson.zip")) をダウンロード及び解凍し、`images` ディレクトリを丸ごと `public` ディレクトリ配下に配置します。
 
 ## Mustache 構文 
-Vue.js では、`{{  }}` のような `Mustache` 構文を使ってテキストを描画できます。以下の例では data 部分の message を表示しています。message の内容が変更されると、それに応じて表示も更新されます。
+Vue.js では、`{{  }}` のような `Mustache` 構文を使ってテキストをレンダリングできます。以下の例では data 部分の message を表示しています。message の内容が変更されると、それに応じて表示も更新されます。
 
 ```html
 <div id="app">
