@@ -73,7 +73,7 @@ Welecome Vue Handson!
 </script>
 ```
 
-見た目を設定するために `</script>` タグの下に、以下の styleタグを追加しましょう。
+見た目を設定するために `</script>` タグの下に、以下の style タグを追加しましょう。
 ```html
 <style>
 .header {
