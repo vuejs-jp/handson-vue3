@@ -62,7 +62,7 @@ Welecome Vue Handson!
 +  data(){
 +    return {
 +      item: {
-+        name: "アボガドディップバケット",
++        name: "アボカドディップバケット",
 +        description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
 +        price: 480,
 +        image: "/images/item1.jpg"
