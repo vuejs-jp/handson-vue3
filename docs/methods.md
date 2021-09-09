@@ -48,22 +48,12 @@
 `{{ }}` の中には、値だけではなく処理を記述することができます。では、`{{ item.price }}` を書き換えて、`item.price` の値を 3 桁ごとにカンマを入れた値にする処理を記述してみましょう。
 
 ```html
-<span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+<span>¥<span class="price">{{ item.price.toLocaleString() }}</span></span>
 ```
 
-`pricePrefix()` という関数を用いて、3 桁ごとにカンマを入れた表示にすることができました。
+`toLocaleString()` という関数を用いて、3 桁ごとにカンマを入れた表示にすることができました。
 
-### 3 桁ごとのカンマ表示を行うコードについての補足
-
-`String(item.price).replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")` というコードについて、簡単に説明をしておきましょう。
-
-まず、`String(item.price)` という部分で `item.price` を文字列型のデータに変換しています。`String()` は引数に渡されたデータを文字列を生成する関数です。
-
-- [ `String()` に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/String)
-
-次に、`replace(/(\d)(?=(\d\d\d)+$)/g, "$1,")` の部分です。文字列型のデータに変換された `item.price` に対し、`replace()` を使い、3 桁ごとにカンマを入れた文字列に変換しています。`replace()` は第一引数に渡された文字列と一致した文字を、第二引数に渡された文字列に変換する関数です。
-
-- [ `replace()` に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [ `toLocaleString()` に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)
 
 ## 独自の関数を定義できる `methods` オプション
 
@@ -93,7 +83,7 @@ export default {
 
 ### `methods` オプションに関数を定義する
 
-引数の値をを 3 桁ごとにカンマを入れた値を返す関数として、`pricePrefix()` という関数を定義してみましょう。
+引数の値を 3 桁ごとにカンマを入れた値を返す関数として、`pricePrefix()` という関数を定義してみましょう。
 
 ```html
 <script>
