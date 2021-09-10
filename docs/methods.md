@@ -52,7 +52,7 @@
 <span>¥<span class="price">{{ item.price.toLocaleString() }}</span></span>
 ```
 
-JavaScriptがもともと持っている `toLocaleString()` 関数を用いて、3 桁ごとにカンマを入れた表示にすることができました。
+JavaScript がもともと持っている `toLocaleString()` 関数を用いて、3 桁ごとにカンマを入れた表示にすることができました。
 
 - [ `toLocaleString()` に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)
 
