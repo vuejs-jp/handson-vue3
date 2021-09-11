@@ -15,9 +15,11 @@ Vue.js では、`{{  }}` のような `Mustache` 構文を使ってテキスト�
 ```js
 var app = new Vue({
   el: '#app',
-  data: {
-    message: 'Welecome Vue Handson!'
-  }
+  data() {
+    return {
+      message: 'Welecome Vue Handson!'
+    }
+  },
 })
 ```
 
@@ -148,6 +150,6 @@ Welecome Vue Handson!
 
 これで、商品を 1 つレンダリングすることができました。
 
+---
 
-[Previous](step03.md) | [Next](step05.md)
-
+[Previous](step03.md) | [Next](v-for.md)
