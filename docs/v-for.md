@@ -6,25 +6,26 @@
 商品を複数表示するようにしてみましょう。
 
 ## v-for 構文 
-Vue.js では、配列からデータを取り出してデータを繰り返しで表示する、`v-for` というディレクティブが用意されています。以下の例では data 部分の items からデータが取り出され表示されます。
+Vue.js では、配列からデータを取り出してデータを繰り返しで表示する、`v-for` というディレクティブが用意されています。v-forディレクティブには、 `task in tasks` の様な構文で書きます。 `tasks` は、データを取り出す元の配列で、 `task` は、配列から取り出した値が入る変数のようなものです。
+以下の例では data 部分の `tasks` からデータを取り出し `{{task}}` で表示しています。
 
 ```html
 <div id="app">
-  <ol>
-    <li v-for="item in items">
-  </ol>
+  <ul>
+    <li v-for="task in tasks">{{task}}</li>
+  </ul>
 </div>
 ```
 
 ```js
 var app = new Vue({
   el: '#app',
-  data: {
+  data() {
     return {
-      items [
-        'itemA',
-        'itemB',
-        'itemC',
+      tasks: [
+        'タスクA',
+        'タスクB',
+        'タスクC',
       ]
     }
   }
@@ -33,15 +34,17 @@ var app = new Vue({
 
 出力例
 ```
-itemA
-itemB
-itemC
+・タスクA
+・タスクB
+・タスクC
 ```
+
+<img src="images/v_for_result1.png" alt="v-for構文の出力例">
 
 ## 複数の商品をレンダリング
 プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。`App.vue` ファイルを次のように変更します。
 
-まずは、 data に表示したい商品を設定します。
+まずは、 data に表示したい商品を設定します。 `item` から `items` に変更し商品のオブジェクト配列にします。
 
 ```
 <script>
@@ -110,7 +113,9 @@ export default {
 </script>
 ```
 
-次に、 v-for を使い各商品の名前 name 、 説明 description 、価格 price を表示します。
+次に、 v-for を用いて各商品の「名前 (name) 」、「説明 (description) 」、「価格 (price) 」、「画像  (image) 」を表示します。`v-for` ディレクティブの右辺には、オブジェクトの配列を指定することもできます。ここでは、 dataの `items` の配列から `item` へ取り出し、順番に表示しています。`:key="item.id"` の属性は、 `v-for` で取り出した各要素を一意にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。
+(詳細はVue.jsドキュメントガイドを参照ください。 <a href="https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81">状態の維持</a> )
+
 v-for ディレクティブを template タグに使っているのが紛らわしいですが、 HTML のコンテンツテンプレート要素で、 Vue.js における template とは別物です。
 
 ```diff
