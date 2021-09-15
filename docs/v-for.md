@@ -115,9 +115,6 @@ export default {
 
 次に、 `v-for` を用いて、各商品の「名前 (name)」、「説明 (description)」、「価格 (price)」、「画像  (image)」を表示します。`v-for` ディレクティブの右辺には、オブジェクトの配列を指定することもできます。ここでは、 `data` の `items` の配列から `item` へ取り出し、順番に表示しています。`:key="item.id"` の属性は、 `v-for` で取り出した各要素を一意にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は Vue.js ドキュメントガイドを参照ください。  [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")
 
-
-`v-for` ディレクティブを `template` タグに使っているのが紛らわしいですが、 HTML のコンテンツテンプレート要素で、 Vue.js における `template` とは別物です。
-
 ```diff
   <main class="main">
 -    <div class="item">
@@ -130,7 +127,7 @@ export default {
 -        <span>¥<span class="price">{{ item.price }}</span></span>
 -      </div>
 -    </div>
-+    <template v-for="item in items" :key="item.id">
++    <div v-for="item in items" :key="item.id">
 +      <div class="item">
 +         <div class="thumbnail">
 +            <img :src="item.image" alt="" />
@@ -140,7 +137,7 @@ export default {
 +        <p>{{ item.description }}</p>
 +        <span>¥<span class="price">{{ item.price }}</span></span>
 +      </div>
-+    </template>
++    </div>
   </main>
 ```
 
