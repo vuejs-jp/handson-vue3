@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       item: {
-        name: 'アボガドディップバケット',
+        name: 'アボカドディップバケット',
         description:
           '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
         price: 480,
@@ -76,7 +76,7 @@ export default {
       items: [
         {
           id: 1,
-          name: 'アボガドディップバケット',
+          name: 'アボカドディップバケット',
           description:
             '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
           price: 480,
