@@ -45,7 +45,7 @@ index.html
             <img src="./images/item1.jpg" alt="" />
           </div>
           <div class="description">
-            <h2>アボガドディップバケット</h2>
+            <h2>アボカドディップバケット</h2>
             <p>
               刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。
             </p>
@@ -202,7 +202,7 @@ body {
    <img src="./images/item1.jpg" alt="" />
    </div>
    <div class="description">
-   <h2>アボガドディップバケット</h2>
+   <h2>アボカドディップバケット</h2>
    <p>
       刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。
    </p>
@@ -257,7 +257,7 @@ export default {
       items: [
         {
           id: 1,
-          name: 'アボガドディップバケット',
+          name: 'アボカドディップバケット',
           description:
             '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
           price: 480,
