@@ -1,4 +1,4 @@
-# Step 2 - プロジェクトの作成
+# プロジェクトの作成
 
 ## Vue CLI でのプロジェクト新規作成
 
@@ -56,4 +56,4 @@
 
 ---
 
-[Previous](step01.md) | [Next](step03.md)
+[Previous](setup.md) | [Next](overview.md)
