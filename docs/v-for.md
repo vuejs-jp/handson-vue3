@@ -152,5 +152,5 @@ export default {
 
 ---
 
-[Previous](step04.md) | [Next](v-if.md)
+[Previous](rendering.md) | [Next](v-if.md)
 
