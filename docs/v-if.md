@@ -118,3 +118,7 @@ JavaScript の条件分岐の構文に `else` があるように、Vue.js にも
 
 また、JavaScript の `else if` と同様の働きをする `v-else-if` も用意されています。
 `v-if` の評価が `false` の時に、さらに条件を指定した時などに使用できます。
+
+---
+
+[Previous](v-for.md) | [Next](methods.md)
