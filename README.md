@@ -1,4 +1,4 @@
-# Vue.js 3 ハンズオン：Vue.js をはじめよう！
+# Vue.js 3 ハンズオン
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
@@ -10,10 +10,6 @@ Vue.js 3 ハンズオンへようこそ😀　このハンズオンは、初め�
 
 ### 2. 自由に利用する
 本ハンズオンの文章、ソースコードを含むあらゆる内容は、自由にご利用いただけます。個人の学習や、グループ・会社での勉強会、もくもく会、セミナーなど、あらゆる用途にご活用ください。
-
-## 🔰始め方
-
-★ドキュメントが完成したら、ここに始め方を書く。
 
 ## 💪コントリビューター
 誤りやよりよい改善を見つけた方は、[Issues](https://github.com/vuejs-jp/handson-vue3-examples/issues) または [Pull requests](https://github.com/vuejs-jp/handson-vue3-examples/pulls) を作成してください。
