@@ -108,7 +108,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 /* 省略 */
 </style>
 ```
