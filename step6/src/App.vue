@@ -93,7 +93,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .header {
   display: flex;
   align-content: center;
