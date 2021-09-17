@@ -46,7 +46,9 @@
 
 ### `<template>` の中で直接表示を操作する
 
+::: v-pre
 `{{ }}` の中には、値だけではなく処理を記述できます。
+:::
 
 ```html
 <span>¥<span class="price">{{ item.price.toLocaleString() }}</span></span>
@@ -58,7 +60,9 @@ JavaScript がもともと持っている `toLocaleString()` 関数を用いて�
 
 ## 独自の関数を定義できる `methods` オプション
 
+::: v-pre
 このように、`{{ }}` の中に直接実行したい処理を記述できますが、処理が長くなると可読性が下がってしまいます。そこで、実行したい処理を関数にして登録し、`{{ }}` にはその関数を記述するとよりスマートです。
+:::
 
 関数を定義するときに使うのが、`methods` オプションです。
 
@@ -108,7 +112,9 @@ export default {
 
 ### 定義した関数を使用する
 
+::: v-pre
 `pricePrefix()` が定義できたら、実際に `{{ }}` の中で使用してみましょう。
+:::
 
 ```html
 <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>

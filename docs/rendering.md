@@ -6,7 +6,9 @@
 
 ## Mustache 構文
 
+::: v-pre
 Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキストをレンダリングできます。以下の例では data 部分の message を表示しています。message の内容が変更されると、それに応じて表示も更新されます。
+:::
 
 ```html
 <div id="app">{{ message }}</div>
@@ -29,7 +31,9 @@ var app = new Vue({
 Welecome Vue Handson!
 ```
 
+::: v-pre
 ちなみに mustache とは口髭を指す英語で、二重中括弧 `{{ }}` が口髭のように見えることから命名されました。
+:::
 
 ## 商品をレンダリング
 
