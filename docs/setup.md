@@ -2,7 +2,7 @@
 
 ## 前提とする環境
 
-- エディタ: Visual Studio Code (以下、VSCode)
+- エディタ: Visual Studio Code (以下、VS Code)
 - 開発言語: JavaScript
 - 利用するツール: Node.js, Vue CLI, Vetur
 
@@ -96,7 +96,7 @@ vue --version
 
 Vetur は Vue.js の開発をサポートする VS Code の拡張です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Vetur 公式ドキュメント](https://vuejs.github.io/vetur/) を参照して下さい。
 
-Vetur をインストールするには、VSCode が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし `Install` ボタンをクリックします。
+Vetur をインストールするには、VS Code が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし `Install` ボタンをクリックします。
 
 ---
 
