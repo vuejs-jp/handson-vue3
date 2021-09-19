@@ -56,7 +56,7 @@ index.html
             <p>
               刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。
             </p>
-            <span>￥<span class="price">480</span></span>
+            <span>¥<span class="price">480</span></span>
           </div>
         </div>
         <div class="item">
@@ -68,7 +68,7 @@ index.html
             <p>
               子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。
             </p>
-            <span>￥<span class="price">1,180</span></span>
+            <span>¥<span class="price">1,180</span></span>
           </div>
         </div>
         <div class="item">
@@ -80,7 +80,7 @@ index.html
             <p>
               ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。
             </p>
-            <span>￥<span class="price">320</span></span>
+            <span>¥<span class="price">320</span></span>
           </div>
         </div>
         <div class="item">
@@ -92,7 +92,7 @@ index.html
             <p>
               イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。
             </p>
-            <span>￥<span class="price">670</span></span>
+            <span>¥<span class="price">670</span></span>
           </div>
         </div>
       </main>
@@ -214,7 +214,7 @@ body {
     <p>
       刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。
     </p>
-    <span>￥<span class="price">480</span></span>
+    <span>¥<span class="price">480</span></span>
   </div>
 </div>
 ```
