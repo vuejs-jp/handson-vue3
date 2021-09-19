@@ -64,6 +64,20 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 90%;
+  margin: 0 5%;
+  text-align: center;
+  color: #242424;
+}
+
 .header {
   display: flex;
   align-content: center;
