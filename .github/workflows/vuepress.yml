@@ -2,12 +2,14 @@ name: VuePress CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
       - '.github/workflows/vuepress.yml'
       - 'docs/**'
   pull_request:
-    branches: [　main ]
+    branches:
+      - main
     paths:
       - '.github/workflows/vuepress.yml'
       - 'docs/**'
