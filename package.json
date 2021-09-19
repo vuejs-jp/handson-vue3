@@ -10,21 +10,21 @@
     "textlint:docs": "textlint --format pretty-error docs/**"
   },
   "dependencies": {
-    "core-js": "3.6.5",
-    "vue": "3.0.0"
+    "core-js": "3.8.3",
+    "vue": "3.0.11"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "4.5.0",
-    "@vue/cli-plugin-eslint": "4.5.0",
-    "@vue/cli-service": "4.5.0",
-    "@vue/compiler-sfc": "3.0.0",
+    "@vue/cli-plugin-babel": "4.5.13",
+    "@vue/cli-plugin-eslint": "4.5.13",
+    "@vue/cli-service": "4.5.13",
+    "@vue/compiler-sfc": "3.0.11",
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.1.0",
-    "eslint": "6.7.2",
-    "eslint-plugin-prettier": "3.3.1",
-    "eslint-plugin-vue": "7.0.0",
-    "prettier": "2.2.1",
-    "textlint": "12.0.0",
+    "eslint": "6.8.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-vue": "7.5.0",
+    "prettier": "2.3.1",
+    "textlint": "12.0.2",
     "textlint-rule-preset-vuejs-jp": "git+https://github.com/vuejs-jp/textlint-rule-preset-vuejs-jp.git"
   },
   "browserslist": [
