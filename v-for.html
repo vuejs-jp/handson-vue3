@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>v-for を使用した要素の繰り返し</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.a0e2e108.js" as="script"><link rel="preload" href="/assets/js/2.5edaaaf6.js" as="script"><link rel="preload" href="/assets/js/14.61030827.js" as="script"><link rel="prefetch" href="/assets/js/10.05072dab.js"><link rel="prefetch" href="/assets/js/11.7f898679.js"><link rel="prefetch" href="/assets/js/12.49bc12f9.js"><link rel="prefetch" href="/assets/js/13.5175cfef.js"><link rel="prefetch" href="/assets/js/15.123ed9f8.js"><link rel="prefetch" href="/assets/js/3.251ffa08.js"><link rel="prefetch" href="/assets/js/4.bc69728f.js"><link rel="prefetch" href="/assets/js/5.56e90f12.js"><link rel="prefetch" href="/assets/js/6.e1df2a1a.js"><link rel="prefetch" href="/assets/js/7.18d86af1.js"><link rel="prefetch" href="/assets/js/8.fdcac201.js"><link rel="prefetch" href="/assets/js/9.7d93d02c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="v-for-を使用した要素の繰り返し"><a href="#v-for-を使用した要素の繰り返し" class="header-anchor">#</a> v-for を使用した要素の繰り返し</h1> <h2 id="繰り返しで-dom-表示を制御する-v-for"><a href="#繰り返しで-dom-表示を制御する-v-for" class="header-anchor">#</a> 繰り返しで DOM 表示を制御する v-for</h2> <p>新しい商品が入荷したので、複数の商品を販売することになりました。商品を複数表示してみましょう。</p> <h2 id="v-for-構文"><a href="#v-for-構文" class="header-anchor">#</a> v-for 構文</h2> <p>Vue.js では、配列からデータを取り出し、繰り返しで表示する、<code>v-for</code> というディレクティブが用意されています。</p> <p><code>v-for</code> ディレクティブは、 <code>task in tasks</code> のような構文で書きます。 <code>tasks</code> はデータを取り出す元の配列で、あらかじめ用意した配列の名前を指定します。 <code>task</code> は配列から取り出した 1 つ 1 つの値にアクセスするエイリアスで、任意の名前を指定します。</p> <div><p>以下の例では <code>data</code> 部分の <code>tasks</code> からデータを取り出し <code>{{ task }}</code> で表示しています。</p></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>task in tasks<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ task }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      tasks<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">'タスクA'</span><span class="token punctuation">,</span>
+        <span class="token string">'タスクB'</span><span class="token punctuation">,</span>
+        <span class="token string">'タスクC'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>出力例</p> <div class="language- extra-class"><pre class="language-text"><code>・タスクA
+・タスクB
+・タスクC
+</code></pre></div><p><img src="images/v_for_result1.png" alt="v-for 構文の出力例"></p> <h2 id="複数の商品をレンダリング"><a href="#複数の商品をレンダリング" class="header-anchor">#</a> 複数の商品をレンダリング</h2> <p>プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。<code>App.vue</code> ファイルを次のように変更します。</p> <p>まずは、 data に表示したい商品を設定します。 <code>item</code> から <code>items</code> に変更し商品のオブジェクトを持つ配列にします。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+export default {
+  name: 'App',
+  data() {
+    return {
+      item: {
+        name: 'アボカドディップバケット',
+        description:
+          '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+        price: 480,
+        image: '/images/item1.jpg'
+      }
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>のブロックを以下に変更します。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+export default {
+  name: 'App',
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+          name: 'アボカドディップバケット',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+          price: 480,
+          image: '/images/item1.jpg'
+        },
+        {
+          id: 2,
+          name: 'あの日夢見たホットケーキ',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+          price: 1180,
+          image: '/images/item2.jpg'
+        },
+        {
+          id: 3,
+          name: 'HOP WTR',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+          price: 320,
+          image: '/images/item3.jpg'
+        },
+        {
+          id: 4,
+          name: 'チーズフレンチフライ',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+          price: 670,
+          image: '/images/item4.jpg'
+        }
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>次に、 <code>v-for</code> を用いて、各商品の「名前 (name)」、「説明 (description)」、「価格 (price)」、「画像 (image)」を繰り返し表示します。</p> <p>同時に指定している <code>key</code> 属性は、 <code>v-for</code> で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は Vue.js ドキュメントガイドを参照ください。  <a href="https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81" title="Vue.jsドキュメントガイド 状態の維持" target="_blank" rel="noopener noreferrer">Vue.jsドキュメントガイド 状態の維持<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-diff extra-class"><pre class="language-diff"><code><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line"> &lt;main class=&quot;main&quot;&gt;
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">    &lt;div class=&quot;item&quot;&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">      &lt;div class=&quot;thumbnail&quot;&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">        &lt;img :src=&quot;item.image&quot; alt=&quot;&quot; /&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">      &lt;/div&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">      &lt;div class=&quot;description&quot;&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">        &lt;h2&gt;{{ item.name }}&lt;/h2&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">        &lt;p&gt;{{ item.description }}&lt;/p&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">        &lt;span&gt;¥&lt;span class=&quot;price&quot;&gt;{{ item.price }}&lt;/span&gt;&lt;/span&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">      &lt;/div&gt;
+</span><span class="token prefix deleted">-</span><span class="token line">    &lt;/div&gt;
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">    &lt;div v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">      &lt;div class=&quot;item&quot;&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">         &lt;div class=&quot;thumbnail&quot;&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">            &lt;img :src=&quot;item.image&quot; alt=&quot;&quot; /&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">      &lt;/div&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">      &lt;div class=&quot;description&quot;&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">        &lt;h2&gt;{{ item.name }}&lt;/h2&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">        &lt;p&gt;{{ item.description }}&lt;/p&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">        &lt;span&gt;¥&lt;span class=&quot;price&quot;&gt;{{ item.price }}&lt;/span&gt;&lt;/span&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">      &lt;/div&gt;
+</span><span class="token prefix inserted">+</span><span class="token line">    &lt;/div&gt;
+</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line"> &lt;/main&gt;
+</span></span></code></pre></div><p><img src="images/v_for_result2.png" alt="複数の商品をレンダリングの出力例"></p> <p>これで、商品を複数レンダリングできました。</p> <hr> <p><a href="/rendering.html">Previous</a> | <a href="/v-if.html">Next</a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a0e2e108.js" defer></script><script src="/assets/js/2.5edaaaf6.js" defer></script><script src="/assets/js/14.61030827.js" defer></script>
+  </body>
+</html>
