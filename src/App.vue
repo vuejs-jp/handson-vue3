@@ -9,17 +9,14 @@
         v-if="!item.soldOut"
         class="item"
         :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected"
-      >
+        @click="item.selected = !item.selected">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
           <p>{{ item.description }}</p>
-          <span
-            >¥<span class="price">{{ pricePrefix(item.price) }}</span></span
-          >
+          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
     </template>
