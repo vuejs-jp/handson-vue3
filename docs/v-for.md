@@ -44,7 +44,7 @@ var app = new Vue({
 ・タスクC
 ```
 
-![v-for 構文の出力例](images/v_for_result1.png)
+![v-for 構文の出力例](./images/v_for_result1.png)
 
 ## 複数の商品をレンダリング
 プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。`App.vue` ファイルを次のように変更します。
@@ -148,7 +148,7 @@ export default {
   </main>
 ```
 
-![複数の商品をレンダリングの出力例](images/v_for_result2.png)
+![複数の商品をレンダリングの出力例](./images/v_for_result2.png)
 
 これで、商品を複数レンダリングできました。
 

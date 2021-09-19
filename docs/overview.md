@@ -4,7 +4,7 @@
 
 このハンズオンでは、簡単な商品の一覧を表示し、購入する商品を選択できるプログラムを作成します。プログラムを作成する過程で、 Vue.js の基本を学ぶことができます。実際に動く物は <a href="hogehoge">こちら</a> から見れます。
 
-![vue-app](images/sample.png)
+![vue-app](./images/sample.png)
 
 ## 作成の流れ
 
