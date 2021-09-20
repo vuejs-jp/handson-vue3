@@ -1,4 +1,4 @@
-# v-for を使用した要素の繰り返し
+# v-for で繰り返しを表現する（商品複数）
 
 ## 繰り返しで DOM 表示を制御する v-for
 
@@ -152,8 +152,4 @@ export default {
 ![複数の商品をレンダリングの出力例](./images/v_for_result2.png)
 
 これで、商品を複数レンダリングできました。
-
----
-
-[Previous](rendering.md) | [Next](v-if.md)
 
