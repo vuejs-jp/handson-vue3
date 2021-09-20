@@ -27,7 +27,7 @@
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <div v-for="item in items" :key="item.id">
       <div v-if="!item.soldOut" class="item">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
@@ -38,7 +38,7 @@
           <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
-    </template>
+    </div>
   </main>
 </template>
 
@@ -241,7 +241,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <div v-for="item in items" :key="item.id">
       <!--  @click="item.selected = !item.selected"を追加 -->
       <div
         v-if="!item.soldOut"
@@ -256,7 +256,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
           <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
-    </template>
+    </div>
   </main>
 </template>
 ```
@@ -290,7 +290,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <div v-for="item in items" :key="item.id">
       <!-- :class="{'selected-item': item.selected}"を追加 -->
       <div
         v-if="!item.soldOut"
@@ -306,7 +306,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
           <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
-    </template>
+    </div>
   </main>
 </template>
 ```
