@@ -1,6 +1,6 @@
 module.exports = {
-    title: "Vue3 Handson",
-    description: "Vue.js-jp Vue3 Handson",
+    title: "Vue3 Hands-on",
+    description: "Vue.js-jp Vue3 Hands-on",
     dest: "dist/",
     base: '/handson-vue3/',
     themeConfig: {

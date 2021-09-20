@@ -170,7 +170,3 @@ body {
 ```
 
 これで、商品を 1 つレンダリングすることができました。
-
----
-
-[Previous](overview.md) | [Next](v-for.md)

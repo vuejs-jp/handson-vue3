@@ -153,7 +153,3 @@ export default {
 
 これで、商品を複数レンダリングできました。
 
----
-
-[Previous](rendering.md) | [Next](v-if.md)
-

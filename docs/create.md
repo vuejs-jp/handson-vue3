@@ -37,9 +37,9 @@ vue create vue3-lab
    ```sh
    Vue CLI v4.5.13
    ? Please pick a preset: Default (Vue 3) ([Vue 3] babel, eslint)
-   ? Pick the package manager to use when installing dependencies: 
-     Use Yarn 
-   ❯ Use NPM 
+   ? Pick the package manager to use when installing dependencies:
+     Use Yarn
+   ❯ Use NPM
    ```
 
 ## プロジェクトの起動
@@ -58,7 +58,3 @@ vue create vue3-lab
    ![vue-app](./images/vue-app.png)
 
    `vue create` コマンドの詳細は [Creating a Project \| Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html) を確認してください。
-
----
-
-[Previous](setup.md) | [Next](overview.md)
