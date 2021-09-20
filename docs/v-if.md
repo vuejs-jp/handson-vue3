@@ -64,7 +64,7 @@ Vue.js では特定の条件の時だけ DOM を生成し表示することが�
 <template>
   <!-- 省略 -->
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <div v-for="item in items" :key="item.id">
       <!-- ここから商品表示 -->
       <div class="item">
         <div class="thumbnail">
@@ -76,7 +76,7 @@ Vue.js では特定の条件の時だけ DOM を生成し表示することが�
           <span>¥<span class="price">item.price</span></span>
         </div>
       </div>
-    </template>
+    </div>
   </main>
 </template>
 ```
@@ -113,7 +113,7 @@ JavaScript の条件分岐の構文に `else` があるように、Vue.js にも
 <div v-if="!item.soldOut">
   <!-- 省略 -->
 </div>
-<div v-slse>売り切れです</div>
+<div v-else>売り切れです</div>
 ```
 
 また、JavaScript の `else if` と同様の働きをする `v-else-if` も用意されています。

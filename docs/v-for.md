@@ -138,6 +138,7 @@ export default {
 +      <div class="item">
 +         <div class="thumbnail">
 +            <img :src="item.image" alt="" />
++         </div>
 +      </div>
 +      <div class="description">
 +        <h2>{{ item.name }}</h2>
