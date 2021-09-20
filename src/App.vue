@@ -4,7 +4,7 @@
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <div v-for="item in items" :key="item.id">
       <div
         v-if="!item.soldOut"
         class="item"
@@ -19,7 +19,7 @@
           <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
         </div>
       </div>
-    </template>
+    </div>
   </main>
 </template>
 
