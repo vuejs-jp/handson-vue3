@@ -113,7 +113,7 @@ JavaScript の条件分岐の構文に `else` があるように、Vue.js にも
 <div v-if="!item.soldOut">
   <!-- 省略 -->
 </div>
-<div v-slse>売り切れです</div>
+<div v-else>売り切れです</div>
 ```
 
 また、JavaScript の `else if` と同様の働きをする `v-else-if` も用意されています。
