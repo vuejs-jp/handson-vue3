@@ -1,6 +1,6 @@
 # methods で価格にカンマを入れる
 
-## Vue コンポーネントの中でデータを操作する
+## Vue.js でデータを操作する
 
 今度は、商品価格の表示を変更してみましょう。価格の表示は、例えば `1,180円` のように 3 桁ごとにカンマを入れた表示が一般的です。しかし、`data` の `price` にはカンマのない価格が格納されています。
 
@@ -19,7 +19,7 @@
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <div v-for="item in items" :key="item.id">
+    <template v-for="item in items" :key="item.id">
       <div v-if="!item.soldOut" class="item">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
@@ -31,7 +31,7 @@
           <span>¥<span class="price">{{ item.price }}</span></span>
         </div>
       </div>
-    </div>
+    </template>
   </main>
 </template>
 ```
@@ -44,7 +44,7 @@
 
 この部分のコードを改修して、`item.price` を 3 桁ごとにカンマを入れた表示に変えてみましょう。
 
-### `<template>` の中で直接表示を操作する
+### Mustache 構文の中で直接表示を操作する
 
 ::: v-pre
 `{{ }}` の中には、値だけではなく処理を記述できます。
@@ -54,7 +54,7 @@
 <span>¥<span class="price">{{ item.price.toLocaleString() }}</span></span>
 ```
 
-JavaScript がもともと持っている `toLocaleString()` 関数を用いて、3 桁ごとにカンマを入れた表示にすることができました。
+JavaScript がもともと持っている `toLocaleString()` 関数を用いて、3 桁ごとにカンマを入れた表示にできました。
 
 - [ `toLocaleString()` に関する詳細](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)
 
@@ -120,4 +120,4 @@ export default {
 <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
 ```
 
-関数を使用することで、可読性が向上しました。また、他の箇所で同じ処理を行いたい場合に使い回すこともできるようになりました。このように、Vue コンポーネントの中でデータの操作や処理を行う関数は `methods` オプションを使用するようにしましょう。
+関数を使って、価格のデータはそのままで、表示を加工できました。また、他の箇所で同じ処理を行いたい場合に使い回すこともできるようになりました。このように、Vue.js でデータの操作や処理を行う関数は `methods` オプションを使用するようにしましょう。

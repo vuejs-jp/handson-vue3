@@ -104,7 +104,6 @@ body {
 #app {
   width: 90%;
   margin: 0 5%;
-  text-align: center;
   color: #242424;
 }
 
