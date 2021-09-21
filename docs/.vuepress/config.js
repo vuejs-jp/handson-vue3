@@ -10,7 +10,8 @@ module.exports = {
                 title: '準備編',
                 collapsable: false,
                 children: [
-                    '/setup'
+                    '/setup',
+                    '/create'
                 ],
                 initialOpenGroupIndex: 1
             },
@@ -18,7 +19,6 @@ module.exports = {
                 title: '本編',
                 collapsable: false,
                 children: [
-                    '/create',
                     '/overview',
                     '/rendering',
                     '/v-for',

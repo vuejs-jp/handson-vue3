@@ -1,10 +1,8 @@
-# v-for で繰り返しを表現する（商品複数）
-
-## 繰り返しで DOM 表示を制御する v-for
+# v-for で商品を複数表示する
 
 新しい商品が入荷したので、複数の商品を販売することになりました。商品を複数表示してみましょう。
 
-## v-for 構文
+## v-for の書き方
 
 Vue.js では、配列からデータを取り出し、繰り返しで表示する、`v-for` というディレクティブが用意されています。
 
@@ -47,9 +45,11 @@ var app = new Vue({
 ![v-for 構文の出力例](./images/v_for_result1.png)
 
 ## 複数の商品をレンダリング
-プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。`App.vue` ファイルを次のように変更します。
+プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。`src/App.vue` ファイルを次のように変更します。
 
 まずは、 data に表示したい商品を設定します。 `item` から `items` に変更し商品のオブジェクトを持つ配列にします。
+
+変更前
 
 ```
 <script>
@@ -70,7 +70,7 @@ export default {
 </script>
 ```
 
-のブロックを以下に変更します。
+変更後
 
 ```
 <script>
@@ -118,9 +118,9 @@ export default {
 </script>
 ```
 
-次に、 `v-for` を用いて、各商品の「名前 (name)」、「説明 (description)」、「価格 (price)」、「画像 (image)」を繰り返し表示します。
+次に、 `v-for` を用いて、各商品の「名前（name）」、「説明（description）」、「価格（price）」、「画像（image）」を繰り返し表示します。
 
-同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は Vue.js ドキュメントガイドを参照ください。  [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")
+同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")を参照してください。  
 
 ```diff
   <main class="main">
@@ -134,22 +134,26 @@ export default {
 -        <span>¥<span class="price">{{ item.price }}</span></span>
 -      </div>
 -    </div>
-+    <div v-for="item in items" :key="item.id">
++    <template v-for="item in items" :key="item.id">
 +      <div class="item">
-+         <div class="thumbnail">
-+            <img :src="item.image" alt="" />
-+         </div>
++        <div class="thumbnail">
++          <img :src="item.image" alt="" />
++        </div>
++        <div class="description">
++          <h2>{{ item.name }}</h2>
++          <p>{{ item.description }}</p>
++          <span>¥<span class="price">{{ item.price }}</span></span>
++        </div>
 +      </div>
-+      <div class="description">
-+        <h2>{{ item.name }}</h2>
-+        <p>{{ item.description }}</p>
-+        <span>¥<span class="price">{{ item.price }}</span></span>
-+      </div>
-+    </div>
++    </template>
   </main>
 ```
 
 ![複数の商品をレンダリングの出力例](./images/v_for_result2.png)
 
 これで、商品を複数レンダリングできました。
+
+::: tip ヒント
+v-for を使った template タグは DOM 要素としてレンダリングされません。
+:::
 

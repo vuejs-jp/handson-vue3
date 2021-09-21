@@ -2,7 +2,9 @@
 
 ## 画像ファイルの配置
 
-まず、ハンズオンで使う商品の画像を用意しましょう。ハンズオンのファイル([vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip 'vue3-lab-handson.zip')) をダウンロード及び解凍し、`images` ディレクトリを丸ごと `public` ディレクトリ配下に配置します。
+まず、ハンズオンで使う商品の画像を用意しましょう。ハンズオン用の画像ファイル（[vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip 'vue3-lab-handson.zip')）をダウンロードおよび解凍します。
+
+あらかじめ作成しておいた Vue.js プロジェクトを開き、 `public` ディレクトリの下に `images` ディレクトリを新しく作成します。作成した `images` ディレクトリの中に、先ほど解凍した画像ファイルをすべてコピーします。
 
 ## Mustache 構文
 
@@ -19,7 +21,7 @@ var app = new Vue({
   el: '#app',
   data() {
     return {
-      message: 'Welecome Vue Handson!'
+      message: 'Welcome to Vue Handson!'
     }
   }
 })
@@ -28,16 +30,17 @@ var app = new Vue({
 出力例
 
 ```
-Welecome Vue Handson!
+Welcome to Vue Handson!
 ```
 
+::: tip ヒント
 ::: v-pre
-ちなみに mustache とは口髭を指す英語で、二重中括弧 `{{ }}` が口髭のように見えることから命名されました。
+mustache とは口髭を指す英語で、二重中括弧 `{{ }}` が口髭のように見えることから命名されました。
 :::
 
 ## 商品をレンダリング
 
-プロジェクトのファイルを書き換えて、商品をレンダリングしていきましょう。`App.vue` ファイルを次のように変更します。
+プロジェクトのファイルを書き換えて、商品をレンダリングしていきましょう。`src/App.vue` ファイルを次のように変更します。
 
 ```diff
 <template>
@@ -67,21 +70,24 @@ Welecome Vue Handson!
 - import HelloWorld from './components/HelloWorld.vue'
  export default {
   name: "App",
-+  data(){
-+    return {
-+      item: {
-+        name: "アボカドディップバケット",
-+        description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
-+        price: 480,
-+        image: "/images/item1.jpg"
-+      }
-+    }
-+  }
-+}
+- components: {
+-   HelloWorld
+- }
++ data() {
++   return {
++     item: {
++       name: "アボカドディップバケット",
++       description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
++       price: 480,
++       image: "/images/item1.jpg"
++     }
++   }
++ }
+}
 </script>
 ```
 
-見た目を設定するために `</script>` タグの下に、以下の style タグを追加しましょう。
+見た目を設定するために style タグの中身を以下のように置き換えます。
 
 ```html
 <style>
@@ -95,7 +101,6 @@ body {
 #app {
   width: 90%;
   margin: 0 5%;
-  text-align: center;
   color: #242424;
 }
 
@@ -169,4 +174,4 @@ body {
 </style>
 ```
 
-これで、商品を 1 つレンダリングすることができました。
+これで、商品を 1 つレンダリングできました。
