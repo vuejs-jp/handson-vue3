@@ -2,7 +2,7 @@ module.exports = {
     title: "Vue3 Hands-on",
     description: "Vue.js-jp Vue3 Hands-on",
     dest: "dist/",
-    base: '/handson-vue3/',
+    base: '/',
     themeConfig: {
         sidebar: [
             '/',
