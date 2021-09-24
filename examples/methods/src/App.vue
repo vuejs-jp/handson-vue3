@@ -50,7 +50,7 @@ export default {
             'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
           price: 320,
           image: '/images/item3.jpg',
-          soldOut: false
+          soldOut: true
         },
         {
           id: 4,
@@ -60,15 +60,6 @@ export default {
           price: 670,
           image: '/images/item4.jpg',
           soldOut: false
-        },
-        {
-          id: 5,
-          name: '商品５',
-          description: '商品５の説明です',
-          price: 500,
-          image: '/images/item4.jpg',
-          selected: false,
-          soldOut: true
         }
       ]
     }
