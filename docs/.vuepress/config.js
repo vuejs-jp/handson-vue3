@@ -3,6 +3,9 @@ module.exports = {
     description: "Vue.js-jp Vue3 Hands-on",
     dest: "dist/",
     base: '/',
+    head: [
+        ['link', { rel: 'icon', href: '/favicon-32.png' }]
+    ],
     themeConfig: {
         sidebar: [
             '/',

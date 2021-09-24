@@ -1,5 +1,3 @@
-.vuepress/*
-!.vuepress/config.js
 images/
 node_modules/
 dist/
