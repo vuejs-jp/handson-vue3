@@ -1,3 +1,4 @@
+// region template
 <template>
   <header class="header">
     <img src="/images/logo.svg" alt="" />
@@ -16,7 +17,9 @@
     </div>
   </main>
 </template>
+// endregion template
 
+// #region script
 <script>
 export default {
   name: 'App',
@@ -33,6 +36,7 @@ export default {
   }
 }
 </script>
+// #endregion script
 
 <style>
 body {

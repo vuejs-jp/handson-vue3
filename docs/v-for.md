@@ -51,103 +51,23 @@ var app = new Vue({
 
 変更前
 
-```
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      item: {
-        name: 'アボカドディップバケット',
-        description:
-          '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-        price: 480,
-        image: '/images/item1.jpg'
-      }
-    }
-  }
-}
-</script>
-```
+<<< @/../examples/rendering/src/App.vue#script{6-12}
 
 変更後
 
-```
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg'
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg'
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg'
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg'
-        }
-      ]
-    }
-  }
-}
-</script>
-```
+<<< @/../examples/v-for/src/App.vue#script{6-39}
 
 次に、 `v-for` を用いて、各商品の「名前（name）」、「説明（description）」、「価格（price）」、「画像（image）」を繰り返し表示します。
 
 同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")を参照してください。  
 
-```diff
-  <main class="main">
--    <div class="item">
--      <div class="thumbnail">
--        <img :src="item.image" alt="" />
--      </div>
--      <div class="description">
--        <h2>{{ item.name }}</h2>
--        <p>{{ item.description }}</p>
--        <span>¥<span class="price">{{ item.price }}</span></span>
--      </div>
--    </div>
-+    <template v-for="item in items" :key="item.id">
-+      <div class="item">
-+        <div class="thumbnail">
-+          <img :src="item.image" alt="" />
-+        </div>
-+        <div class="description">
-+          <h2>{{ item.name }}</h2>
-+          <p>{{ item.description }}</p>
-+          <span>¥<span class="price">{{ item.price }}</span></span>
-+        </div>
-+      </div>
-+    </template>
-  </main>
-```
+変更前
+
+<<< @/../examples/rendering/src/App.vue#template{7-16}
+
+変更後
+
+<<< @/../examples/v-for/src/App.vue#template{7-18}
 
 ![複数の商品をレンダリングの出力例](./images/v_for_result2.png)
 
