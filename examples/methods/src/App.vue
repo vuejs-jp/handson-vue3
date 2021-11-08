@@ -131,7 +131,7 @@ body {
 
 .item > div.thumbnail > img {
   width: 100%;
-  height: calc(width);
+  height: calc(100%);
   object-fit: cover;
 }
 
