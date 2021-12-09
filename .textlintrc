@@ -1,11 +1,17 @@
 {
-  "filters": {},
+  "filters": {
+    "allowlist": {
+      "allow": [
+        "/<<</"
+      ]
+    }
+  },
   "rules": {
     "preset-vuejs-jp": {
       "no-mix-dearu-desumasu": {
         "strict": false
       },
-    "ja-no-space-between-full-width": false
+      "ja-no-space-between-full-width": false
     }
   }
 }
