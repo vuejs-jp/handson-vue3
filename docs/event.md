@@ -39,64 +39,64 @@
 </template>
 
 <script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg',
-          soldOut: false
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg',
-          soldOut: false
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg',
-          soldOut: true
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg',
-          soldOut: false
-        }
-      ]
-    }
-  },
-  methods: {
-    /**
-     * 価格を3桁ごとのカンマ付きで返す
-     * @param {number} price 価格
-     */
-    pricePrefix(price) {
-      return price.toLocaleString()
+  export default {
+    name: 'App',
+    data() {
+      return {
+        items: [
+          {
+            id: 1,
+            name: 'アボカドディップバケット',
+            description:
+              '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+            price: 480,
+            image: '/images/item1.jpg',
+            soldOut: false
+          },
+          {
+            id: 2,
+            name: 'あの日夢見たホットケーキ',
+            description:
+              '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+            price: 1180,
+            image: '/images/item2.jpg',
+            soldOut: false
+          },
+          {
+            id: 3,
+            name: 'HOP WTR',
+            description:
+              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+            price: 320,
+            image: '/images/item3.jpg',
+            soldOut: true
+          },
+          {
+            id: 4,
+            name: 'チーズフレンチフライ',
+            description:
+              'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+            price: 670,
+            image: '/images/item4.jpg',
+            soldOut: false
+          }
+        ]
+      }
+    },
+    methods: {
+      /**
+       * 価格を3桁ごとのカンマ付きで返す
+       * @param {number} price 価格
+       */
+      pricePrefix(price) {
+        return price.toLocaleString()
+      }
     }
   }
-}
 </script>
 
 <style>
-/* 省略 */
+  /* 省略 */
 </style>
 ```
 
@@ -126,56 +126,56 @@ export default {
 
 ```html
 <script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg',
-          soldOut: false,
-          selected: false // selectedプロパティ追加
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg',
-          soldOut: false,
-          selected: false // selectedプロパティ追加
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg',
-          soldOut: true,
-          selected: false // selectedプロパティ追加
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg',
-          soldOut: false,
-          selected: false // selectedプロパティ追加
-        }
-      ]
+  export default {
+    name: 'App',
+    data() {
+      return {
+        items: [
+          {
+            id: 1,
+            name: 'アボカドディップバケット',
+            description:
+              '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+            price: 480,
+            image: '/images/item1.jpg',
+            soldOut: false,
+            selected: false // selectedプロパティ追加
+          },
+          {
+            id: 2,
+            name: 'あの日夢見たホットケーキ',
+            description:
+              '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+            price: 1180,
+            image: '/images/item2.jpg',
+            soldOut: false,
+            selected: false // selectedプロパティ追加
+          },
+          {
+            id: 3,
+            name: 'HOP WTR',
+            description:
+              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+            price: 320,
+            image: '/images/item3.jpg',
+            soldOut: true,
+            selected: false // selectedプロパティ追加
+          },
+          {
+            id: 4,
+            name: 'チーズフレンチフライ',
+            description:
+              'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+            price: 670,
+            image: '/images/item4.jpg',
+            soldOut: false,
+            selected: false // selectedプロパティ追加
+          }
+        ]
+      }
     }
-  },
-  // 省略
-}
+    // 省略
+  }
 </script>
 ```
 
@@ -223,7 +223,8 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
       <div
         v-if="!item.soldOut"
         class="item"
-        @click="item.selected = !item.selected">
+        @click="item.selected = !item.selected"
+      >
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
@@ -273,7 +274,8 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
         v-if="!item.soldOut"
         class="item"
         :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
+        @click="item.selected = !item.selected"
+      >
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
@@ -300,11 +302,107 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 これで、商品が選択状態の時に背景の色が変化するようになりました。
 
+## キー修飾子を使ったキーボードイベントの使い方
+
+マウスクリックではなくキーボードの操作で商品の選択を行うことがあるかもしれません。そのような時には`v-on`ディレクティブに対してキー修飾子を追加することで、キーボードイベントを使用することができます。
+
+### キー修飾子の書き方
+
+`v-on`ディレクティブにキーボードイベントを追加するためには`keyup`イベントを設定します。`keyup`イベントには使用したいキーコードをつなげて、実行したい処理を記述します。
+
+```html
+<input v-on:keyup.enter="alert">
+```
+```
+methods: {
+  alert() {
+    alert('keyup')
+  }
+}
+```
+`keyup`イベントにキーコード`enter`を設定し、alertメソッドを記述しました。 inputタグにフォーカスし、キーボードのEnterを押すとalertメソッドが実行されます。また、`click`イベントと同様に`keyup`イベントも省略して記述できます。
+
+```html
+<input @keyup.enter="alert">
+```
+
+### 使用可能なキーコード
+
+`enter`以外でVue.js から提供されているキーコードの一覧は下記の通りです。
+
+- .enter
+- .tab
+- .delete ( “Delete” と “Backspace” の両方がキャプチャされています。 )
+- .esc
+- .space
+- .up
+- .down
+- .left
+- .right
+
+### キー修飾子の実装
+
+現在`click`イベントが設定されている処理を`keyup`イベントで置き換えてみます。
+
+```html
+<template>
+  <header class="header">
+    <img src="/images/logo.svg" alt="" />
+    <h1>Vue.js ハンズオン</h1>
+  </header>
+  <main class="main">
+    <template v-for="item in items" :key="item.id">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @keyup.enter="item.selected = !item.selected"
+      >
+        <div class="thumbnail">
+          <img :src="item.image" alt="" />
+        </div>
+        <div class="description">
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.description }}</p>
+          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+        </div>
+      </div>
+    </template>
+  </main>
+</template>
+```
+
+しかし、このままですと要素を選択肢して`Enter`を押しても何も反応しません。`div`タグが静的HTML要素でありキーボードによるアクセスができないためです。そのため`div`タグへのキーボードのアクセスが可能となるようにアクションを追加します。
+
+```html
+<div
+  v-if="!item.soldOut"
+  class="item"
+  :class="{ 'selected-item': item.selected }"
+  @keyup.enter="item.selected = !item.selected"
+  tabindex="0"
+>
+```
+
+`tabindex`属性を追加することでキーボードによるアクセスが可能となったので、キーボードの`Enter`を押すとスタイルが変化するようになりました。もし`Enter`を押した時とクリックした時、どちらのイベントも有効にしたい場合は、`keyup`イベントと`click`イベントの両方を記述することで実現可能です。
+
+```html
+<div
+  v-if="!item.soldOut"
+  class="item"
+  :class="{ 'selected-item': item.selected }"
+  @keyup.enter="item.selected = !item.selected"
+  @click="item.selected = !item.selected"
+  tabindex="0"
+>
+```
 ## 今回使用したディレクティブ
 
 今回の実装では 2 つのディレクティブを使用しました。
 
 - `v-on:click`（`@click`）を使用したイベントリスナーの登録
+- `v-on:keyup`（`@keyup`）を使用したイベントリスナーの登録
 - `v-bind:class`（`:class`）を使用した属性の操作
+
 
 このように、複数のディレクティブや処理を組み合わせて、さまざまな動きを実現できます。
