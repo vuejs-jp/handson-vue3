@@ -39,64 +39,64 @@
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-        items: [
-          {
-            id: 1,
-            name: 'アボカドディップバケット',
-            description:
-              '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-            price: 480,
-            image: '/images/item1.jpg',
-            soldOut: false
-          },
-          {
-            id: 2,
-            name: 'あの日夢見たホットケーキ',
-            description:
-              '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-            price: 1180,
-            image: '/images/item2.jpg',
-            soldOut: false
-          },
-          {
-            id: 3,
-            name: 'HOP WTR',
-            description:
-              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-            price: 320,
-            image: '/images/item3.jpg',
-            soldOut: true
-          },
-          {
-            id: 4,
-            name: 'チーズフレンチフライ',
-            description:
-              'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-            price: 670,
-            image: '/images/item4.jpg',
-            soldOut: false
-          }
-        ]
-      }
-    },
-    methods: {
-      /**
-       * 価格を3桁ごとのカンマ付きで返す
-       * @param {number} price 価格
-       */
-      pricePrefix(price) {
-        return price.toLocaleString()
-      }
+export default {
+  name: 'App',
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+          name: 'アボカドディップバケット',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+          price: 480,
+          image: '/images/item1.jpg',
+          soldOut: false
+        },
+        {
+          id: 2,
+          name: 'あの日夢見たホットケーキ',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+          price: 1180,
+          image: '/images/item2.jpg',
+          soldOut: false
+        },
+        {
+          id: 3,
+          name: 'HOP WTR',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+          price: 320,
+          image: '/images/item3.jpg',
+          soldOut: true
+        },
+        {
+          id: 4,
+          name: 'チーズフレンチフライ',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+          price: 670,
+          image: '/images/item4.jpg',
+          soldOut: false
+        }
+      ]
+    }
+  },
+  methods: {
+    /**
+     * 価格を3桁ごとのカンマ付きで返す
+     * @param {number} price 価格
+     */
+    pricePrefix(price) {
+      return price.toLocaleString()
     }
   }
+}
 </script>
 
 <style>
-  /* 省略 */
+/* 省略 */
 </style>
 ```
 
@@ -126,56 +126,56 @@
 
 ```html
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-        items: [
-          {
-            id: 1,
-            name: 'アボカドディップバケット',
-            description:
-              '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-            price: 480,
-            image: '/images/item1.jpg',
-            soldOut: false,
-            selected: false // selectedプロパティ追加
-          },
-          {
-            id: 2,
-            name: 'あの日夢見たホットケーキ',
-            description:
-              '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-            price: 1180,
-            image: '/images/item2.jpg',
-            soldOut: false,
-            selected: false // selectedプロパティ追加
-          },
-          {
-            id: 3,
-            name: 'HOP WTR',
-            description:
-              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-            price: 320,
-            image: '/images/item3.jpg',
-            soldOut: true,
-            selected: false // selectedプロパティ追加
-          },
-          {
-            id: 4,
-            name: 'チーズフレンチフライ',
-            description:
-              'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-            price: 670,
-            image: '/images/item4.jpg',
-            soldOut: false,
-            selected: false // selectedプロパティ追加
-          }
-        ]
-      }
+export default {
+  name: 'App',
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+          name: 'アボカドディップバケット',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+          price: 480,
+          image: '/images/item1.jpg',
+          soldOut: false,
+          selected: false // selectedプロパティ追加
+        },
+        {
+          id: 2,
+          name: 'あの日夢見たホットケーキ',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+          price: 1180,
+          image: '/images/item2.jpg',
+          soldOut: false,
+          selected: false // selectedプロパティ追加
+        },
+        {
+          id: 3,
+          name: 'HOP WTR',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+          price: 320,
+          image: '/images/item3.jpg',
+          soldOut: true,
+          selected: false // selectedプロパティ追加
+        },
+        {
+          id: 4,
+          name: 'チーズフレンチフライ',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+          price: 670,
+          image: '/images/item4.jpg',
+          soldOut: false,
+          selected: false // selectedプロパティ追加
+        }
+      ]
     }
-    // 省略
-  }
+  },
+  // 省略
+}
 </script>
 ```
 
@@ -223,8 +223,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
       <div
         v-if="!item.soldOut"
         class="item"
-        @click="item.selected = !item.selected"
-      >
+        @click="item.selected = !item.selected">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
@@ -274,8 +273,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
         v-if="!item.soldOut"
         class="item"
         :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected"
-      >
+        @click="item.selected = !item.selected">
         <div class="thumbnail">
           <img :src="item.image" alt="" />
         </div>
@@ -403,6 +401,5 @@ methods: {
 - `v-on:click`（`@click`）を使用したイベントリスナーの登録
 - `v-on:keyup`（`@keyup`）を使用したイベントリスナーの登録
 - `v-bind:class`（`:class`）を使用した属性の操作
-
 
 このように、複数のディレクティブや処理を組み合わせて、さまざまな動きを実現できます。
