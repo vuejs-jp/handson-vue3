@@ -39,64 +39,64 @@
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-        items: [
-          {
-            id: 1,
-            name: 'アボカドディップバケット',
-            description:
-              '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-            price: 480,
-            image: '/images/item1.jpg',
-            soldOut: false
-          },
-          {
-            id: 2,
-            name: 'あの日夢見たホットケーキ',
-            description:
-              '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-            price: 1180,
-            image: '/images/item2.jpg',
-            soldOut: false
-          },
-          {
-            id: 3,
-            name: 'HOP WTR',
-            description:
-              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-            price: 320,
-            image: '/images/item3.jpg',
-            soldOut: true
-          },
-          {
-            id: 4,
-            name: 'チーズフレンチフライ',
-            description:
-              'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-            price: 670,
-            image: '/images/item4.jpg',
-            soldOut: false
-          }
-        ]
-      }
-    },
-    methods: {
-      /**
-       * 価格を3桁ごとのカンマ付きで返す
-       * @param {number} price 価格
-       */
-      pricePrefix(price) {
-        return price.toLocaleString()
-      }
+export default {
+  name: 'App',
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+          name: 'アボカドディップバケット',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+          price: 480,
+          image: '/images/item1.jpg',
+          soldOut: false
+        },
+        {
+          id: 2,
+          name: 'あの日夢見たホットケーキ',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+          price: 1180,
+          image: '/images/item2.jpg',
+          soldOut: false
+        },
+        {
+          id: 3,
+          name: 'HOP WTR',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+          price: 320,
+          image: '/images/item3.jpg',
+          soldOut: true
+        },
+        {
+          id: 4,
+          name: 'チーズフレンチフライ',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+          price: 670,
+          image: '/images/item4.jpg',
+          soldOut: false
+        }
+      ]
+    }
+  },
+  methods: {
+    /**
+     * 価格を3桁ごとのカンマ付きで返す
+     * @param {number} price 価格
+     */
+    pricePrefix(price) {
+      return price.toLocaleString()
     }
   }
+}
 </script>
 
 <style>
-  /* 省略 */
+/* 省略 */
 </style>
 ```
 
@@ -126,56 +126,56 @@
 
 ```html
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-        items: [
-          {
-            id: 1,
-            name: 'アボカドディップバケット',
-            description:
-              '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-            price: 480,
-            image: '/images/item1.jpg',
-            soldOut: false,
-            selected: false // selectedプロパティ追加
-          },
-          {
-            id: 2,
-            name: 'あの日夢見たホットケーキ',
-            description:
-              '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-            price: 1180,
-            image: '/images/item2.jpg',
-            soldOut: false,
-            selected: false // selectedプロパティ追加
-          },
-          {
-            id: 3,
-            name: 'HOP WTR',
-            description:
-              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-            price: 320,
-            image: '/images/item3.jpg',
-            soldOut: true,
-            selected: false // selectedプロパティ追加
-          },
-          {
-            id: 4,
-            name: 'チーズフレンチフライ',
-            description:
-              'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-            price: 670,
-            image: '/images/item4.jpg',
-            soldOut: false,
-            selected: false // selectedプロパティ追加
-          }
-        ]
-      }
-    },
-    // 省略
-  }
+export default {
+  name: 'App',
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+          name: 'アボカドディップバケット',
+          description:
+            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+          price: 480,
+          image: '/images/item1.jpg',
+          soldOut: false,
+          selected: false // selectedプロパティ追加
+        },
+        {
+          id: 2,
+          name: 'あの日夢見たホットケーキ',
+          description:
+            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+          price: 1180,
+          image: '/images/item2.jpg',
+          soldOut: false,
+          selected: false // selectedプロパティ追加
+        },
+        {
+          id: 3,
+          name: 'HOP WTR',
+          description:
+            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+          price: 320,
+          image: '/images/item3.jpg',
+          soldOut: true,
+          selected: false // selectedプロパティ追加
+        },
+        {
+          id: 4,
+          name: 'チーズフレンチフライ',
+          description:
+            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+          price: 670,
+          image: '/images/item4.jpg',
+          soldOut: false,
+          selected: false // selectedプロパティ追加
+        }
+      ]
+    }
+  },
+  // 省略
+}
 </script>
 ```
 
@@ -306,7 +306,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 ### キー修飾子の書き方
 
-`v-on` ディレクティブにキーボードイベントを追加するためには `keyup` イベントを設定します。`keyup` イベントには使用したいキーコードを `.` (ドット)でつなげて、実行したい処理を記述します。
+`v-on` ディレクティブにキーボードイベントを追加するためには `keyup` イベントを設定します。`keyup` イベントには使用したいキーコードを `.` （ドット）でつなげて、実行したい処理を記述します。
 
 ```html
 <input v-on:keyup.enter="alert" />
@@ -318,7 +318,7 @@ methods: {
   }
 }
 ```
-`keyup` イベントにキーコード `enter` を `.` (ドット)でつなげて、`alert` メソッドを記述しました。`input` タグにフォーカスし、キーボードの `Enter` を押すと `alert` メソッドが実行されます。また、`click` イベントと同様に `keyup` イベントも `v-on` ディレクティブの省略が可能です。
+`keyup` イベントにキーコード `enter` を `.` （ドット）でつなげて、`alert` メソッドを記述しました。`input` タグにフォーカスし、キーボードの `Enter` を押すと `alert` メソッドが実行されます。また、`click` イベントと同様に `keyup` イベントも `v-on` ディレクティブの省略が可能です。
 
 ```html
 <input @keyup.enter="alert" />
