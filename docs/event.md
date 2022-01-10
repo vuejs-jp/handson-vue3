@@ -300,11 +300,106 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 これで、商品が選択状態の時に背景の色が変化するようになりました。
 
+## キー修飾子を使ったキーボードイベントの使い方
+
+マウスクリックではなくキーボードの操作で商品の選択を行うことがあるかもしれません。そのような時には `v-on` ディレクティブに対してキー修飾子を追加すると、キーボードイベントを使用できます。
+
+### キー修飾子の書き方
+
+`v-on` ディレクティブにキーボードイベントを追加するためには `keyup` イベントを設定します。`keyup` イベントには使用したいキーコードを `.`（ドット）でつなげて、実行したい処理を記述します。
+
+```html
+<input v-on:keyup.enter="alert" />
+```
+```
+methods: {
+  alert() {
+    alert('keyup')
+  }
+}
+```
+`keyup` イベントにキーコード `enter` を `.`（ドット）でつなげて、`alert` メソッドを記述しました。`input` タグにフォーカスし、キーボードの `Enter` を押すと `alert` メソッドが実行されます。また、`click` イベントと同様に `keyup` イベントも `v-on` ディレクティブの省略が可能です。
+
+```html
+<input @keyup.enter="alert" />
+```
+
+### 使用可能なキーコード
+
+`enter` 以外で Vue.js から提供されているキーコードの一覧は下記の通りです。
+
+- .enter
+- .tab
+- .delete ( “Delete” と “Backspace” の両方がキャプチャされています。 )
+- .esc
+- .space
+- .up
+- .down
+- .left
+- .right
+
+### キー修飾子の実装
+
+現在 `click` イベントが設定されている処理を `keyup` イベントで置き換えてみます。
+
+```html
+<template>
+  <header class="header">
+    <img src="/images/logo.svg" alt="" />
+    <h1>Vue.js ハンズオン</h1>
+  </header>
+  <main class="main">
+    <template v-for="item in items" :key="item.id">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @keyup.enter="item.selected = !item.selected"
+      >
+        <div class="thumbnail">
+          <img :src="item.image" alt="" />
+        </div>
+        <div class="description">
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.description }}</p>
+          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+        </div>
+      </div>
+    </template>
+  </main>
+</template>
+```
+
+しかし、このままですと要素を選択して `Enter` を押しても何も反応しません。`div` タグが静的 HTML 要素でありキーボードによるアクセスができないためです。そのため `div` タグへのキーボードのアクセスが可能となるように `tabindex` 属性を追加します。
+
+```html
+<div
+  v-if="!item.soldOut"
+  class="item"
+  :class="{ 'selected-item': item.selected }"
+  @keyup.enter="item.selected = !item.selected"
+  tabindex="0"
+>
+```
+
+`tabindex` 属性を追加することでキーボードによるアクセスが可能となったので、キーボードの `Enter` を押すとスタイルが変化するようになりました。もし `Enter` を押した時とクリックした時、どちらのイベントも有効にしたい場合は、`keyup` イベントと `click` イベントの両方を記述することで実現可能です。
+
+```html
+<div
+  v-if="!item.soldOut"
+  class="item"
+  :class="{ 'selected-item': item.selected }"
+  @keyup.enter="item.selected = !item.selected"
+  @click="item.selected = !item.selected"
+  tabindex="0"
+>
+```
 ## 今回使用したディレクティブ
 
 今回の実装では 2 つのディレクティブを使用しました。
 
 - `v-on:click`（`@click`）を使用したイベントリスナーの登録
+- `v-on:keyup`（`@keyup`）を使用したイベントリスナーの登録
 - `v-bind:class`（`:class`）を使用した属性の操作
 
 このように、複数のディレクティブや処理を組み合わせて、さまざまな動きを実現できます。
