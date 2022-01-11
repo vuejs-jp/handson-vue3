@@ -1,6 +1,6 @@
 {
   "name": "handson-vue3-examples-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,9 @@
   "author": "Vue.js 日本ユーザーグループ",
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.9.5"
+  },
+  "volta": {
+    "node": "16.13.2"
   }
 }
