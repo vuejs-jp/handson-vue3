@@ -1,35 +1,35 @@
 module.exports = {
-  "root": true,
-  "env": {
-    "node": true
+  'root': true,
+  'env': {
+    'node': true
   },
-  "extends": [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended"
+  'extends': [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended'
   ],
-  "parserOptions": {
-    "parser": "babel-eslint"
+  'parserOptions': {
+    'parser': 'babel-eslint'
   },
-  "rules": {
-    "semi": [
-      "error",
-      "never"
+  'rules': {
+    'semi': [
+      'error',
+      'never'
     ],
-    "quotes": [
-      "error",
-      "single"
+    'quotes': [
+      'error',
+      'single'
     ],
-    "comma-dangle": [
-      "error",
-      "never"
+    'comma-dangle': [
+      'error',
+      'never'
     ],
-    "comma-style": [
-      "error",
-      "last"
+    'comma-style': [
+      'error',
+      'last'
     ],
-    "vue/html-closing-bracket-newline": ["error", {
-      "singleline": "never",
-      "multiline": "never"
+    'vue/html-closing-bracket-newline': ['error', {
+      'singleline': 'never',
+      'multiline': 'never'
     }]
   }
 }
