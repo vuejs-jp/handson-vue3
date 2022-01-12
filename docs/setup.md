@@ -38,7 +38,7 @@ node -v
 バージョン番号が表示されたら、Node.js はインストールされていますので、セットアップの手順は飛ばして構いません。
 
 ```sh
-v14.16.0
+v16.13.2
 ```
 
 ::: warning 注意
@@ -61,13 +61,13 @@ LTS は、Long-term Support の略で、長期間サポートされる安定バ�
 
 #### Mac でよく使われるバージョンマネージャー
 
+- [Volta](https://volta.sh/)
 - [nodenv](https://github.com/nodenv/nodenv)
-- [nvm](https://github.com/nvm-sh/nvm)
 
 #### Windows でよく使われるバージョンマネージャー
 
+- [Volta](https://volta.sh/)
 - [nvm-windows](https://github.com/coreybutler/nvm-windows)
-- [nodist](https://github.com/nullivex/nodist)
 
 ## Vue CLI のインストール
 
@@ -88,7 +88,7 @@ vue --version
 バージョン番号が表示されたら、Vue CLI がインストールされています。
 
 ```sh
-@vue/cli 4.5.13
+@vue/cli 4.5.15
 ```
 
 この方法は、npm の環境に Vue CLI がグローバルインストールされます。グローバルインストールをせずに、`npx` を利用する方法もあります。詳細は [Vue CLI 公式ドキュメント](https://cli.vuejs.org/guide/cli-service.html#using-the-binary) を参照してください。
@@ -111,8 +111,8 @@ VS Code を既にお使いの場合はこのセクションは飛ばしてくだ
 1. インストーラーの指示に従ってインストールします
    - インストールの詳細は [公式ドキュメント](https://code.visualstudio.com/docs/setup/setup-overview) を確認してください
 
-### Vetur 拡張機能のインストール
+### Volar (Vue Language Features) 拡張機能のインストール
 
-Vetur は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Vetur 公式ドキュメント](https://vuejs.github.io/vetur/) を参照してください。
+Volar は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Volar の GitHub リポジトリ](https://github.com/johnsoncodehk/volar/) を参照してください。
 
-Vetur をインストールするには、VS Code が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし Install ボタンをクリックします。
+Volar をインストールするには、VS Code が入っているマシンで、 [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) にアクセスし Install ボタンをクリックします。

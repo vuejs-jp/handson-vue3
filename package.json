@@ -1,6 +1,6 @@
 {
   "name": "handson-vue3-examples",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,20 +10,20 @@
     "textlint:docs": "textlint --format pretty-error docs/**"
   },
   "dependencies": {
-    "core-js": "3.8.3",
-    "vue": "3.0.11"
+    "core-js": "3.20.2",
+    "vue": "3.2.26"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "4.5.13",
-    "@vue/cli-plugin-eslint": "4.5.13",
-    "@vue/cli-service": "4.5.13",
-    "@vue/compiler-sfc": "3.0.11",
+    "@vue/cli-plugin-babel": "4.5.15",
+    "@vue/cli-plugin-eslint": "4.5.15",
+    "@vue/cli-service": "4.5.15",
+    "@vue/compiler-sfc": "3.2.26",
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-vue": "7.5.0",
-    "prettier": "2.3.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-vue": "8.2.0",
+    "prettier": "2.5.1",
     "textlint": "12.1.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-rule-preset-vuejs-jp": "github:vuejs-jp/textlint-rule-preset-vuejs-jp"
@@ -32,5 +32,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "volta": {
+    "node": "16.13.2"
+  }
 }
