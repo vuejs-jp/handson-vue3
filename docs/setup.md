@@ -111,8 +111,8 @@ VS Code を既にお使いの場合はこのセクションは飛ばしてくだ
 1. インストーラーの指示に従ってインストールします
    - インストールの詳細は [公式ドキュメント](https://code.visualstudio.com/docs/setup/setup-overview) を確認してください
 
-### Vetur 拡張機能のインストール
+### Volar (Vue Language Features) 拡張機能のインストール
 
-Vetur は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Vetur 公式ドキュメント](https://vuejs.github.io/vetur/) を参照してください。
+Volar は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Volar の GitHub リポジトリ](https://github.com/johnsoncodehk/volar/) を参照してください。
 
-Vetur をインストールするには、VS Code が入っているマシンで、 [Vetur - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=octref.vetur) にアクセスし Install ボタンをクリックします。
+Volar をインストールするには、VS Code が入っているマシンで、 [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) にアクセスし Install ボタンをクリックします。
