@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>@click で商品を選択する | Vue3 Hands-on</title>
-    <meta name="generator" content="VuePress 1.8.2">
+    <meta name="generator" content="VuePress 1.9.5">
     <link rel="icon" href="/favicon-32.png">
     <meta name="description" content="Vue.js-jp Vue3 Hands-on">
     
-    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.10949277.js" as="script"><link rel="preload" href="/assets/js/2.6c2f32c9.js" as="script"><link rel="preload" href="/assets/js/11.07f599bc.js" as="script"><link rel="prefetch" href="/assets/js/10.ce73e623.js"><link rel="prefetch" href="/assets/js/12.578c3f23.js"><link rel="prefetch" href="/assets/js/13.5bb68d79.js"><link rel="prefetch" href="/assets/js/14.e6c091aa.js"><link rel="prefetch" href="/assets/js/15.a666ce5a.js"><link rel="prefetch" href="/assets/js/3.e466dae6.js"><link rel="prefetch" href="/assets/js/4.05ed7b63.js"><link rel="prefetch" href="/assets/js/5.fa89edb8.js"><link rel="prefetch" href="/assets/js/6.35975fef.js"><link rel="prefetch" href="/assets/js/7.bddadaf9.js"><link rel="prefetch" href="/assets/js/8.9e0da2a7.js"><link rel="prefetch" href="/assets/js/9.6cf2b10f.js">
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.1626be67.js" as="script"><link rel="preload" href="/assets/js/2.a80e8fdb.js" as="script"><link rel="preload" href="/assets/js/11.04c68301.js" as="script"><link rel="prefetch" href="/assets/js/10.987da13a.js"><link rel="prefetch" href="/assets/js/12.0777bf9d.js"><link rel="prefetch" href="/assets/js/13.952c48dc.js"><link rel="prefetch" href="/assets/js/14.34e8d36f.js"><link rel="prefetch" href="/assets/js/15.d0be5cc0.js"><link rel="prefetch" href="/assets/js/3.e1eaf57e.js"><link rel="prefetch" href="/assets/js/4.4ef91d24.js"><link rel="prefetch" href="/assets/js/5.579f4022.js"><link rel="prefetch" href="/assets/js/6.b46fc75d.js"><link rel="prefetch" href="/assets/js/7.b99d9ce3.js"><link rel="prefetch" href="/assets/js/8.4aa1904a.js"><link rel="prefetch" href="/assets/js/9.4ca95e10.js">
     <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
   </head>
   <body>
@@ -35,50 +35,50 @@
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
   <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      items<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token literal-property property">items</span><span class="token operator">:</span> <span class="token punctuation">[</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">false</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'あの日夢見たホットケーキ'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'あの日夢見たホットケーキ'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">1180</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item2.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">false</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1180</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item2.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'HOP WTR'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'HOP WTR'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item3.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">true</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item3.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">true</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'チーズフレンチフライ'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'チーズフレンチフライ'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">670</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item4.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">false</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">670</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item4.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span>
         <span class="token punctuation">}</span>
       <span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token comment">/**
      * 価格を3桁ごとのカンマ付きで返す
      * @param {number} price 価格
@@ -98,49 +98,49 @@
 <span class="token punctuation">}</span>
 </code></pre></div><p><code>.selected-item</code> という style を追加しました。選択中の商品は背景の色を変化させたいため、<code>background-color</code> プロパティを定義しています。</p> <h2 id="_2-クリックすると商品を-選択状態-にする"><a href="#_2-クリックすると商品を-選択状態-にする" class="header-anchor">#</a> 2. クリックすると商品を&quot;選択状態&quot;にする</h2> <p>次は、クリックして商品を&quot;選択状態&quot;にする部分の実装です。</p> <h3 id="選択状態-を表すプロパティの追加"><a href="#選択状態-を表すプロパティの追加" class="header-anchor">#</a> &quot;選択状態&quot;を表すプロパティの追加</h3> <p>以前、<code>data</code> の <code>items</code> に、&quot;売り切れかどうか&quot;という情報を表す <code>soldOut</code> というプロパティを追加しました。今回も同様に、&quot;選択状態か&quot;という情報をプロパティとして追加しましょう。</p> <p><code>selected</code> というプロパティを追加し、値を <code>true</code>（選択状態）/ <code>false</code>（非選択状態）とすることで、選択しているかどうか判別できるようにします。</p> <p>初期状態は何も選択されていない状態であるため、すべての商品を <code>selected: false</code> にしておきましょう。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
   <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      items<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token literal-property property">items</span><span class="token operator">:</span> <span class="token punctuation">[</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          selected<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'あの日夢見たホットケーキ'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'あの日夢見たホットケーキ'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">1180</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item2.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          selected<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1180</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item2.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'HOP WTR'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'HOP WTR'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item3.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-          selected<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item3.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-          id<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'チーズフレンチフライ'</span><span class="token punctuation">,</span>
-          description<span class="token operator">:</span>
+          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'チーズフレンチフライ'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">description</span><span class="token operator">:</span>
             <span class="token string">'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。'</span><span class="token punctuation">,</span>
-          price<span class="token operator">:</span> <span class="token number">670</span><span class="token punctuation">,</span>
-          image<span class="token operator">:</span> <span class="token string">'/images/item4.jpg'</span><span class="token punctuation">,</span>
-          soldOut<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          selected<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
+          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">670</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item4.jpg'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// selectedプロパティ追加</span>
         <span class="token punctuation">}</span>
       <span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
@@ -252,6 +252,6 @@
       <a href="/methods.html" class="prev">
         methods で価格にカンマを入れる
       </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.10949277.js" defer></script><script src="/assets/js/2.6c2f32c9.js" defer></script><script src="/assets/js/11.07f599bc.js" defer></script>
+    <script src="/assets/js/app.1626be67.js" defer></script><script src="/assets/js/2.a80e8fdb.js" defer></script><script src="/assets/js/11.04c68301.js" defer></script>
   </body>
 </html>
