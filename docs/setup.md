@@ -61,13 +61,13 @@ LTS は、Long-term Support の略で、長期間サポートされる安定バ�
 
 #### Mac でよく使われるバージョンマネージャー
 
+- [Volta](https://volta.sh/)
 - [nodenv](https://github.com/nodenv/nodenv)
-- [nvm](https://github.com/nvm-sh/nvm)
 
 #### Windows でよく使われるバージョンマネージャー
 
+- [Volta](https://volta.sh/)
 - [nvm-windows](https://github.com/coreybutler/nvm-windows)
-- [nodist](https://github.com/nullivex/nodist)
 
 ## Vue CLI のインストール
 
@@ -88,7 +88,7 @@ vue --version
 バージョン番号が表示されたら、Vue CLI がインストールされています。
 
 ```sh
-@vue/cli 4.5.13
+@vue/cli 4.5.15
 ```
 
 この方法は、npm の環境に Vue CLI がグローバルインストールされます。グローバルインストールをせずに、`npx` を利用する方法もあります。詳細は [Vue CLI 公式ドキュメント](https://cli.vuejs.org/guide/cli-service.html#using-the-binary) を参照してください。
