@@ -6,6 +6,8 @@
 
 ![vue-app](./images/sample.png)
 
+> このハンズオンを完了した場合の完成イメージは [こちら](https://handson-example.vuejs-jp.org/) で確認できます。
+
 ## Vue.js を使わない場合
 
 Vue.js でのハンズオンに入る前に Vue.js を使わないで実装した場合のプログラムを見てみましょう。
