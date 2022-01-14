@@ -1,14 +1,20 @@
 // region template
 <template>
   <header class="header">
-    <img src="/images/logo.svg" alt="" />
+    <img
+      src="/images/logo.svg"
+      alt="">
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template v-for="item in items" :key="item.id">
+    <template
+      v-for="item in items"
+      :key="item.id">
       <div class="item">
         <div class="thumbnail">
-          <img :src="item.image" alt="" />
+          <img
+            :src="item.image"
+            alt="">
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
