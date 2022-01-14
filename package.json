@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "prettier --check . && eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "textlint": "textlint --format pretty-error",
     "textlint:docs": "textlint --format pretty-error docs/**"
   },
