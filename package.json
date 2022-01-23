@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "textlint": "textlint --format pretty-error",
     "textlint:docs": "textlint --format pretty-error docs/**"
   },
@@ -21,7 +21,6 @@
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
-    "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-vue": "8.2.0",
     "prettier": "2.5.1",
     "textlint": "12.1.0",
