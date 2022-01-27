@@ -42,6 +42,7 @@ export default {
 </script>
 // #endregion script
 
+// region style
 <style>
 body {
   font-family: sans-serif;
@@ -124,3 +125,4 @@ body {
   font-weight: bold;
 }
 </style>
+// endregion style
