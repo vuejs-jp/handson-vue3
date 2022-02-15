@@ -1,3 +1,4 @@
+// region template
 <template>
   <header class="header">
     <img

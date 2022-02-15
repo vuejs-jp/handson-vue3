@@ -16,89 +16,13 @@
 
 現在のコードは以下のようになっています。
 
-```html
-<template>
-  <header class="header">
-    <img src="/images/logo.svg" alt="" />
-    <h1>Vue.js ハンズオン</h1>
-  </header>
-  <main class="main">
-    <template v-for="item in items" :key="item.id">
-      <div v-if="!item.soldOut" class="item">
-        <div class="thumbnail">
-          <img :src="item.image" alt="" />
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
-        </div>
-      </div>
-    </template>
-  </main>
-</template>
+tenplate
 
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg',
-          soldOut: false
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg',
-          soldOut: false
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg',
-          soldOut: true
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg',
-          soldOut: false
-        }
-      ]
-    }
-  },
-  methods: {
-    /**
-     * 価格を3桁ごとのカンマ付きで返す
-     * @param {number} price 価格
-     */
-    pricePrefix(price) {
-      return price.toLocaleString()
-    }
-  }
-}
-</script>
+<<< @/../examples/methods/src/App.vue#template
 
-<style>
-/* 省略 */
-</style>
-```
+script
+
+<<< @/../examples/methods/src/App.vue#script
 
 ## 1. 選択状態を表す style を用意する
 
@@ -124,60 +48,7 @@ export default {
 
 初期状態は何も選択されていない状態であるため、すべての商品を `selected: false` にしておきましょう。
 
-```html
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg',
-          soldOut: false,
-          selected: false // selectedプロパティ追加
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg',
-          soldOut: false,
-          selected: false // selectedプロパティ追加
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg',
-          soldOut: true,
-          selected: false // selectedプロパティ追加
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg',
-          soldOut: false,
-          selected: false // selectedプロパティ追加
-        }
-      ]
-    }
-  },
-  // 省略
-}
-</script>
-```
+<<< @/../examples/event/src/App.vue#script{15-15,25-25,35-35,45-45}
 
 ### v-on の書き方
 
@@ -209,34 +80,9 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 ### click イベントの実装
 
-では実際に、商品に `click` イベントを登録していきましょう。
+では実際に、商品に `click` イベントを登録していきましょう。以下の例でハイライトしている箇所を追加します。
 
-```html
-<template>
-  <header class="header">
-    <img src="/images/logo.svg" alt="" />
-    <h1>Vue.js ハンズオン</h1>
-  </header>
-  <main class="main">
-    <template v-for="item in items" :key="item.id">
-      <!--  @click="item.selected = !item.selected"を追加 -->
-      <div
-        v-if="!item.soldOut"
-        class="item"
-        @click="item.selected = !item.selected">
-        <div class="thumbnail">
-          <img :src="item.image" alt="" />
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
-        </div>
-      </div>
-    </template>
-  </main>
-</template>
-```
+<<< @/../examples/event/src/App.vue#template{16-16}
 
 `v-for` の中の要素は 1 つ 1 つの商品を表しています。その要素に対し `@click` を追加しました。
 
@@ -258,35 +104,9 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 ### `:class` の実装
 
-では実際に `:class` を使って実装してみましょう。
+では実際に `:class` を使って実装してみましょう。以下の例でハイライトしている箇所を追加します。
 
-```html
-<template>
-  <header class="header">
-    <img src="/images/logo.svg" alt="" />
-    <h1>Vue.js ハンズオン</h1>
-  </header>
-  <main class="main">
-    <template v-for="item in items" :key="item.id">
-      <!-- :class="{'selected-item': item.selected}"を追加 -->
-      <div
-        v-if="!item.soldOut"
-        class="item"
-        :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
-        <div class="thumbnail">
-          <img :src="item.image" alt="" />
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
-        </div>
-      </div>
-    </template>
-  </main>
-</template>
-```
+<<< @/../examples/event/src/App.vue#template{15-15}
 
 商品要素に対して、`:class` を追加しました。処理の中身を確認していきましょう。
 
