@@ -12,29 +12,7 @@
 
 現在の `<template>` 内のコードは以下のようになっています。
 
-```html
-<template>
-  <header class="header">
-    <img src="/images/logo.svg" alt="" />
-    <h1>Vue.js ハンズオン</h1>
-  </header>
-  <main class="main">
-    <template v-for="item in items" :key="item.id">
-      <div v-if="!item.soldOut" class="item">
-        <div class="thumbnail">
-          <img :src="item.image" alt="" />
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-          <!-- コード1 価格の表示 -->
-          <span>¥<span class="price">{{ item.price }}</span></span>
-        </div>
-      </div>
-    </template>
-  </main>
-</template>
-```
+<<< @/../examples/v-if/src/App.vue#template
 
 価格の表示を行なっている部分は、コード 1 の部分です。
 
@@ -89,26 +67,9 @@ export default {
 
 ### `methods` オプションに関数を定義する
 
-引数を 3 桁ごとにカンマを入れた値として返す関数として、`pricePrefix()` という関数を定義してみましょう。
+引数を 3 桁ごとにカンマを入れた値として返す関数として、`pricePrefix()` という関数を定義してみましょう。以下のハイライトしている箇所（ `methods` 以下）を追加します。
 
-```html
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      // 省略
-    }
-  },
-  methods: {
-    // pricePrefix()を定義
-    pricePrefix(price) {
-      return price.toLocaleString()
-    }
-  }
-}
-</script>
-```
+<<< @/../examples/methods/src/App.vue#script{46-54}
 
 ### 定義した関数を使用する
 
