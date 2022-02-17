@@ -16,7 +16,7 @@
 
 現在のコードは以下のようになっています。
 
-tenplate
+template
 
 <<< @/../examples/methods/src/App.vue#template
 
