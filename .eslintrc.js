@@ -9,7 +9,7 @@ module.exports = {
     'prettier',
   ],
   'parserOptions': {
-    'parser': 'babel-eslint'
+    'parser': '@babel/eslint-parser',
   },
   'rules': {
     'vue/html-closing-bracket-newline': ['error', {
