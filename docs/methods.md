@@ -122,15 +122,15 @@ export default {
 
 関数を使って、価格のデータはそのままで、表示を加工できました。また、他の箇所で同じ処理を行いたい場合に使い回すこともできるようになりました。このように、Vue.js でデータの操作や処理を行う関数は `methods` オプションを使用するようにしましょう。
 
-## `computed` との違い
+## 算出プロパティ `computed` との違い
 
 Vue.js には関数を扱う `methods` オプションの他に、算出プロパティを扱う `computed` オプションがあります。この 2 つのオプションの違いについて説明していきます。
 
-まず、`methods` オプションと `computed` オプションの違いを知るために、`template` で使用するためにはどのように値を扱うのか、アプローチの方法をそれぞれ確認してみましょう。
+まず、`methods` オプションと `computed` オプションの違いを知るために、`template` でどのように扱うのかをそれぞれ確認してみましょう。
 
 #### `methods` オプションで商品数を表示する
 
-確認を行うための準備として、`methods` オプションで商品数を表示する関数を定義していきます。
+確認の準備として、`methods` オプションで商品数を表示する関数を定義していきます。
 
 ```html
 <template>
@@ -163,16 +163,16 @@ Vue.js には関数を扱う `methods` オプションの他に、算出プロ�
 </script>
 ```
 
-`methods` オプションに新たに `stockQuantity()` 関数を定義し、`template` 内で使用しています。 `stockQuantity()` では `filter()` 関数によって在庫がある商品を抽出し、`length` プロパティによって抽出した数を取得しています。
+`methods` オプションへ新たに `stockQuantity()` 関数を定義し、`template` 内で使用しています。 `stockQuantity()` では `filter()` 関数によって在庫がある商品を抽出し、`length` プロパティによって抽出した数を取得しています。
 
-ここに[v-else や v-else-if の使い方](http://localhost:8081/v-if.html#dom-%E8%A6%81%E7%B4%A0%E3%81%AB-v-if-%E3%82%92%E8%BF%BD%E5%8A%A0)のコードを参考に、入荷のボタンを追加してみます。
+ここに[v-else や v-else-if の使い方](https://handson.vuejs-jp.org/v-if.html#v-else-%E3%82%84-v-else-if-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)のコードを参考に、入荷のボタンを追加してみます。
 
 ```html
 <div v-if="!item.soldOut">
   <!-- 省略 -->
 </div>
 <div v-else>
-  売り切れです<button @click="stockItem(item)">入荷</button>
+  売り切れです<button type="button" @click="stockItem(item)">入荷</button>
 </div>
 ```
 ```html
@@ -184,7 +184,7 @@ Vue.js には関数を扱う `methods` オプションの他に、算出プロ�
       return this.items.filter(item => item.soldOut === false ).length
     },
     /**
-     *
+     * 商品の在庫状況を変更する
      * @param {object} 商品情報
      */
     stockItem(item) {
@@ -194,65 +194,24 @@ Vue.js には関数を扱う `methods` オプションの他に、算出プロ�
 </script>
 ```
 
-入荷ボタンをクリックすると `stockItem()` 関数によってリアクティブな値である `items` 配列の中身が変更されます。`items` 配列が変更されたことにより `template` が更新されるので、 `stockQuantity()` 関数が実行され、商品数が 3 から 4 に更新されます。
+入荷ボタンをクリックすると `stockItem()` 関数によって `items` 配列の中身が変更されます。`items` 配列が変更されたことにより `template` が更新されるので、 `stockQuantity()` 関数が実行され、商品数が 3 から 4 に更新されます。
 
 #### `computed` オプションで商品数を表示する
 
-`methods` オプションで商品数を表示しましたが、`computed` オプションで同様に商品数を表示してみます。`computed` オプションの特徴として、リアクティブな値を扱う必要があります。そのため `data()` 関数にプロパティを定義していきます。
-
-```html
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      goods: 0,
-      // 省略
-    }
-  },
-  // 省略
-}
-</script>
-```
-商品数を表すプロパティとして `goods` を定義しました。次に、`computed` オプションに `goods` の値を扱う関数を定義していきます。
+`methods` オプションで商品数を表示しましたが、`computed` オプションでも商品数を表示してみます。`computed` オプションの特徴として、`data` を扱う必要がありますが、`methods` オプションの時と同様に `items` 配列を扱っていきます。
 
 ```html
 <script>
   // 省略
   computed: {
-    getGoods() {
-      this.goods = this.items.filter(item => item.soldOut === false ).length
-      return this.goods
+    stockQuantityComputed() {
+      return this.items.filter(item => item.soldOut === false ).length
     }
   }
 </script>
 ```
 
-コードの内容は新たに定義した `goods` プロパティを扱っていること以外、`methods` オプションで商品数を取得した `stockQuantity()` 関数と同じです。ところがエラーがでています。
-
-`Unexpected side effect in "getGoods" computed property.`
-
-`computed` オプションでは `data()` 関数に定義されている値を直接変更することはできません。そのため `methods` オプションにプロパティの値を変更する関数を定義し、その関数を呼び出すようにします。
-
-```html
-<script>
-  // 省略
-  methods: {
-    // 省略
-    setGoods() {
-      this.goods = this.items.filter(item => item.soldOut === false ).length
-    }
-  },
-  computed: {
-    getGoods() {
-      this.setGoods()
-      return this.goods
-    }
-  }
-</script>
-```
-
-それでは作成した `getGoods()` 関数を `template` で使用してみましょう。
+コードの内容は `methods` オプションで商品数を取得した `stockQuantity()` 関数と同じです。それでは作成した `stockQuantityComputed` プロパティを `template` で使用してみましょう。
 
 ```html
 <template>
@@ -260,7 +219,7 @@ export default {
     <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
-  <div>商品数：{{ getGoods }}</div>
+  <div>商品数：{{ stockQuantityComputed }}</div>
   <!-- 省略 -->
 </template>
 ```
@@ -276,12 +235,12 @@ export default {
 `methods` オプションでも `computed` オプションでも最終的に同じ値を取得することが可能ですが、2 つのオプションの違いはどこにあるのでしょうか
 
 #### キャッシュの違いについて
-大きな違いとして `computed` オプションにはキャッシュ機能があるため、リロードのタイミングが異なります。
+大きな違いとして `computed` オプションにはキャッシュ機能があるため、値の更新タイミングが異なります。
 
-- `methods` オプション : `template` が更新される
-- `computed` オプション : リアクティブな値が更新される
+- `methods` オプション : `template` が更新された時
+- `computed` オプション : `data` が更新された時
 
-実際にリロードタイミングの確認を行うために、現在時刻を表示する処理を追加していきます。
+実際に値の更新タイミングを確認するために、現在時刻を表示する処理を追加していきます。
 
 ```html
 <!-- 省略 -->
@@ -327,6 +286,6 @@ export default {
 </script>
 ```
 
-`methods` オプションに定義されていた `getDate()` 関数では、入荷ボタンをクリックすると更新されましたが、`computed` オプションに定義した `getDateComputed` プロパティは更新されません。こちらは `computed` オプションのリロードのタイミングは Vue インスタンスの状態が更新された場合であり、リアクティブなデータを扱っていないと自動的にリロードがされないことが理由です。
+`methods` オプションに定義されていた `getDate()` 関数では、入荷ボタンをクリックすると更新されましたが、`computed` オプションに定義した `getDateComputed` プロパティは更新されません。こちらは `computed` オプションの値の更新タイミングが `data` が更新された場合であり、`data` を扱っていないと自動的に値が更新されないことが理由です。
 
 以上のように、`methods` オプションと `computed` オプションでは更新のタイミングが違うので注意が必要です。
