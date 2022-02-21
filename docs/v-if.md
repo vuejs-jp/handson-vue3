@@ -20,69 +20,23 @@ Vue.js では特定の条件の時だけ DOM を生成し表示できる、`v-if
 
 まず、"売り切れかどうか"という情報を、`data` の商品情報に `soldOut` というプロパティで持たせてみましょう。今回は `id` が `3` の商品を売り切れ状態にしてみます。`id` が `3` の商品に `soldOut` というプロパティを追加し、 `true` を設定します。
 
-```html
-<template>
-  <!-- 省略 -->
-</template>
-
-<script>
-  export default {
-    name: 'App',
-    data: () => {
-      return {
-        items: [
-          // id 1, 2, 4 省略
-          {
-            id: 3,
-            name: 'HOP WTR',
-            description:
-              'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-            price: 320,
-            image: '/images/item3.jpg',
-            // 売り切れかどうかを判断するプロパティを追加
-            soldOut: true
-          }
-        ]
-      }
-    }
-  }
-</script>
-```
+<<< @/../examples/v-if/src/App.vue#script{32-32}
 
 ## DOM 要素に v-if を追加
 
-次に、DOM 要素に `v-if` を追加して、非表示にします。1 つ 1 つの商品を表示している要素は以下の部分です。
+次に、DOM 要素に `v-if` を追加して、非表示にします。1 つ 1 つの商品を表示している要素は以下でハイライトしている部分です。
 
-```html
-<div class="item">
-  <div class="thumbnail">
-    <img :src="item.image" alt="" />
-  </div>
-  <div class="description">
-    <h2>{{ item.name }}</h2>
-    <p>{{ item.description }}</p>
-    <span>¥<span class="price">item.price</span></span>
-  </div>
-</div>
-```
+変更前
+
+<<< @/../examples/v-for/src/App.vue#template{12-23}
 
 この `<div>` 要素に `v-if` を記述していきます。`item.soldOut` が `true` の場合は、売り切れであることを示しています。
 
 売り切れではない時、つまり `item.soldOut` が `false` の時だけ表示をさせたいため、ひと工夫必要です。`v-if="item.soldOut"` としてしまうと、売り切れの場合のみ表示させることになってしまうため、`!` を使用して真偽値を逆転させて使用しましょう。
 
-```html
-<!-- <div>要素に v-if を追加 -->
-<div v-if="!item.soldOut" class="item">
-  <div class="thumbnail">
-    <img :src="item.image" alt="" />
-  </div>
-  <div class="description">
-    <h2>{{ item.name }}</h2>
-    <p>{{ item.description }}</p>
-    <span>¥<span class="price">item.price</span></span>
-  </div>
-</div>
-```
+変更後
+
+<<< @/../examples/v-if/src/App.vue#template{12-25}
 
 これで `id` が `3` の商品は非表示になりました。
 

@@ -1,10 +1,13 @@
+// region template
 <template>
   <img
     alt="Vue logo"
     src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
+// endregion template
 
+// region script
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
@@ -15,7 +18,9 @@ export default {
   }
 }
 </script>
+// endregion script
 
+// region style
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,3 +31,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+// endregion style
