@@ -8,7 +8,7 @@
     <link rel="icon" href="/favicon-32.png">
     <meta name="description" content="Vue.js-jp Vue3 Hands-on">
     
-    <link rel="preload" href="/assets/css/0.styles.84741abc.css" as="style"><link rel="preload" href="/assets/js/app.51946fb7.js" as="script"><link rel="preload" href="/assets/js/2.e6839c40.js" as="script"><link rel="preload" href="/assets/js/13.e0def65e.js" as="script"><link rel="prefetch" href="/assets/js/10.f85d626b.js"><link rel="prefetch" href="/assets/js/11.2b5aa242.js"><link rel="prefetch" href="/assets/js/12.2e4a47ce.js"><link rel="prefetch" href="/assets/js/14.e08bf68d.js"><link rel="prefetch" href="/assets/js/15.9aedcfe8.js"><link rel="prefetch" href="/assets/js/3.883a7fcb.js"><link rel="prefetch" href="/assets/js/4.884eced7.js"><link rel="prefetch" href="/assets/js/5.302a207c.js"><link rel="prefetch" href="/assets/js/6.454f85d8.js"><link rel="prefetch" href="/assets/js/7.6fbba82e.js"><link rel="prefetch" href="/assets/js/8.4cc15aab.js"><link rel="prefetch" href="/assets/js/9.4e220c51.js">
+    <link rel="preload" href="/assets/css/0.styles.84741abc.css" as="style"><link rel="preload" href="/assets/js/app.76e5349f.js" as="script"><link rel="preload" href="/assets/js/2.e6839c40.js" as="script"><link rel="preload" href="/assets/js/13.c69530a1.js" as="script"><link rel="prefetch" href="/assets/js/10.f85d626b.js"><link rel="prefetch" href="/assets/js/11.e65c45b4.js"><link rel="prefetch" href="/assets/js/12.1d4d0a6e.js"><link rel="prefetch" href="/assets/js/14.e08bf68d.js"><link rel="prefetch" href="/assets/js/15.04bb996b.js"><link rel="prefetch" href="/assets/js/3.883a7fcb.js"><link rel="prefetch" href="/assets/js/4.884eced7.js"><link rel="prefetch" href="/assets/js/5.302a207c.js"><link rel="prefetch" href="/assets/js/6.454f85d8.js"><link rel="prefetch" href="/assets/js/7.6fbba82e.js"><link rel="prefetch" href="/assets/js/8.4cc15aab.js"><link rel="prefetch" href="/assets/js/9.4e220c51.js">
     <link rel="stylesheet" href="/assets/css/0.styles.84741abc.css">
   </head>
   <body>
@@ -22,46 +22,57 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre></div><p>出力例</p> <div class="language- extra-class"><pre class="language-text"><code>Welcome to Vue Handson!
-</code></pre></div><div class="custom-block tip"><p class="custom-block-title">ヒント</p> <div><p>mustache とは口髭を指す英語で、二重中括弧 <code>{{ }}</code> が口髭のように見えることから命名されました。</p></div></div> <h2 id="商品をレンダリング"><a href="#商品をレンダリング" class="header-anchor">#</a> 商品をレンダリング</h2> <p>プロジェクトのファイルを書き換えて、商品をレンダリングしていきましょう。<code>src/App.vue</code> ファイルを次のように変更します。</p> <div class="language-diff extra-class"><pre class="language-diff"><code><span class="token deleted-arrow deleted"><span class="token prefix deleted">&lt;</span><span class="token line">template&gt;
-</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">  &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;
-</span><span class="token prefix deleted">-</span><span class="token line">  &lt;HelloWorld msg=&quot;Welcome to Your Vue.js App&quot;/&gt;
-</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">  &lt;header class=&quot;header&quot;&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">    &lt;img src=&quot;/images/logo.svg&quot; alt=&quot;&quot; /&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">    &lt;h1&gt;Vue.js ハンズオン&lt;/h1&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">  &lt;/header&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">  &lt;main class=&quot;main&quot;&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">    &lt;div class=&quot;item&quot;&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">      &lt;div class=&quot;thumbnail&quot;&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">        &lt;img :src=&quot;item.image&quot; alt=&quot;&quot; /&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">      &lt;/div&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">      &lt;div class=&quot;description&quot;&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">        &lt;h2&gt;{{ item.name }}&lt;/h2&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">        &lt;p&gt;{{ item.description }}&lt;/p&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">        &lt;span&gt;¥&lt;span class=&quot;price&quot;&gt;{{ item.price }}&lt;/span&gt;&lt;/span&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">     &lt;/div&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">   &lt;/div&gt;
-</span><span class="token prefix inserted">+</span><span class="token line">  &lt;/main&gt;
-</span></span><span class="token deleted-arrow deleted"><span class="token prefix deleted">&lt;</span><span class="token line">/template&gt;
-</span></span></code></pre></div><div class="language-diff extra-class"><pre class="language-diff"><code><span class="token deleted-arrow deleted"><span class="token prefix deleted">&lt;</span><span class="token line">script&gt;
-</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> import HelloWorld from './components/HelloWorld.vue'
-</span></span><span class="token unchanged"><span class="token prefix unchanged"> </span><span class="token line">export default {
-</span><span class="token prefix unchanged"> </span><span class="token line"> name: &quot;App&quot;,
-</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> components: {
-</span><span class="token prefix deleted">-</span><span class="token line">   HelloWorld
-</span><span class="token prefix deleted">-</span><span class="token line"> }
-</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> data() {
-</span><span class="token prefix inserted">+</span><span class="token line">   return {
-</span><span class="token prefix inserted">+</span><span class="token line">     item: {
-</span><span class="token prefix inserted">+</span><span class="token line">       name: &quot;アボカドディップバケット&quot;,
-</span><span class="token prefix inserted">+</span><span class="token line">       description: &quot;刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。&quot;,
-</span><span class="token prefix inserted">+</span><span class="token line">       price: 480,
-</span><span class="token prefix inserted">+</span><span class="token line">       image: &quot;/images/item1.jpg&quot;
-</span><span class="token prefix inserted">+</span><span class="token line">     }
-</span><span class="token prefix inserted">+</span><span class="token line">   }
-</span><span class="token prefix inserted">+</span><span class="token line"> }
-</span></span>}
-<span class="token deleted-arrow deleted"><span class="token prefix deleted">&lt;</span><span class="token line">/script&gt;
-</span></span></code></pre></div><p>見た目を設定するために style タグの中身を以下のように置き換えます。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">ヒント</p> <div><p>mustache とは口髭を指す英語で、二重中括弧 <code>{{ }}</code> が口髭のように見えることから命名されました。</p></div></div> <h2 id="商品をレンダリング"><a href="#商品をレンダリング" class="header-anchor">#</a> 商品をレンダリング</h2> <p>プロジェクトのファイルを書き換えて、商品をレンダリングしていきましょう。まず、<code>src/App.vue</code> ファイルの template を次のように変更します。</p> <p>変更前（template）</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+    <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>Vue logo<span class="token punctuation">&quot;</span></span>
+    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>./assets/logo.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HelloWorld</span> <span class="token attr-name">msg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>Welcome to Your Vue.js App<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>変更後（template）</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>header<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+      <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/images/logo.svg<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Vue.js ハンズオン<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>main<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>thumbnail<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+          <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.image<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>description<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>{{ item.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ item.description }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>¥<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>price<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ item.price }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>次に、<code>src/App.vue</code> ファイルの script を次のように変更します。</p> <p>変更前（script）</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'./components/HelloWorld.vue'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    HelloWorld
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>変更後（script）</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">item</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">description</span><span class="token operator">:</span>
+          <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>見た目を設定するために style タグの中身を以下のように置き換えます。</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
 <span class="token selector">body</span> <span class="token punctuation">{</span>
   <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
@@ -142,8 +153,7 @@
   <span class="token property">font-size</span><span class="token punctuation">:</span> 28px<span class="token punctuation">;</span>
   <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code></pre></div><p>これで、商品を 1 つレンダリングできました。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>これで、商品を 1 つレンダリングできました。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/overview.html" class="prev">
         ハンズオンの概要
@@ -152,6 +162,6 @@
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.51946fb7.js" defer></script><script src="/assets/js/2.e6839c40.js" defer></script><script src="/assets/js/13.e0def65e.js" defer></script>
+    <script src="/assets/js/app.76e5349f.js" defer></script><script src="/assets/js/2.e6839c40.js" defer></script><script src="/assets/js/13.c69530a1.js" defer></script>
   </body>
 </html>
