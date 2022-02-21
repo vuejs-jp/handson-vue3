@@ -111,7 +111,7 @@ var app = new Vue({
 ・taskC , タスクC
 ```
 
-オブジェクトの `key` と `value` に加えて `index`を 表示することもできます。
+オブジェクトの `key` と `value` に加えて `index` を表示することもできます。
 
 ```html
 <div id="app">
