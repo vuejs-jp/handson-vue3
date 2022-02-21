@@ -4,6 +4,10 @@
 
 Vue CLI を使って生成されるアプリケーションをプロジェクトと呼びます。ここではプロジェクトを新しく作成する方法を紹介します。
 
+::: tip 情報
+Vue CLI は現在メンテナンスモードとなっており、今後は新しいプロジェクト作成ツールである [create-vue](https://github.com/vuejs/create-vue) の利用が推奨される予定です。
+:::
+
 1. アプリケーションを作成するディレクトリを決めておきます（この例では `vue3-lab` としています）。Vue CLI でプロジェクトを作成すると、決めたディレクトリの配下にファイル群が生成されます。
 
 2. ターミナルで、プロジェクトのディレクトリを作成する親ディレクトリに移動します。もし、ホームディレクトリの直下にプロジェクトを作成するのであれば、ターミナルで以下のコマンドを使って移動しておきます。
@@ -22,17 +26,17 @@ Vue CLI を使って生成されるアプリケーションをプロジェクト
    vue create vue3-lab
    ```
 
-   ::: tip ヒント 
-   なお、このハンズオンでは `Vue CLI v4.5.13` を使用して説明しています。
+   ::: tip ヒント
+   このハンズオンでは `Vue CLI v5.0.1` を使用して説明しています。
    :::
 
-4. コマンドを実行すると、ターミナルに `Please pick a preset` と表示されます。このハンズオンでは以下のように `Default (Vue 3) ([Vue 3] babel, eslint) ` を選択します。
+4. コマンドを実行すると、ターミナルに `Please pick a preset` と表示されます。このハンズオンでは以下のように `Default ([Vue 3] babel, eslint) ` を選択します。
 
    ```sh
-   Vue CLI v4.5.13
-   ? Please pick a preset:
+   Vue CLI v5.0.1
+   ? Please pick a preset: (Use arrow keys)
+   ❯ Default ([Vue 3] babel, eslint)
      Default ([Vue 2] babel, eslint)
-   ❯ Default (Vue 3) ([Vue 3] babel, eslint)
      Manually select features
    ```
 

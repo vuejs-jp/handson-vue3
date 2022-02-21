@@ -2,7 +2,7 @@
 
 ## 前提とする環境
 
-- エディタ: Visual Studio Code（以下、VS Code）, Vetur（VS Code の拡張機能）
+- エディタ: Visual Studio Code（以下、VS Code）, Volar（VS Code の拡張機能）
 - 開発言語: JavaScript
 - 利用するツール: Node.js, Vue CLI
 
@@ -38,7 +38,7 @@ node -v
 バージョン番号が表示されたら、Node.js はインストールされていますので、セットアップの手順は飛ばして構いません。
 
 ```sh
-v16.13.2
+v16.14.0
 ```
 
 ::: warning 注意
@@ -88,7 +88,7 @@ vue --version
 バージョン番号が表示されたら、Vue CLI がインストールされています。
 
 ```sh
-@vue/cli 4.5.15
+@vue/cli 5.0.1
 ```
 
 この方法は、npm の環境に Vue CLI がグローバルインストールされます。グローバルインストールをせずに、`npx` を利用する方法もあります。詳細は [Vue CLI 公式ドキュメント](https://cli.vuejs.org/guide/cli-service.html#using-the-binary) を参照してください。
