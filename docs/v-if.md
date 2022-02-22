@@ -58,3 +58,47 @@ JavaScript の条件分岐の構文に `else` があるように、Vue.js にも
 ```
 
 また、JavaScript の `else if` と同様の働きをする `v-else-if` も用意されています。`v-if` の評価が `false` の時に、さらに条件を指定したい時に使用できます。
+
+## v-showとの違い
+`v-if` に似た `v-show` というディレクティブが用意されています。以下のように、表示・非表示を制御したい DOM 要素に `v-show` を追加します。`v-show` の値が `true` の場合は表示され、 `false` の場合は表示されません。
+
+```html
+<!-- 表示される -->
+<div v-show="true">something</div>
+
+<!-- 表示されない -->
+<div v-show="false">something</div>
+```
+
+一見 `v-if` と同じように思えますが、`v-if` が DOM 要素ごと削除しているのに対して、`v-show` は style 属性の値に `display:none;` を付与して非表示にしています。
+
+ブラウザ上での描画
+```html
+<!-- 表示されない -->
+<div style="display:none;">something</div>
+```
+
+::: tip ヒント
+`v-if` は表示を切り替えるコストが高く、 `v-show` は初期描画のコストが高いです。そのため、頻繁に表示を切り替えるのであれば `v-show` を使い、それ以外では `v-if` を使うとよいでしょう。
+:::
+
+::: tip ヒント
+`v-show` は `<template>` 要素に使えないことに気をつけましょう。また、 `v-else` や `v-else-if` も使えません。
+:::
+
+## v-for との併用について
+
+`v-if` と `v-for` を同時に使うことは推奨されていません。なぜなら、同じ要素において `v-for` は `v-if` より優先度が高く `v-if` の評価に関わらず `v-for` の表示処理が行われるためです。以下の例のように、別の要素に分けることを推奨します。
+
+```html
+<div v-if="!item.soldOut">
+   <template
+      v-for="item in items"
+      :key="item.id">
+      <div class="item">
+      <!-- 省略 -->
+      </div>
+   </template>
+</div>
+<div v-else>売り切れです</div>
+```
