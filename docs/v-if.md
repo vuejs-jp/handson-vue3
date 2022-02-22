@@ -116,7 +116,7 @@ JavaScript の条件分岐の構文に `else` があるように、Vue.js にも
 <div v-show="false">something</div>
 ```
 
-ただし、 `v-show` ディレクティブの場合、 `v-if` が DOM 要素ごと削除しているのに対して、 スタイル属性に `display:none` を付与して非表示にしています。
+一見 `v-if` と同じように思えますが、`v-if` が DOM 要素ごと削除しているのに対して、`v-show` は style 属性の値に `display:none;` を付与して非表示にしています。
 
 ブラウザ上での描画
 ```html
