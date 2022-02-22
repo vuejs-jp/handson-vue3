@@ -129,7 +129,7 @@ JavaScript の条件分岐の構文に `else` があるように、Vue.js にも
 :::
 
 ::: tip ヒント
-`v-show` は `<template>` 要素に使用できないことに気をつけましょう。また、 `v-else` や `v-else-if` も使用できません。
+`v-show` は `<template>` 要素に使えないことに気をつけましょう。また、 `v-else` や `v-else-if` も使えません。
 :::
 
 ## v-for との併用について
