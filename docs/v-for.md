@@ -89,18 +89,15 @@ v-for を使った template タグは DOM 要素としてレンダリングさ�
 ```
 
 ```js
-var app = new Vue({
-  el: '#app',
-  data() {
-    return {
-      tasks: [
-        'タスクA',
-        'タスクB',
-        'タスクC',
-      ]
-    }
+data() {
+  return {
+    tasks: [
+      'タスクA',
+      'タスクB',
+      'タスクC',
+    ]
   }
-})
+}
 ```
 
 出力例
@@ -126,18 +123,15 @@ var app = new Vue({
 ```
 
 ```js
-var app = new Vue({
-  el: '#app',
-  data() {
-    return {
-      tasks: {
-        taskA: 'タスクA',
-        taskB: 'タスクB',
-        taskC: 'タスクC',
-      }
+data() {
+  return {
+    tasks: {
+      taskA: 'タスクA',
+      taskB: 'タスクB',
+      taskC: 'タスクC',
     }
   }
-})
+}
 ```
 
 出力例
@@ -158,18 +152,15 @@ var app = new Vue({
 ```
 
 ```js
-var app = new Vue({
-  el: '#app',
-  data() {
-    return {
-      tasks: {
-        taskA: 'タスクA',
-        taskB: 'タスクB',
-        taskC: 'タスクC',
-      }
+data() {
+  return {
+    tasks: {
+      taskA: 'タスクA',
+      taskB: 'タスクB',
+      taskC: 'タスクC',
     }
   }
-})
+}
 ```
 
 出力例
