@@ -77,6 +77,7 @@ var app = new Vue({
 v-for を使った template タグは DOM 要素としてレンダリングされません。
 :::
 
+## v-for の index と注意点
 以下のように、 `v-for` で、配列のインデックスを取り出すこともできます。
 
 ```html
