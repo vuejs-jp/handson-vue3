@@ -121,7 +121,7 @@ var app = new Vue({
 ```html
 <div id="app">
   <ul>
-    <li v-for="(value, key) in tasks">{{key}} , {{ value }}</li>
+    <li v-for="(value, key) in tasks">{{ key }} , {{ value }}</li>
   </ul>
 </div>
 ```
