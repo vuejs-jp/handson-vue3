@@ -12,19 +12,27 @@
 Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキストをレンダリングできます。以下の例では data 部分の message を表示しています。message の内容が変更されると、それに応じて表示も更新されます。
 :::
 
-```html
-<div id="app">{{ message }}</div>
-```
+```vue
+<template>
+  <div>{{ message }}</div>
+</template>
 
-```js
-var app = new Vue({
-  el: '#app',
+<script>
+export default {
   data() {
     return {
       message: 'Welcome to Vue Handson!'
-    }
+    };
   }
 })
+</script>
+```
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')
 ```
 
 出力例
