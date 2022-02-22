@@ -21,18 +21,15 @@ Vue.js では、配列からデータを取り出し、繰り返しで表示す�
 ```
 
 ```js
-var app = new Vue({
-  el: '#app',
-  data() {
-    return {
-      tasks: [
-        'タスクA',
-        'タスクB',
-        'タスクC',
-      ]
-    }
+data() {
+  return {
+    tasks: [
+      'タスクA',
+      'タスクB',
+      'タスクC',
+    ]
   }
-})
+}
 ```
 
 出力例
@@ -77,3 +74,95 @@ var app = new Vue({
 v-for を使った template タグは DOM 要素としてレンダリングされません。
 :::
 
+## v-for の index と注意点
+以下のように、 `v-for` で配列のインデックスを取り出せます。
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="(task, index) in tasks">{{index}} , {{ task }}</li>
+  </ul>
+</div>
+```
+
+```js
+data() {
+  return {
+    tasks: [
+      'タスクA',
+      'タスクB',
+      'タスクC',
+    ]
+  }
+}
+```
+
+出力例
+```
+・0 , タスクA
+・1 , タスクB
+・2 , タスクC
+```
+
+::: tip ヒント
+`v-for` の `key` に `v-for` の `index` を使うことはできますが、要素の再利用や並び替え時に問題が発生するため非推奨です。
+:::
+
+## オブジェクトの v-for
+データの取り出し元に、オブジェクトを使うことも可能です。以下の例では、オブジェクトの `key` と `value` を順番に取り出して表示しています。
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="(value, key) in tasks">{{ key }} , {{ value }}</li>
+  </ul>
+</div>
+```
+
+```js
+data() {
+  return {
+    tasks: {
+      taskA: 'タスクA',
+      taskB: 'タスクB',
+      taskC: 'タスクC',
+    }
+  }
+}
+```
+
+出力例
+```
+・taskA , タスクA
+・taskB , タスクB
+・taskC , タスクC
+```
+
+オブジェクトの `key` と `value` に加えて `index` を表示することもできます。
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="(value, key, index) in tasks">{{index}} , {{key}} , {{ value }}</li>
+  </ul>
+</div>
+```
+
+```js
+data() {
+  return {
+    tasks: {
+      taskA: 'タスクA',
+      taskB: 'タスクB',
+      taskC: 'タスクC',
+    }
+  }
+}
+```
+
+出力例
+```
+・0 , taskA , タスクA
+・1 , taskB , タスクB
+・2 , taskC , タスクC
+```
