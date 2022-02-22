@@ -77,6 +77,42 @@ var app = new Vue({
 v-for を使った template タグは DOM 要素としてレンダリングされません。
 :::
 
+以下のように、 `v-for` で、配列のインデックスを取り出すこともできます。
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="(task, index) in tasks">{{index}} , {{ task }}</li>
+  </ul>
+</div>
+```
+
+```js
+var app = new Vue({
+  el: '#app',
+  data() {
+    return {
+      tasks: [
+        'タスクA',
+        'タスクB',
+        'タスクC',
+      ]
+    }
+  }
+})
+```
+
+出力例
+```
+・0 , タスクA
+・1 , タスクB
+・2 , タスクC
+```
+
+::: tip ヒント
+`v-for` の `key` に `v-for` の `index` を使う事はできますが、要素の再利用や並び替えをする時に、問題が発生するので非推奨です。
+:::
+
 ## オブジェクトの v-for
 データの取り出し元に、オブジェクトを使用することも可能です。
 以下の例では、オブジェクトの `key` と `value` を順番に取り出して表示しています。
@@ -142,4 +178,3 @@ var app = new Vue({
 ・1 , taskB , タスクB
 ・2 , taskC , タスクC
 ```
-## key に index を使う方法と注意点
