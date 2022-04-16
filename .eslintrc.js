@@ -1,22 +1,26 @@
+require('@rushstack/eslint-patch/modern-module-resolution')
+
 module.exports = {
-  'root': true,
-  'env': {
-    'node': true
+  root: true,
+  env: {
+    node: true,
+    'vue/setup-compiler-macros': true
   },
-  'extends': [
+  extends: [
     'plugin:vue/vue3-recommended',
     'eslint:recommended',
-    'prettier',
+    '@vue/eslint-config-prettier'
   ],
-  'parserOptions': {
-    'parser': '@babel/eslint-parser',
-  },
-  'rules': {
-    'vue/html-closing-bracket-newline': ['error', {
-      'singleline': 'never',
-      'multiline': 'never'
-    }],
+  rules: {
+    'vue/html-closing-bracket-newline': [
+      'error',
+      {
+        singleline: 'never',
+        multiline: 'never'
+      }
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'prettier/prettier': 'off' // eslint-plugin-prettierの部分だけoffにする
   }
 }
