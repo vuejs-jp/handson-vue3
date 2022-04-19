@@ -10,7 +10,6 @@
     "textlint:docs": "textlint --format pretty-error docs/**"
   },
   "dependencies": {
-    "core-js": "3.21.1",
     "vue": "3.2.31"
   },
   "devDependencies": {
