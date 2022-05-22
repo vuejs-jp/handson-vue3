@@ -20,7 +20,7 @@ Vue.js では特定の条件の時だけ DOM を生成し表示できる、`v-if
 
 まず、"売り切れかどうか"という情報を、`data` の商品情報に `soldOut` というプロパティで持たせてみましょう。今回は `id` が `3` の商品を売り切れ状態にしてみます。`id` が `3` の商品に `soldOut` というプロパティを追加し、 `true` を設定します。
 
-<<< @/../examples/v-if/src/App.vue#script{29-29}
+<<< @/../examples/v-if/src/App.vue#script{30-30}
 
 ## DOM 要素に v-if を追加
 
