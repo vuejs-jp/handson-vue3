@@ -42,13 +42,13 @@ JavaScript がもともと持っている `toLocaleString()` 関数を用いて�
 このように、`{{ }}` の中に直接実行したい処理を記述できますが、処理が長くなると可読性が下がってしまいます。そこで、実行したい処理を関数にして登録し、`{{ }}` にはその関数を記述するとよりスマートです。
 :::
 
-通常のJavaScriptのように関数宣言で定義することで、関数を追加することができます。
+通常の JavaScript のように関数宣言で定義することで、関数を追加することができます。
 
 `item.price` を引数として渡し、`toLocaleString()` の結果を返す関数を作成してみましょう。
 
 ### 関数を定義する
 
-`<script setup>` 内に 関数を定義していきます。
+`<script setup>` 内に関数を定義していきます。
 
 まず、引数を 3 桁ごとにカンマを入れた値として返す関数として、`pricePrefix()` という関数を定義してみましょう。以下のハイライトしている箇所（`pricePrefix()` 以下）を追加します。
 
@@ -113,7 +113,7 @@ const stockQuantity = () => {
 </script>
 ```
 
-新たな関数として `stockQuantity()` を定義し、`template` 内で使用しています。 `stockQuantity()` では `filter()` 関数によって在庫がある商品を抽出し、`length` プロパティによって抽出した数を取得しています。
+新たな関数として `stockQuantity()` を定義し、`template` 内で使用しています。`stockQuantity()` では `filter()` 関数によって在庫がある商品を抽出し、`length` プロパティによって抽出した数を取得しています。
 
 ここに[v-else や v-else-if の使い方](https://handson.vuejs-jp.org/v-if.html#v-else-%E3%82%84-v-else-if-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)のコードを参考に、入荷のボタンを追加してみます。
 
@@ -145,7 +145,7 @@ const stockItem = (item) => {
 </script>
 ```
 
-入荷ボタンをクリックすると `stockItem()` によって `items` 配列の中身が変更されます。`items` 配列が変更されたことにより `template` が更新されるので、 `stockQuantity()` が実行され、商品数が 3 から 4 に更新されます。
+入荷ボタンをクリックすると `stockItem()` によって `items` 配列の中身が変更されます。`items` 配列が変更されたことにより `template` が更新されるので、`stockQuantity()` が実行され、商品数が 3 から 4 に更新されます。
 
 #### `computed` プロパティで商品数を表示する
 
