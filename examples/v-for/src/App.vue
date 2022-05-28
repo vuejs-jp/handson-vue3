@@ -1,20 +1,14 @@
 // region template
 <template>
   <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
+    <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template
-      v-for="item in items"
-      :key="item.id">
+    <template v-for="item in items" :key="item.id">
       <div class="item">
         <div class="thumbnail">
-          <img
-            :src="item.image"
-            alt="">
+          <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
@@ -28,48 +22,43 @@
 // endregion template
 
 // region script
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg'
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg'
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg'
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg'
-        }
-      ]
-    }
+<script setup>
+import { ref } from 'vue'
+
+const items = ref([
+  {
+    id: 1,
+    name: 'アボカドディップバケット',
+    description:
+      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+    price: 480,
+    image: '/images/item1.jpg'
+  },
+  {
+    id: 2,
+    name: 'あの日夢見たホットケーキ',
+    description:
+      '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+    price: 1180,
+    image: '/images/item2.jpg'
+  },
+  {
+    id: 3,
+    name: 'HOP WTR',
+    description:
+      'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+    price: 320,
+    image: '/images/item3.jpg'
+  },
+  {
+    id: 4,
+    name: 'チーズフレンチフライ',
+    description:
+      'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+    price: 670,
+    image: '/images/item4.jpg'
   }
-}
+])
 </script>
 // endregion script
 
