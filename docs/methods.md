@@ -153,7 +153,7 @@ const stockItem = (item) => {
 
 ```html
 <script setup>
-import { reactive, computed } from 'vue'
+import { ref, computed } from 'vue'
 // 省略
 const stockQuantityComputed = computed(() => {
   return items.filter(item => item.soldOut === false ).length
