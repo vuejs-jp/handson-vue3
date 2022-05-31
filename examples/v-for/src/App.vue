@@ -3,7 +3,7 @@
   <header class="header">
     <img
       src="/images/logo.svg"
-      alt="" />
+      alt="">
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
@@ -14,7 +14,7 @@
         <div class="thumbnail">
           <img
             :src="item.image"
-            alt="" />
+            alt="">
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
