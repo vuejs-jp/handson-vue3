@@ -14,11 +14,11 @@ Vue.js でのハンズオンに入る前に Vue.js を使わないで実装し�
 
 index.html
 
-<<< @/../examples/overview/public/index.html
+<<< @/../examples/overview/index.html
 
 style.css
 
-<<< @/../examples/overview/public/style.css
+<<< @/../examples/overview/style.css
 
 ## 商品表示部分の説明
 
