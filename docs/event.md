@@ -137,6 +137,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 ```html
 <input v-on:keyup.enter="alert" />
 ```
+
 ```vue
 <script setup>
 // ...省略
@@ -146,6 +147,7 @@ function alert() {
 }
 </script>
 ```
+
 `keyup` イベントにキーコード `enter` を `.`（ドット）でつなげて、`alert` メソッドを記述しました。`input` タグにフォーカスし、キーボードの `Enter` を押すと `alert` メソッドが実行されます。また、`click` イベントと同様に `keyup` イベントも `v-on` ディレクティブの省略が可能です。
 
 ```html
@@ -222,6 +224,7 @@ function alert() {
   tabindex="0"
 >
 ```
+
 ## 今回使用したディレクティブ
 
 今回の実装では以下のディレクティブを使用しました。
