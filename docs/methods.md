@@ -100,15 +100,15 @@ Vue.js には関数の他に、算出プロパティを扱う `computed` プロ�
  * 価格を3桁ごとのカンマ付きで返す
  * @param {number} price 価格
  */
-const pricePrefix = (price) => {
+function pricePrefix(price) {
   return price.toLocaleString()
 }
 
 /**
  * 在庫のある商品数を返す
  */
-const stockQuantity = () => {
-  return items.filter(item => item.soldOut === false ).length
+function stockQuantity() {
+  return items.value.filter(item => item.soldOut === false ).length
 }
 </script>
 ```
@@ -131,15 +131,15 @@ const stockQuantity = () => {
 /**
  * 在庫のある商品数を返す
  */
-const stockQuantity = () => {
-  return items.filter(item => item.soldOut === false ).length
+function stockQuantity() {
+  return items.value.filter(item => item.soldOut === false ).length
 }
 
 /**
  * 商品の在庫状況を変更する
  * @param {object} 商品情報
  */
-const stockItem = (item) => {
+function stockItem(item) {
   item.soldOut = false
 }
 </script>
@@ -155,8 +155,8 @@ const stockItem = (item) => {
 <script setup>
 import { ref, computed } from 'vue'
 // 省略
-const stockQuantityComputed = computed(() => {
-  return items.filter(item => item.soldOut === false ).length
+const stockQuantityComputed = computed(function() {
+  return items.value.filter(item => item.soldOut === false ).length
 })
 </script>
 ```
@@ -200,14 +200,14 @@ const stockQuantityComputed = computed(() => {
 ```html
 <script setup>
 // 省略
-const stockItem = (item) => {
+function stockItem(item) {
   item.soldOut = false
 }
 
 /**
  * 現在時刻を取得する
  */
-const getDate = () => {
+function getDate() {
   return Date.now()
 }
 </script>
@@ -225,7 +225,7 @@ const getDate = () => {
 ```html
 <script setup>
 // 省略
-const getDateComputed = computed(() => {
+const getDateComputed = computed(function() {
   return Date.now()
 })
 </script>

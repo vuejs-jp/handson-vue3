@@ -76,7 +76,7 @@ const items = ref([
  * 価格を3桁ごとのカンマ付きで返す
  * @param {number} price 価格
  */
-const pricePrefix = (price) => {
+function pricePrefix(price) {
   return price.toLocaleString()
 }
 </script>
