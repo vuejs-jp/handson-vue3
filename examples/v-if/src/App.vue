@@ -31,9 +31,9 @@
 
 // region script
 <script setup>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
-const items = reactive([
+const items = ref([
   {
     id: 1,
     name: 'アボカドディップバケット',
