@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "scripts": {
     "dev": "vite",
+    "dev:v-if": "npm run dev -w=v-if",
     "build": "vite build",
     "preview": "vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
