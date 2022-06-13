@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "scripts": {
     "dev": "vite",
+    "dev:event": "npm run dev -w=event",
     "dev:overview": "npm run dev -w=overview",
     "dev:v-for": "npm run dev -w=v-for",
     "build": "vite build",

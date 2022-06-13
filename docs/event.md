@@ -42,13 +42,13 @@ script
 
 ### "選択状態"を表すプロパティの追加
 
-以前、`data` の `items` に、"売り切れかどうか"という情報を表す `soldOut` というプロパティを追加しました。今回も同様に、"選択状態か"という情報をプロパティとして追加しましょう。
+以前 `items` に、"売り切れかどうか"という情報を表す `soldOut` というプロパティを追加しました。今回も同様に、"選択状態か"という情報をプロパティとして追加しましょう。
 
 `selected` というプロパティを追加し、値を `true`（選択状態）/ `false`（非選択状態）とすることで、選択しているかどうか判別できるようにします。
 
 初期状態は何も選択されていない状態であるため、すべての商品を `selected: false` にしておきましょう。
 
-<<< @/../examples/event/src/App.vue#script{15-15,25-25,35-35,45-45}
+<<< @/../examples/event/src/App.vue#script{13,23,33,43}
 
 ### v-on の書き方
 
@@ -82,7 +82,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 では実際に、商品に `click` イベントを登録していきましょう。以下の例でハイライトしている箇所を追加します。
 
-<<< @/../examples/event/src/App.vue#template{16-16}
+<<< @/../examples/event/src/App.vue#template{16}
 
 `v-for` の中の要素は 1 つ 1 つの商品を表しています。その要素に対し `@click` を追加しました。
 
@@ -106,7 +106,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 では実際に `:class` を使って実装してみましょう。以下の例でハイライトしている箇所を追加します。
 
-<<< @/../examples/event/src/App.vue#template{15-15}
+<<< @/../examples/event/src/App.vue#template{15}
 
 商品要素に対して、`:class` を追加しました。処理の中身を確認していきましょう。
 
@@ -137,13 +137,17 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 ```html
 <input v-on:keyup.enter="alert" />
 ```
-```
-methods: {
-  alert() {
-    alert('keyup')
-  }
+
+```vue
+<script setup>
+// ...省略
+
+function alert() {
+  alert('keyup')
 }
+</script>
 ```
+
 `keyup` イベントにキーコード `enter` を `.`（ドット）でつなげて、`alert` メソッドを記述しました。`input` タグにフォーカスし、キーボードの `Enter` を押すと `alert` メソッドが実行されます。また、`click` イベントと同様に `keyup` イベントも `v-on` ディレクティブの省略が可能です。
 
 ```html
@@ -220,9 +224,10 @@ methods: {
   tabindex="0"
 >
 ```
+
 ## 今回使用したディレクティブ
 
-今回の実装では 2 つのディレクティブを使用しました。
+今回の実装では以下のディレクティブを使用しました。
 
 - `v-on:click`（`@click`）を使用したイベントリスナーの登録
 - `v-on:keyup`（`@keyup`）を使用したイベントリスナーの登録
