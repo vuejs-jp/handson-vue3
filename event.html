@@ -8,7 +8,7 @@
     <link rel="icon" href="/favicon-32.png">
     <meta name="description" content="Vue.js-jp Vue3 Hands-on">
     
-    <link rel="preload" href="/assets/css/0.styles.84741abc.css" as="style"><link rel="preload" href="/assets/js/app.c9cc289e.js" as="script"><link rel="preload" href="/assets/js/2.e6839c40.js" as="script"><link rel="preload" href="/assets/js/11.ccf58307.js" as="script"><link rel="prefetch" href="/assets/js/10.f85d626b.js"><link rel="prefetch" href="/assets/js/12.93323aa1.js"><link rel="prefetch" href="/assets/js/13.e54ff76e.js"><link rel="prefetch" href="/assets/js/14.b35fe86d.js"><link rel="prefetch" href="/assets/js/15.ff6c85d8.js"><link rel="prefetch" href="/assets/js/3.883a7fcb.js"><link rel="prefetch" href="/assets/js/4.884eced7.js"><link rel="prefetch" href="/assets/js/5.302a207c.js"><link rel="prefetch" href="/assets/js/6.cd89c300.js"><link rel="prefetch" href="/assets/js/7.6fbba82e.js"><link rel="prefetch" href="/assets/js/8.181592c0.js"><link rel="prefetch" href="/assets/js/9.4e220c51.js">
+    <link rel="preload" href="/assets/css/0.styles.84741abc.css" as="style"><link rel="preload" href="/assets/js/app.c125864f.js" as="script"><link rel="preload" href="/assets/js/2.e6839c40.js" as="script"><link rel="preload" href="/assets/js/11.a66a09f8.js" as="script"><link rel="prefetch" href="/assets/js/10.f85d626b.js"><link rel="prefetch" href="/assets/js/12.93323aa1.js"><link rel="prefetch" href="/assets/js/13.3d3fe490.js"><link rel="prefetch" href="/assets/js/14.e08bf68d.js"><link rel="prefetch" href="/assets/js/15.6bab3ffa.js"><link rel="prefetch" href="/assets/js/3.883a7fcb.js"><link rel="prefetch" href="/assets/js/4.884eced7.js"><link rel="prefetch" href="/assets/js/5.302a207c.js"><link rel="prefetch" href="/assets/js/6.874692ea.js"><link rel="prefetch" href="/assets/js/7.6fbba82e.js"><link rel="prefetch" href="/assets/js/8.181592c0.js"><link rel="prefetch" href="/assets/js/9.4e220c51.js">
     <link rel="stylesheet" href="/assets/css/0.styles.84741abc.css">
   </head>
   <body>
@@ -97,64 +97,58 @@
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></div><h2 id="_1-選択状態を表す-style-を用意する"><a href="#_1-選択状態を表す-style-を用意する" class="header-anchor">#</a> 1. 選択状態を表す style を用意する</h2> <p>まず、選択中の商品に適用する style を用意しましょう。<code>&lt;style&gt;</code> タグに以下の style を追加します。</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.selected-item</span> <span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> #e3f2fd<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p><code>.selected-item</code> という style を追加しました。選択中の商品は背景の色を変化させたいため、<code>background-color</code> プロパティを定義しています。</p> <h2 id="_2-クリックすると商品を-選択状態-にする"><a href="#_2-クリックすると商品を-選択状態-にする" class="header-anchor">#</a> 2. クリックすると商品を&quot;選択状態&quot;にする</h2> <p>次は、クリックして商品を&quot;選択状態&quot;にする部分の実装です。</p> <h3 id="選択状態-を表すプロパティの追加"><a href="#選択状態-を表すプロパティの追加" class="header-anchor">#</a> &quot;選択状態&quot;を表すプロパティの追加</h3> <p>以前、<code>data</code> の <code>items</code> に、&quot;売り切れかどうか&quot;という情報を表す <code>soldOut</code> というプロパティを追加しました。今回も同様に、&quot;選択状態か&quot;という情報をプロパティとして追加しましょう。</p> <p><code>selected</code> というプロパティを追加し、値を <code>true</code>（選択状態）/ <code>false</code>（非選択状態）とすることで、選択しているかどうか判別できるようにします。</p> <p>初期状態は何も選択されていない状態であるため、すべての商品を <code>selected: false</code> にしておきましょう。</p> <div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
-  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      <span class="token literal-property property">items</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">description</span><span class="token operator">:</span>
-            <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'あの日夢見たホットケーキ'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">description</span><span class="token operator">:</span>
-            <span class="token string">'子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1180</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item2.jpg'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'HOP WTR'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">description</span><span class="token operator">:</span>
-            <span class="token string">'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item3.jpg'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'チーズフレンチフライ'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">description</span><span class="token operator">:</span>
-            <span class="token string">'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">670</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item4.jpg'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
+</code></pre></div><p><code>.selected-item</code> という style を追加しました。選択中の商品は背景の色を変化させたいため、<code>background-color</code> プロパティを定義しています。</p> <h2 id="_2-クリックすると商品を-選択状態-にする"><a href="#_2-クリックすると商品を-選択状態-にする" class="header-anchor">#</a> 2. クリックすると商品を&quot;選択状態&quot;にする</h2> <p>次は、クリックして商品を&quot;選択状態&quot;にする部分の実装です。</p> <h3 id="選択状態-を表すプロパティの追加"><a href="#選択状態-を表すプロパティの追加" class="header-anchor">#</a> &quot;選択状態&quot;を表すプロパティの追加</h3> <p>以前 <code>items</code> に、&quot;売り切れかどうか&quot;という情報を表す <code>soldOut</code> というプロパティを追加しました。今回も同様に、&quot;選択状態か&quot;という情報をプロパティとして追加しましょう。</p> <p><code>selected</code> というプロパティを追加し、値を <code>true</code>（選択状態）/ <code>false</code>（非選択状態）とすることで、選択しているかどうか判別できるようにします。</p> <p>初期状態は何も選択されていない状態であるため、すべての商品を <code>selected: false</code> にしておきましょう。</p> <div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ref <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">description</span><span class="token operator">:</span>
+      <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token comment">/**
-     * 価格を3桁ごとのカンマ付きで返す
-     * @param {number} price 価格
-     */</span>
-    <span class="token function">pricePrefix</span><span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> price<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'あの日夢見たホットケーキ'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">description</span><span class="token operator">:</span>
+      <span class="token string">'子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">1180</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item2.jpg'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'HOP WTR'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">description</span><span class="token operator">:</span>
+      <span class="token string">'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item3.jpg'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'チーズフレンチフライ'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">description</span><span class="token operator">:</span>
+      <span class="token string">'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">670</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item4.jpg'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">soldOut</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">selected</span><span class="token operator">:</span> <span class="token boolean">false</span>
   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">/**
+ * 価格を3桁ごとのカンマ付きで返す
+ * @param {number} price 価格
+ */</span>
+<span class="token keyword">function</span> <span class="token function">pricePrefix</span><span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> price<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="v-on-の書き方"><a href="#v-on-の書き方" class="header-anchor">#</a> v-on の書き方</h3> <p>商品をクリックした時に <code>selected</code> プロパティの値を <code>true</code> にすれば、「クリックして選択する」という実装が可能になります。</p> <p>商品に対して <code>click</code> イベントのイベントリスナーを実装していきましょう。</p> <div class="custom-block tip"><p class="custom-block-title">ヒント</p> <p>ボタンがクリックされた、フォームに入力された、スクロールしたなど、Web ページ上でのさまざまな動きのことをイベントと言います。イベントが発生した時に実行される処理をイベントリスナーといい、イベントが発生する要素に対して設定します。</p></div> <p>Vue.js でイベントリスナーを登録するには <code>v-on</code> というディレクティブを使用し、以下のように記述します。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name"><span class="token namespace">v-on:</span>click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>イベント時の処理<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>***<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p>上記は <code>&lt;button&gt;</code> 要素をクリックした時に実行される <code>click</code> イベントを設定しています。<code>v-on:click=&quot; &quot;</code> の <code>&quot; &quot;</code> の中に、<code>click</code> イベントが発生した時に実行したい処理を記述できます。</p> <p><code>click</code> のほかにも、スクロールした時に実行される <code>scroll</code> イベントや、フォームが送信された時に実行される <code>submit</code> イベントなども用意されています。</p> <p><code>v-on:click</code> は、<code>@click</code> と省略して記述できます。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>イベント時の処理<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>***<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
@@ -218,11 +212,13 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>商品要素に対して、<code>:class</code> を追加しました。処理の中身を確認していきましょう。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;{ 'selected-item': item.selected }&quot;</span>
 </code></pre></div><p>上記のように、適用したい <code>class</code> を条件式と一緒に記述することで、その条件式が <code>true</code> の場合のみ該当の <code>class</code> を適用できます。</p> <p><code>:class=&quot;{ 'selected-item': item.selected }&quot;</code> の中の <code>selected-item</code> が、1 で作成した style のクラス名です。<code>selected-item</code> は、<code>item.selected</code> が <code>true</code> の場合のみ適用されます。<code>item.selected</code> が <code>true</code> の場合とは、商品が選択されている状態を示しています。</p> <p>これで、商品が選択状態の時に背景の色が変化するようになりました。</p> <hr> <div class="custom-block tip"><p class="custom-block-title">+1 チャレンジ</p> <p>ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。</p></div> <h2 id="キー修飾子を使ったキーボードイベントの使い方"><a href="#キー修飾子を使ったキーボードイベントの使い方" class="header-anchor">#</a> キー修飾子を使ったキーボードイベントの使い方</h2> <p>マウスクリックではなくキーボードの操作で商品の選択を行うことがあるかもしれません。そのような時には <code>v-on</code> ディレクティブに対してキー修飾子を追加すると、キーボードイベントを使用できます。</p> <h3 id="キー修飾子の書き方"><a href="#キー修飾子の書き方" class="header-anchor">#</a> キー修飾子の書き方</h3> <p><code>v-on</code> ディレクティブにキーボードイベントを追加するためには <code>keyup</code> イベントを設定します。<code>keyup</code> イベントには使用したいキーコードを <code>.</code>（ドット）でつなげて、実行したい処理を記述します。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name"><span class="token namespace">v-on:</span>keyup.enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
-</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>methods: {
-  alert() {
-    alert('keyup')
-  }
-}
+</code></pre></div><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token comment">// ...省略</span>
+
+<span class="token keyword">function</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'keyup'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p><code>keyup</code> イベントにキーコード <code>enter</code> を <code>.</code>（ドット）でつなげて、<code>alert</code> メソッドを記述しました。<code>input</code> タグにフォーカスし、キーボードの <code>Enter</code> を押すと <code>alert</code> メソッドが実行されます。また、<code>click</code> イベントと同様に <code>keyup</code> イベントも <code>v-on</code> ディレクティブの省略が可能です。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">@keyup.enter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>alert<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
 </code></pre></div><h3 id="使用可能なキーコード"><a href="#使用可能なキーコード" class="header-anchor">#</a> 使用可能なキーコード</h3> <p><code>enter</code> 以外で Vue.js から提供されているキーコードの一覧は下記の通りです。</p> <ul><li>.enter</li> <li>.tab</li> <li>.delete ( “Delete” と “Backspace” の両方がキャプチャされています。 )</li> <li>.esc</li> <li>.space</li> <li>.up</li> <li>.down</li> <li>.left</li> <li>.right</li></ul> <h3 id="キー修飾子の実装"><a href="#キー修飾子の実装" class="header-anchor">#</a> キー修飾子の実装</h3> <p>現在 <code>click</code> イベントが設定されている処理を <code>keyup</code> イベントで置き換えてみます。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>header<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -264,11 +260,11 @@
   <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.selected = !item.selected<span class="token punctuation">&quot;</span></span>
   <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>0<span class="token punctuation">&quot;</span></span>
 <span class="token punctuation">&gt;</span></span>
-</code></pre></div><h2 id="今回使用したディレクティブ"><a href="#今回使用したディレクティブ" class="header-anchor">#</a> 今回使用したディレクティブ</h2> <p>今回の実装では 2 つのディレクティブを使用しました。</p> <ul><li><code>v-on:click</code>（<code>@click</code>）を使用したイベントリスナーの登録</li> <li><code>v-on:keyup</code>（<code>@keyup</code>）を使用したイベントリスナーの登録</li> <li><code>v-bind:class</code>（<code>:class</code>）を使用した属性の操作</li></ul> <p>このように、複数のディレクティブや処理を組み合わせて、さまざまな動きを実現できます。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><h2 id="今回使用したディレクティブ"><a href="#今回使用したディレクティブ" class="header-anchor">#</a> 今回使用したディレクティブ</h2> <p>今回の実装では以下のディレクティブを使用しました。</p> <ul><li><code>v-on:click</code>（<code>@click</code>）を使用したイベントリスナーの登録</li> <li><code>v-on:keyup</code>（<code>@keyup</code>）を使用したイベントリスナーの登録</li> <li><code>v-bind:class</code>（<code>:class</code>）を使用した属性の操作</li></ul> <p>このように、複数のディレクティブや処理を組み合わせて、さまざまな動きを実現できます。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/methods.html" class="prev">
         methods で価格にカンマを入れる
       </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.c9cc289e.js" defer></script><script src="/assets/js/2.e6839c40.js" defer></script><script src="/assets/js/11.ccf58307.js" defer></script>
+    <script src="/assets/js/app.c125864f.js" defer></script><script src="/assets/js/2.e6839c40.js" defer></script><script src="/assets/js/11.a66a09f8.js" defer></script>
   </body>
 </html>
