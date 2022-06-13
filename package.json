@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "dev:event": "npm run dev -w=event",
+    "dev:overview": "npm run dev -w=overview",
     "dev:v-for": "npm run dev -w=v-for",
     "build": "vite build",
     "preview": "vite preview --port 5050",
