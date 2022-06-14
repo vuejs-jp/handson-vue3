@@ -50,25 +50,25 @@ const tasks = ref([
 
 <<< @/../examples/v-for/src/App.vue#script{4-37}
 
-次に、 `v-for` を用いて、各商品の「名前（name）」、「説明（description）」、「価格（price）」、「画像（image）」を繰り返し表示します。
-
-同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")を参照してください。  
+次に、 `v-for` を用いて、各商品の「名前（name）」、「説明（description）」、「価格（price）」、「画像（image）」を繰り返し表示します。 
 
 変更前
 
-<<< @/../examples/rendering/src/App.vue#template{7-16}
+<<< @/../examples/rendering/src/App.vue#template{9-20}
 
 変更後
 
 <<< @/../examples/v-for/src/App.vue#template{9-24}
 
-![複数の商品をレンダリングの出力例](./images/v_for_result2.png)
-
-これで、商品を複数レンダリングできました。
+同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")を参照してください。 
 
 ::: tip ヒント
 v-for を使った template タグは DOM 要素としてレンダリングされません。
 :::
+
+このように `v-for` を使うことで、以下のように商品を複数レンダリングできるようになりました。
+
+![複数の商品をレンダリングの出力例](./images/v_for_result2.png)
 
 ---
 
@@ -118,11 +118,11 @@ const tasks = ref([
 ```
 
 ```js
-const tasks = ref([
-  { taskA: 'タスクA' },
-  { taskB: 'タスクB' },
-  { taskC: 'タスクC' },
-])
+const tasks = ref({
+    taskA: 'タスクA',
+    taskB: 'タスクB',
+    taskC: 'タスクC',
+})
 ```
 
 出力例
@@ -143,11 +143,11 @@ const tasks = ref([
 ```
 
 ```js
-const tasks = ref([
-  { taskA: 'タスクA' },
-  { taskB: 'タスクB' },
-  { taskC: 'タスクC' },
-])
+const tasks = ref({
+    taskA: 'タスクA',
+    taskB: 'タスクB',
+    taskC: 'タスクC',
+})
 ```
 
 出力例
