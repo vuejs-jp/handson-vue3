@@ -8,7 +8,7 @@
     <link rel="icon" href="/favicon-32.png">
     <meta name="description" content="Vue.js-jp Vue3 Hands-on">
     
-    <link rel="preload" href="/assets/css/0.styles.84741abc.css" as="style"><link rel="preload" href="/assets/js/app.c125864f.js" as="script"><link rel="preload" href="/assets/js/2.e6839c40.js" as="script"><link rel="preload" href="/assets/js/6.874692ea.js" as="script"><link rel="prefetch" href="/assets/js/10.f85d626b.js"><link rel="prefetch" href="/assets/js/11.a66a09f8.js"><link rel="prefetch" href="/assets/js/12.93323aa1.js"><link rel="prefetch" href="/assets/js/13.3d3fe490.js"><link rel="prefetch" href="/assets/js/14.e08bf68d.js"><link rel="prefetch" href="/assets/js/15.6bab3ffa.js"><link rel="prefetch" href="/assets/js/3.883a7fcb.js"><link rel="prefetch" href="/assets/js/4.884eced7.js"><link rel="prefetch" href="/assets/js/5.302a207c.js"><link rel="prefetch" href="/assets/js/7.6fbba82e.js"><link rel="prefetch" href="/assets/js/8.181592c0.js"><link rel="prefetch" href="/assets/js/9.4e220c51.js">
+    <link rel="preload" href="/assets/css/0.styles.84741abc.css" as="style"><link rel="preload" href="/assets/js/app.ccd23f87.js" as="script"><link rel="preload" href="/assets/js/2.e6839c40.js" as="script"><link rel="preload" href="/assets/js/6.c5d4a4af.js" as="script"><link rel="prefetch" href="/assets/js/10.f85d626b.js"><link rel="prefetch" href="/assets/js/11.a66a09f8.js"><link rel="prefetch" href="/assets/js/12.93323aa1.js"><link rel="prefetch" href="/assets/js/13.6c86d5cb.js"><link rel="prefetch" href="/assets/js/14.e08bf68d.js"><link rel="prefetch" href="/assets/js/15.6bab3ffa.js"><link rel="prefetch" href="/assets/js/3.883a7fcb.js"><link rel="prefetch" href="/assets/js/4.884eced7.js"><link rel="prefetch" href="/assets/js/5.302a207c.js"><link rel="prefetch" href="/assets/js/7.6fbba82e.js"><link rel="prefetch" href="/assets/js/8.181592c0.js"><link rel="prefetch" href="/assets/js/9.4e220c51.js">
     <link rel="stylesheet" href="/assets/css/0.styles.84741abc.css">
   </head>
   <body>
@@ -29,21 +29,16 @@
 </code></pre></div><p>出力例</p> <div class="language- extra-class"><pre class="language-text"><code>・タスクA
 ・タスクB
 ・タスクC
-</code></pre></div><p><img src="/assets/img/v_for_result1.806d512f.png" alt="v-for 構文の出力例"></p> <h2 id="複数の商品をレンダリング"><a href="#複数の商品をレンダリング" class="header-anchor">#</a> 複数の商品をレンダリング</h2> <p>プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。<code>src/App.vue</code> ファイルを次のように変更します。</p> <p>まずは、 data に表示したい商品を設定します。 <code>item</code> から <code>items</code> に変更し商品のオブジェクトを持つ配列にします。</p> <p>変更前</p> <div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
-  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      <span class="token literal-property property">item</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">description</span><span class="token operator">:</span>
-          <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/v_for_result1.806d512f.png" alt="v-for 構文の出力例"></p> <h2 id="複数の商品をレンダリング"><a href="#複数の商品をレンダリング" class="header-anchor">#</a> 複数の商品をレンダリング</h2> <p>プロジェクトのファイルを書き換えて、複数の商品をレンダリングしていきましょう。<code>src/App.vue</code> ファイルを次のように変更します。</p> <p>まずは、 data に表示したい商品を設定します。 <code>item</code> から <code>items</code> に変更し商品のオブジェクトを持つ配列にします。</p> <p>変更前</p> <div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ref <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">const</span> item <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'アボカドディップバケット'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">description</span><span class="token operator">:</span>
+      <span class="token string">'刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">480</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'/images/item1.jpg'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></div><p>変更後</p> <div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
 <span class="token keyword">import</span> <span class="token punctuation">{</span> ref <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
 
@@ -187,6 +182,6 @@
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.c125864f.js" defer></script><script src="/assets/js/2.e6839c40.js" defer></script><script src="/assets/js/6.874692ea.js" defer></script>
+    <script src="/assets/js/app.ccd23f87.js" defer></script><script src="/assets/js/2.e6839c40.js" defer></script><script src="/assets/js/6.c5d4a4af.js" defer></script>
   </body>
 </html>
