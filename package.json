@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "scripts": {
     "dev": "vite",
+    "dev:rendering": "npm run dev -w=rendering",
+    "dev:event": "npm run dev -w=event",
+    "dev:overview": "npm run dev -w=overview",
     "dev:v-for": "npm run dev -w=v-for",
     "build": "vite build",
     "preview": "vite preview --port 5050",
