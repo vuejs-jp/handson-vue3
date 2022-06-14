@@ -9,7 +9,7 @@
 ## Mustache 構文
 
 ::: v-pre
-Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキストをレンダリングできます。以下の例では data 部分の message を表示しています。message の内容が変更されると、それに応じて表示も更新されます。
+Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキストをレンダリングできます。以下の例では script 部分の message を表示しています。message の内容が変更されると、それに応じて表示も更新されます。
 :::
 
 ```vue
@@ -17,14 +17,9 @@ Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキスト�
   <div>{{ message }}</div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      message: 'Welcome to Vue Handson!'
-    }
-  }
-}
+<script setup>
+import { ref } from 'vue'
+const message = ref('Welcome to Vue Handson!')
 </script>
 ```
 
@@ -84,23 +79,17 @@ mustache とは口髭を指す英語で、二重中括弧 `{{ }}` が口髭の�
 商品の内容を変更し、表示に反映されることを確認してみましょう。商品名 `name`、概要文 `description`、価格 `price` をそれぞれ適当に変更します。
 
 ```diff
-<script>
- export default {
-  name: "App",
-  data() {
-    return {
-      item: {
--       name: "アボカドディップバケット",
--       description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
--       price: 480,
-+       name: "アボカドソースバケット",
-+       description: "刻んだ野菜をアボカドと混ぜ、優しい味のソースに。こんがり焼いたバゲットとお召し上がりください。",
-+       price: 320,
-        image: "/images/item1.jpg"
-      }
-    }
-  }
-}
+<script setup>
+import { ref } from 'vue'
+const item = ref({
+-  name: "アボカドディップバケット",
+-  description: "刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。",
+-  price: 480,
++  name: "アボカドソースバケット",
++  description: "刻んだ野菜をアボカドと混ぜ、優しい味のソースに。こんがり焼いたバゲットとお召し上がりください。",
++  price: 320,
+   image: "/images/item1.jpg"
+})
 </script>
 ```
 

@@ -24,21 +24,16 @@
 // endregion template
 
 // #region script
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      item: {
-        name: 'アボカドディップバケット',
-        description:
-          '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-        price: 480,
-        image: '/images/item1.jpg'
-      }
-    }
-  }
-}
+<script setup>
+import { ref } from 'vue'
+const item = ref({
+    id: 1,
+    name: 'アボカドディップバケット',
+    description:
+      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+    price: 480,
+    image: '/images/item1.jpg'
+})
 </script>
 // #endregion script
 
