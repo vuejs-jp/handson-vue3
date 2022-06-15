@@ -4,7 +4,7 @@
 
 - エディタ: Visual Studio Code（以下、VS Code）, Volar（VS Code の拡張機能）
 - 開発言語: JavaScript
-- 利用するツール: Node.js, Vue CLI
+- 利用するツール: Node.js, create-vue, Vite
 
 ## ターミナルの準備
 
