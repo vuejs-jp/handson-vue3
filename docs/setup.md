@@ -4,7 +4,7 @@
 
 - エディタ: Visual Studio Code（以下、VS Code）, Volar（VS Code の拡張機能）
 - 開発言語: JavaScript
-- 利用するツール: Node.js, Vue CLI
+- 利用するツール: Node.js
 
 ## ターミナルの準備
 
@@ -38,7 +38,7 @@ node -v
 バージョン番号が表示されたら、Node.js はインストールされていますので、セットアップの手順は飛ばして構いません。
 
 ```sh
-v16.14.0
+v16.15.1
 ```
 
 ::: warning 注意
@@ -69,34 +69,6 @@ LTS は、Long-term Support の略で、長期間サポートされる安定バ�
 - [Volta](https://volta.sh/)
 - [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
-## Vue CLI のインストール
-
-Vue.js を使った開発を始めるにはいくつかの方法があります。ここでは、最も広く普及しており、かつ簡単な方法である [Vue CLI](https://cli.vuejs.org/) を利用した開発方法を紹介します（[Vite](https://vitejs.dev/) を利用する方法もありますがここでは割愛します）。
-
-ターミナルから以下のコマンドを実行して Vue CLI をインストールします。
-
-```sh
-npm install -g @vue/cli
-```
-
-Vue CLI が正しくインストールされた場合は以下のコマンドでバージョン番号を確認できます。
-
-```sh
-vue --version
-```
-
-バージョン番号が表示されたら、Vue CLI がインストールされています。
-
-```sh
-@vue/cli 5.0.1
-```
-
-この方法は、npm の環境に Vue CLI がグローバルインストールされます。グローバルインストールをせずに、`npx` を利用する方法もあります。詳細は [Vue CLI 公式ドキュメント](https://cli.vuejs.org/guide/cli-service.html#using-the-binary) を参照してください。
-
-::: tip ヒント
-グローバルインストールとは、コンピューター上のどのディレクトリからでもコマンド（この場合は Vue CLI のこと）を使えるようにすることです。
-:::
-
 ## VS Code のセットアップ
 
 このハンズオンでは、VS Code を使って開発していきます。
@@ -115,4 +87,4 @@ VS Code を既にお使いの場合はこのセクションは飛ばしてくだ
 
 Volar は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Volar の GitHub リポジトリ](https://github.com/johnsoncodehk/volar/) を参照してください。
 
-Volar をインストールするには、VS Code が入っているマシンで、 [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) にアクセスし Install ボタンをクリックします。
+Volar をインストールするには、VS Code が入っているマシンで、 [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Vue.volar) にアクセスし Install ボタンをクリックします。
