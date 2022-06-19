@@ -1,66 +1,73 @@
 # プロジェクトの作成
 
-## Vue CLI でのプロジェクト新規作成
+## create-vue でのプロジェクト新規作成
 
-Vue CLI を使って生成されるアプリケーションをプロジェクトと呼びます。ここではプロジェクトを新しく作成する方法を紹介します。
+[create-vue](https://github.com/vuejs/create-vue) を使って生成されるアプリケーションをプロジェクトと呼びます。ここではプロジェクトを新しく作成してみましょう。
 
-::: tip 情報
-Vue CLI は現在メンテナンスモードとなっており、今後は新しいプロジェクト作成ツールである [create-vue](https://github.com/vuejs/create-vue) の利用が推奨される予定です。
-:::
+1. アプリケーションを作成するディレクトリを決めておきます（この例では `vue3-lab` としています）。`create-vue` でプロジェクトを作成すると、決めたディレクトリの配下にファイル群が生成されます。
 
-1. アプリケーションを作成するディレクトリを決めておきます（この例では `vue3-lab` としています）。Vue CLI でプロジェクトを作成すると、決めたディレクトリの配下にファイル群が生成されます。
+1. ターミナルで、プロジェクトのディレクトリを作成する親ディレクトリに移動します。もし、ホームディレクトリの直下にプロジェクトを作成するのであれば、ターミナルで以下のコマンドを使って移動しておきます。
 
-2. ターミナルで、プロジェクトのディレクトリを作成する親ディレクトリに移動します。もし、ホームディレクトリの直下にプロジェクトを作成するのであれば、ターミナルで以下のコマンドを使って移動しておきます。
+    ```sh
+    cd ~
+    ```
 
-   ```sh
-   cd ~
-   ```
+    ::: tip ヒント
+    ホームディレクトリとは、ユーザー固有のファイルやフォルダを保存できる領域であり、通常ユーザー名でディレクトリが作成されています。
+    :::
 
-   ::: tip ヒント
-   ホームディレクトリとは、ユーザー固有のファイルやフォルダを保存できる領域であり、通常ユーザー名でディレクトリが作成されています。
-   :::
+1. `create-vue` でプロジェクトを新規作成します。ターミナルで以下のコマンドを実行します（コマンド実行後はそのまま待機しておいてください）。プロジェクトのディレクトリは `create-vue` によって自動的に作成されます。
 
-3. Vue CLI でプロジェクトを新規作成します。ターミナルで以下のコマンドを実行します（コマンド実行後はそのまま待機しておいてください）。プロジェクトのディレクトリは Vue CLI によって自動的に作成されます。
+    ```sh
+    npm init vue@3 vue3-lab
+    ```
 
-   ```sh
-   vue create vue3-lab
-   ```
+1. コマンドを実行すると、ターミナルにいくつかの質問が表示されます。このハンズオンでは以下のように選択します。
 
-   ::: tip ヒント
-   このハンズオンでは `Vue CLI v5.0.1` を使用して説明しています。
-   :::
+    ```
+    Need to install the following packages:
+      create-vue@3
+    Ok to proceed? (y) -> y 
+    ```
 
-4. コマンドを実行すると、ターミナルに `Please pick a preset` と表示されます。このハンズオンでは以下のように `Default ([Vue 3] babel, eslint) ` を選択します。
+    ::: tip ヒント
+    y を入力し、enter / return キーで確定ができます。
+    :::
 
-   ```sh
-   Vue CLI v5.0.1
-   ? Please pick a preset: (Use arrow keys)
-   ❯ Default ([Vue 3] babel, eslint)
-     Default ([Vue 2] babel, eslint)
-     Manually select features
-   ```
+    ```
+    Vue.js - The Progressive JavaScript Framework
+      Add TypeScript? … No / Yes -> No
+      Add JSX Support? … No / Yes -> No
+      Add Vue Router for Single Page Application development? … No / Yes -> No
+      Add Pinia for state management? … No / Yes -> No
+      Add Vitest for Unit Testing? … No / Yes -> No
+      Add Cypress for both Unit and End-to-End testing? … No / Yes -> No
+      Add ESLint for code quality? … No / Yes -> No
+    ```
 
-   ::: tip ヒント
-   矢印キーで移動、return キーで確定ができます。
-   :::
-
-   ::: warning 注意
-   お使いの環境によっては、パッケージマネージャーを選択する画面になることがあります。このハンズオンでは、npm を前提に説明を進めます。
-   :::
+    ::: tip ヒント
+    矢印キーで移動、enter / return キーで確定ができます。
+    :::
 
 ## プロジェクトの起動
 
-1. `vue create` の処理が完了したら、作成したプロジェクトのディレクトリに移動し（この例では `vue3-lab`）、プロジェクトを起動します。
+作成したプロジェクトを起動してみましょう。プロジェクトの起動には外部パッケージをインストールしてから起動コマンドを実行します。
 
-   ```sh
-   cd vue3-lab
-   npm run serve
-   ```
+1. 作成したプロジェクトのディレクトリに移動し（この例では `vue3-lab`）、`npm install` で外部パッケージをインストールします。
 
-1. `npm run serve` の実行が完了したら、ブラウザで `http://localhost:8080/` にアクセスします。
+    ```sh
+    cd vue3-lab
+    npm install
+    ```
 
-1. ブラウザに「Welcome to Your Vue.js App」等と表示されていれば、無事にプロジェクトの作成が成功しています。
+1. `npm install` の処理が完了したら `npm run dev` でプロジェクトを起動します。
 
-   ![vue-app](./images/vue-app.png)
+    ```sh
+    npm run dev
+    ```
 
-   `vue create` コマンドの詳細は [Creating a Project \| Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html) を確認してください。
+1. `npm run dev` の実行が完了したら、ブラウザで `http://localhost:3000/` にアクセスします。
+
+1. ブラウザに「You did it!」等と表示されていれば、無事にプロジェクトの作成が成功しています。
+
+   ![Vite App](./images/vite-app.png)

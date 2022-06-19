@@ -62,15 +62,11 @@ body {
   margin-top: 20px;
 }
 
-.item > div.description > h3, .item > div.description > p {
+.item > div.description > p {
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 18px;
   line-height: 25px;
-}
-
-.item > div.description > h3 {
-  font-weight: bold;
 }
 
 .item > div.description > span {
@@ -85,5 +81,5 @@ body {
 }
 
 .selected-item {
-  background: #E3F2FD;
+  background: #e3f2fd;
 }
