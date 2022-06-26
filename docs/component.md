@@ -32,7 +32,7 @@ src
 次にいよいよモジュールを切り出す作業に入ります。以下のハイライト部分を `Card.vue` に移します。また、`pricePrefix()` や関連する `style` も一緒に移します。
 
 <<< @/../examples/event/src/App.vue#template{17-26}
-<<< @/../examples/event/src/App.vue#script{50-58}
+<<< @/../examples/event/src/App.vue#script{47-53}
 <<< @/../examples/event/src/App.vue#style{54-81}
 
 移し替えて出来上がった `Card.vue` は下記のようになります。

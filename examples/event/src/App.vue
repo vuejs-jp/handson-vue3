@@ -88,6 +88,7 @@ function pricePrefix(price) {
 </script>
 // endregion script
 
+// region style
 <style>
 body {
   font-family: sans-serif;
@@ -174,3 +175,4 @@ body {
   background: #e3f2fd;
 }
 </style>
+// endregion style

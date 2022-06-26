@@ -9,16 +9,10 @@
     <p>{{ description }}</p>
     <span>¥<span class="price">{{ pricePrefix(price) }}</span></span>
   </div>
-  <button type="button" @click="() => emit('sold-out',id)">売り切れ</button>
 </template>
 
 <script setup>
 defineProps({
-  id: {
-    type: Number,
-    default: null,
-    required: false
-  },
   name: {
     type: String,
     default: '',
@@ -48,8 +42,6 @@ defineProps({
 function pricePrefix(price) {
   return price.toLocaleString()
 }
-
-const emit = defineEmits(['sold-out'])
 </script>
 
 <style>

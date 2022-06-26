@@ -20,8 +20,7 @@
           :image="item.image"
           :name="item.name"
           :description="item.description"
-          :price="item.price"
-          @sold-out="changeSoldOut"/>
+          :price="item.price"/>
       </div>
     </template>
   </main>
@@ -76,10 +75,6 @@ const items = ref([
   }
 ])
 
-function changeSoldOut(id) {
-  const pickElm = items.value.find(item => item.id == id)
-  pickElm.soldOut = true
-}
 </script>
 // endregion script
 
@@ -136,35 +131,6 @@ body {
   transition: 0.2s transform ease-out;
   transform: scale(1.05);
 }
-
-/* .item > div.thumbnail > img {
-  width: 100%;
-  height: calc(100%);
-  object-fit: cover;
-}
-
-.item > div.description {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.item > div.description > p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 18px;
-  line-height: 25px;
-}
-
-.item > div.description > span {
-  display: block;
-  margin-top: 10px;
-  font-size: 20px;
-}
-
-.item > div.description > span > .price {
-  font-size: 28px;
-  font-weight: bold;
-} */
 
 .selected-item {
   background: #e3f2fd;
