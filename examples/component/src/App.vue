@@ -15,16 +15,13 @@
         class="item"
         :class="{ 'selected-item': item.selected }"
         @click="item.selected = !item.selected">
-        <div class="thumbnail">
-          <img
-            :src="item.image"
-            alt="">
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
-        </div>
+        <Card
+          :id="item.id"
+          :image="item.image"
+          :name="item.name"
+          :description="item.description"
+          :price="item.price"
+          @sold-out="changeSoldOut"/>
       </div>
     </template>
   </main>
@@ -32,68 +29,61 @@
 // endregion template
 
 // region script
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'アボカドディップバケット',
-          description:
-            '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-          price: 480,
-          image: '/images/item1.jpg',
-          soldOut: false,
-          selected: false
-        },
-        {
-          id: 2,
-          name: 'あの日夢見たホットケーキ',
-          description:
-            '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
-          price: 1180,
-          image: '/images/item2.jpg',
-          soldOut: false,
-          selected: false
-        },
-        {
-          id: 3,
-          name: 'HOP WTR',
-          description:
-            'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
-          price: 320,
-          image: '/images/item3.jpg',
-          soldOut: true,
-          selected: false
-        },
-        {
-          id: 4,
-          name: 'チーズフレンチフライ',
-          description:
-            'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
-          price: 670,
-          image: '/images/item4.jpg',
-          soldOut: false,
-          selected: false
-        }
-      ]
-    }
+<script setup>
+import { ref } from 'vue'
+import Card from './components/Card.vue'
+
+const items = ref([
+  {
+    id: 1,
+    name: 'アボカドディップバケット',
+    description:
+      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+    price: 480,
+    image: '/images/item1.jpg',
+    soldOut: false,
+    selected: false
   },
-  methods: {
-    /**
-     * 価格を3桁ごとのカンマ付きで返す
-     * @param {number} price 価格
-     */
-    pricePrefix(price) {
-      return price.toLocaleString()
-    }
+  {
+    id: 2,
+    name: 'あの日夢見たホットケーキ',
+    description:
+      '子供のころに食べたかった、あのホットケーキを再現しました。素朴でどこか懐かしい味をどうぞ。',
+    price: 1180,
+    image: '/images/item2.jpg',
+    soldOut: false,
+    selected: false
+  },
+  {
+    id: 3,
+    name: 'HOP WTR',
+    description:
+      'ロサンゼルス生まれのスパークリングウォーター。ノンカロリー、ノンアルコールの新感覚飲料です。',
+    price: 320,
+    image: '/images/item3.jpg',
+    soldOut: true,
+    selected: false
+  },
+  {
+    id: 4,
+    name: 'チーズフレンチフライ',
+    description:
+      'イタリア産チーズをたっぷりかけたアツアツのフレンチフライ。みんな大好きな一品です。',
+    price: 670,
+    image: '/images/item4.jpg',
+    soldOut: false,
+    selected: false
   }
+])
+
+function changeSoldOut(id) {
+  const pickElm = items.value.find(item => item.id == id)
+  pickElm.soldOut = true
 }
 </script>
 // endregion script
 
+// region style
 <style>
 body {
   font-family: sans-serif;
@@ -147,7 +137,7 @@ body {
   transform: scale(1.05);
 }
 
-.item > div.thumbnail > img {
+/* .item > div.thumbnail > img {
   width: 100%;
   height: calc(100%);
   object-fit: cover;
@@ -174,9 +164,10 @@ body {
 .item > div.description > span > .price {
   font-size: 28px;
   font-weight: bold;
-}
+} */
 
 .selected-item {
   background: #e3f2fd;
 }
 </style>
+// endregion style
