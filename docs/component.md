@@ -2,7 +2,7 @@
 
 ## コンポーネントとは
 
-Vue.js ではテンプレート、ロジック、そしてスタイルを 1 つのファイルにまとめることで、単一ファイルコンポーネント（ `SFC` ）として利用することができます。`SFC` は `<script setup>` 内で `import` することで、テンプレートで直接使用することが可能となります。
+Vue.js ではテンプレート、ロジック、そしてスタイルを 1 つのファイルにまとめることで、単一ファイルコンポーネント（`SFC`）として利用することができます。`SFC` は `<script setup>` 内で `import` することで、テンプレートで直接使用することが可能となります。
 
 ```html
 <template>
@@ -130,7 +130,7 @@ import { ref } from 'vue'
 import Card from './components/Card.vue'
 ```
 
-`Card` コンポーネントを `import` して、`template` 内で呼び出しています。しかし現状エラーがでて動きません。作成した `Card` コンポーネントは `item` のデータを持っていないためです。そのため、`Card` コンポーネントでも `item` のデータを使えるように、親のコンポーネント( `App.vue` )から `props` として渡す必要があります。
+`Card` コンポーネントを `import` して、`template` 内で呼び出しています。しかし現状エラーがでて動きません。作成した `Card` コンポーネントは `item` のデータを持っていないためです。そのため、`Card` コンポーネントでも `item` のデータを使えるように、親のコンポーネント（`App.vue`）から `props` として渡す必要があります。
 
 ### 親のコンポーネント( App.vue )から値を受け取る準備をする
 
@@ -183,12 +183,12 @@ defineProps({
 `defineProps` の中に受け取る `props` を書いていきます。`type` は型、`default` は初期値、`required` は必須要素を表しています。
 
 ::: tip ヒント
-`defineProps` とこのあと紹介する `defineEmits` は`<script setup> `内でのみ使用可能なコンパイラマクロとなっているため、`import` する必要はありません。
+`defineProps` とこのあと紹介する `defineEmits` は `<script setup> ` 内でのみ使用可能なコンパイラマクロとなっているため、`import` する必要はありません。
 :::
 
 ### App.vueから値を渡す準備をする
 
-`Card.vue` の`defineProps` で定義した値を `template` 内で渡していきます。
+`Card.vue` の `defineProps` で定義した値を `template` 内で渡していきます。
 
 ```html
 <template>
@@ -218,7 +218,7 @@ defineProps({
 ### Card コンポーネントで emits の定義をする
 Vue.js では `emits` オプションが使えます。`emits` オプションは、子のコンポーネント内で親のコンポーネントに発行できるイベントを定義できます。
 
-今回では子のコンポーネントで「売り切れ」のイベントを発行して、親のコンポーネントで `items` を書き換える、という流れになります。現状では `Card` コンポーネントは渡された情報を表示するのみで、どの `item` か特定できる情報がないので、idも渡すように修正します。`defineProps` も忘れず修正しましょう。
+今回では子のコンポーネントで「売り切れ」のイベントを発行して、親のコンポーネントで `items` を書き換える、という流れになります。現状では `Card` コンポーネントは渡された情報を表示するのみで、どの `item` か特定できる情報がないので、`id` も渡すように修正します。`defineProps` も忘れず修正しましょう。
 
 #### App.vue
 ```html
@@ -284,7 +284,7 @@ const emit = defineEmits(['sold-out'])
   @sold-out="changeSoldOut"/>
 ```
 
-`Card` コンポーネントには `sold-out` の`emits` を受け取った場合に `changeSoldOut` が実行されるように設定しました。次に、実行される `changeSoldOut` を定義します。
+`Card` コンポーネントには `sold-out` の `emits` を受け取った場合に `changeSoldOut` が実行されるように設定しました。次に、実行される `changeSoldOut` を定義します。
 
 ```html
 <script setup>
