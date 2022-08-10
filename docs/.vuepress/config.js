@@ -27,7 +27,8 @@ module.exports = {
                     '/v-for',
                     '/v-if',
                     '/methods',
-                    '/event'
+                    '/event',
+                    '/component'
                 ],
                 initialOpenGroupIndex: 1
             }
