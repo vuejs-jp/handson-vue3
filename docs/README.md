@@ -22,6 +22,7 @@ Vue.js 3 ハンズオンへようこそ😀　このハンズオンは、初め�
 1. [v-if で表示・非表示を切り替える](./v-if.md 'v-if で表示・非表示を切り替える')
 1. [methods で価格にカンマを入れる](./methods.md 'methods で価格にカンマを入れる')
 1. [@click で商品を選択する](./event.md '@click で商品を選択する')
+1. [商品をコンポーネント化する](./component.md '商品をコンポーネント化する')
 
 ## コントリビューター
 誤りやよりよい改善を見つけた方は、[Issues](https://github.com/vuejs-jp/handson-vue3-examples/issues) または [Pull requests](https://github.com/vuejs-jp/handson-vue3-examples/pulls) を作成してください。
