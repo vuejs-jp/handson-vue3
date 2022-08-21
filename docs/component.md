@@ -45,11 +45,21 @@ src
 
 次にいよいよモジュールを切り出す作業に入ります。以下のハイライト部分を `Card.vue` に移します。また、`pricePrefix()` や関連する `style` も一緒に移します。
 
+#### template
+
 <<< @/../examples/event/src/App.vue#template{17-26}
+
+#### script
+
 <<< @/../examples/event/src/App.vue#script{47-53}
+
+#### style
+
 <<< @/../examples/event/src/App.vue#style{54-82}
 
 移し替えて出来上がった `Card.vue` は下記のようになります。
+
+#### Card.vue
 
 ```vue
 <template>
@@ -106,10 +116,12 @@ function pricePrefix(price) {
 ## Card コンポーネントを使用する
 切り出しができたので、作成したコンポーネントを `App.vue` で使えるようにしましょう。
 
+#### App.vue / template
+
 ```vue{14}
 <template>
 
-<!-- 省略 -->
+  <!-- 省略 -->
 
   <main class="main">
     <template
@@ -126,6 +138,9 @@ function pricePrefix(price) {
   </main>
 </template>
 ```
+
+#### App.vue / script
+
 ```vue{3}
 <script setup>
 import { ref } from 'vue'
@@ -144,6 +159,8 @@ import Card from './components/Card.vue'
 
 現在 `item` オブジェクト内のデータを参照していますが、 シンプルに必要な値のみを受け取り、表示するようにするために、コードを書き換えます。
 
+#### Card.vue / template
+
 ```vue{8-10}
 <template>
   <div class="thumbnail">
@@ -160,6 +177,8 @@ import Card from './components/Card.vue'
 ```
 
 次に親のコンポーネントから `props` を受け取る設定を記述します。
+
+#### Card.vue / script
 
 ```vue{2-23}
 <script setup>
@@ -190,6 +209,7 @@ defineProps({
 
 </script>
 ```
+
 `defineProps` の中に受け取る `props` を書いていきます。`type` は型、`default` は初期値、`required` は必須要素を表しています。
 
 ::: tip ヒント
@@ -200,10 +220,12 @@ defineProps({
 
 `Card.vue` の `defineProps` で定義した値を `template` 内で渡していきます。
 
+#### App.vue / template
+
 ```vue{14-18}
 <template>
 
-<!-- 省略 -->
+  <!-- 省略 -->
 
   <main class="main">
     <template
@@ -242,6 +264,8 @@ Vue.js では `emits` オプションが使えます。`emits` オプション�
 
 今回では子のコンポーネントで「売り切れ」のイベントを発行して、親のコンポーネントで `items` を書き換える、という流れになります。現状では `Card` コンポーネントは渡された情報を表示するのみで、どの `item` か特定できる情報がないので、`id` も渡すように修正します。`defineProps` も忘れず修正しましょう。
 
+#### App.vue / template
+
 ```vue{2}
 <Card
   :id="item.id"
@@ -250,6 +274,8 @@ Vue.js では `emits` オプションが使えます。`emits` オプション�
   :description="item.description"
   :price="item.price"/>
 ```
+
+#### Card.vue / script
 
 ```vue{3-7}
 <script setup>
