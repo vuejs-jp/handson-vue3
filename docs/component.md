@@ -4,7 +4,7 @@
 
 Vue.js ではテンプレート、ロジック、そしてスタイルを 1 つのファイルにまとめることで、単一ファイルコンポーネント（`Single File Components`、略称 `SFC`）として利用することができます。`SFC` は `<script setup>` 内で `import` することで、テンプレートで直接使用することが可能となります。
 
-```html
+```vue{2,6}
 <template>
   <MyComponent />
 </template>
@@ -45,13 +45,23 @@ src
 
 次にいよいよモジュールを切り出す作業に入ります。以下のハイライト部分を `Card.vue` に移します。また、`pricePrefix()` や関連する `style` も一緒に移します。
 
+#### template
+
 <<< @/../examples/event/src/App.vue#template{17-26}
+
+#### script
+
 <<< @/../examples/event/src/App.vue#script{47-53}
+
+#### style
+
 <<< @/../examples/event/src/App.vue#style{54-82}
 
 移し替えて出来上がった `Card.vue` は下記のようになります。
 
-```html
+#### Card.vue
+
+```vue
 <template>
   <div class="thumbnail">
     <img
@@ -106,9 +116,13 @@ function pricePrefix(price) {
 ## Card コンポーネントを使用する
 切り出しができたので、作成したコンポーネントを `App.vue` で使えるようにしましょう。
 
-```html
+#### App.vue / template
+
+```vue{14}
 <template>
-<!-- 省略 -->
+
+  <!-- 省略 -->
+
   <main class="main">
     <template
       v-for="item in items"
@@ -124,10 +138,17 @@ function pricePrefix(price) {
   </main>
 </template>
 ```
-```html
+
+#### App.vue / script
+
+```vue{3}
 <script setup>
 import { ref } from 'vue'
 import Card from './components/Card.vue'
+
+// 省略
+
+</script>
 ```
 
 `Card` コンポーネントを `import` して、`template` 内で呼び出しています。しかし現状エラーがでて動きません。作成した `Card` コンポーネントは `item` のデータを持っていないためです。そのため、`Card` コンポーネントでも `item` のデータを使えるように、親のコンポーネント（`App.vue`）から `props` として渡す必要があります。
@@ -138,7 +159,9 @@ import Card from './components/Card.vue'
 
 現在 `item` オブジェクト内のデータを参照していますが、 シンプルに必要な値のみを受け取り、表示するようにするために、コードを書き換えます。
 
-```html
+#### Card.vue / template
+
+```vue{8-10}
 <template>
   <div class="thumbnail">
     <img
@@ -155,7 +178,9 @@ import Card from './components/Card.vue'
 
 次に親のコンポーネントから `props` を受け取る設定を記述します。
 
-```html
+#### Card.vue / script
+
+```vue{2-23}
 <script setup>
 defineProps({
   name: {
@@ -179,7 +204,12 @@ defineProps({
     required: false
   },
 });
+
+// 省略
+
+</script>
 ```
+
 `defineProps` の中に受け取る `props` を書いていきます。`type` は型、`default` は初期値、`required` は必須要素を表しています。
 
 ::: tip ヒント
@@ -190,9 +220,22 @@ defineProps({
 
 `Card.vue` の `defineProps` で定義した値を `template` 内で渡していきます。
 
-```html
+#### App.vue / template
+
+```vue{14-18}
 <template>
-<!-- 省略 -->
+
+  <!-- 省略 -->
+
+  <main class="main">
+    <template
+      v-for="item in items"
+      :key="item.id">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @click="item.selected = !item.selected">
         <Card
           :image="item.image"
           :name="item.name"
@@ -221,19 +264,20 @@ Vue.js では `emits` オプションが使えます。`emits` オプション�
 
 今回では子のコンポーネントで「売り切れ」のイベントを発行して、親のコンポーネントで `items` を書き換える、という流れになります。現状では `Card` コンポーネントは渡された情報を表示するのみで、どの `item` か特定できる情報がないので、`id` も渡すように修正します。`defineProps` も忘れず修正しましょう。
 
-#### App.vue
-```html
+#### App.vue / template
+
+```vue{2}
 <Card
   :id="item.id"
   :image="item.image"
   :name="item.name"
   :description="item.description"
-  :price="item.price"
-  @sold-out="changeSoldOut"/>
+  :price="item.price"/>
 ```
 
-#### Card.vue
-```html
+#### Card.vue / script
+
+```vue{3-7}
 <script setup>
 defineProps({
   id: {
@@ -246,13 +290,23 @@ defineProps({
     default: '',
     required: false
   },
+
+  // 省略
+
+})
+
+// 省略
+
+</script>
 ```
 
 `<script setup>` の中で `emits` を使用するためには `defineEmits` の API を使用します。`defineProps` と同様に `<script setup>` の中で自動的に使えるようになっているため、`import` は不要です。
 
-```html
+```vue{9}
 <script setup>
+
 // 省略
+
 function pricePrefix(price) {
   return price.toLocaleString()
 }
@@ -263,9 +317,11 @@ const emit = defineEmits(['sold-out'])
 
 次に `template` に売り切れのボタンを作成します。
 
-```html
+```vue{5}
 <template>
+
   <!-- 省略 -->
+
   <button type="button" @click="() => emit('sold-out',id)">売り切れ</button>
 </template>
 ```
@@ -276,8 +332,9 @@ const emit = defineEmits(['sold-out'])
 
 `Card` コンポーネントからの `emits` を受け取り、実行される関数を定義していきます。
 
-```html
+```vue{7}
 <Card
+  :id="item.id"
   :image="item.image"
   :name="item.name"
   :description="item.description"
@@ -287,9 +344,11 @@ const emit = defineEmits(['sold-out'])
 
 `Card` コンポーネントには `sold-out` の `emits` を受け取った場合に `changeSoldOut` が実行されるように設定しました。次に、実行される `changeSoldOut` を定義します。
 
-```html
+```vue{5-8}
 <script setup>
+
 // 省略
+
 function changeSoldOut(id) {
   const pickElm = items.value.find(item => item.id == id)
   pickElm.soldOut = true
