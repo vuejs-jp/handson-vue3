@@ -161,7 +161,7 @@ import Card from './components/Card.vue'
 
 #### Card.vue / template
 
-```vue{8-10}
+```vue{4,8-10}
 <template>
   <div class="thumbnail">
     <img
