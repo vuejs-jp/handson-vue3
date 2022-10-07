@@ -135,15 +135,15 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 `v-on` ディレクティブにキーボードイベントを追加するためには `keyup` イベントを設定します。`keyup` イベントには使用したいキーコードを `.`（ドット）でつなげて、実行したい処理を記述します。
 
 ```html
-<input v-on:keyup.enter="alert" />
+<input v-on:keyup.enter="alertDialog" />
 ```
 
 ```vue
 <script setup>
 // ...省略
 
-function alert() {
-  alert('keyup')
+function alertDialog() {
+  window.alert('keyup')
 }
 </script>
 ```
