@@ -82,7 +82,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 
 では実際に、商品に `click` イベントを登録していきましょう。以下の例でハイライトしている箇所を追加します。
 
-<<< @/../examples/event/src/App.vue#template{16}
+<<< @/../examples/event/src/App.vue#template{15-16}
 
 `v-for` の中の要素は 1 つ 1 つの商品を表しています。その要素に対し `@click` を追加しました。
 
