@@ -33,7 +33,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: echo 'handson.vuejs-jp.org' > CNAME
-        working-directory: docs/dist
+        working-directory: docs/.vitepress/dist
       - uses: actions/upload-artifact@v3
         with:
           name: dist
