@@ -4,10 +4,7 @@ export default defineConfig({
   lang: 'ja-JP',
   title: 'Vue3 Hands-on',
   description: 'Vue.js-jp Vue3 Hands-on',
-
-  // TODO: favicon
-  // head: [['link', { rel: 'icon', href: '/favicon-32.png' }]],
-
+  head: [['link', { rel: 'icon', href: '/images/favicon-32.png' }]],
   themeConfig: {
     siteTitle: 'Vue3 ハンズオン',
     sidebar: [
