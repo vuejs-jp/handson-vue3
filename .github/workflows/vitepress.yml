@@ -13,10 +13,19 @@ on:
     paths:
       - '.github/workflows/vitepress.yml'
       - 'docs/**'
+  workflow_dispatch:
 
 defaults:
   run:
     working-directory: docs
+
+permissions:
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -40,15 +49,21 @@ jobs:
           path: docs/dist
 
   deploy:
-    if: github.event_name == 'push' # PR 時はデプロイを実行しない
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' # PR 時はデプロイを実行しない
     runs-on: ubuntu-latest
     needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - uses: actions/download-artifact@v3
         with:
           name: dist
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          publish_branch: gh-pages
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
