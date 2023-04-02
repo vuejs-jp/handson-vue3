@@ -1,30 +1,3 @@
-<template>
-  <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
-    <h1>Vue.js ハンズオン</h1>
-  </header>
-  <main class="main">
-    <template
-      v-for="item in items"
-      :key="item.id">
-      <div
-        v-if="!item.soldOut"
-        class="item"
-        :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
-        <Card
-          :id="item.id"
-          :image="item.image"
-          :name="item.name"
-          :description="item.description"
-          :price="item.price"/>
-      </div>
-    </template>
-  </main>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import Card from './components/Card.vue'
@@ -73,6 +46,33 @@ const items = ref([
 ])
 
 </script>
+
+<template>
+  <header class="header">
+    <img
+      src="/images/logo.svg"
+      alt="">
+    <h1>Vue.js ハンズオン</h1>
+  </header>
+  <main class="main">
+    <template
+      v-for="item in items"
+      :key="item.id">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @click="item.selected = !item.selected">
+        <Card
+          :id="item.id"
+          :image="item.image"
+          :name="item.name"
+          :description="item.description"
+          :price="item.price"/>
+      </div>
+    </template>
+  </main>
+</template>
 
 <style>
 body {
