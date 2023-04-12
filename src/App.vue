@@ -18,8 +18,11 @@
           :id="item.id"
           :image="item.image"
           :name="item.name"
-          :description="item.description"
-          :price="item.price"/>
+          :price="item.price">
+          <template #description>
+            <span class="description">{{ item.description }}</span>
+          </template>
+        </Card>
       </div>
     </template>
   </main>

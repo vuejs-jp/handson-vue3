@@ -6,7 +6,7 @@
   </div>
   <div class="description">
     <h2>{{ name }}</h2>
-    <p>{{ description }}</p>
+    <p><slot name="description" /></p>
     <span>¥<span class="price">{{ pricePrefix(price) }}</span></span>
   </div>
 </template>
@@ -14,11 +14,6 @@
 <script setup>
 defineProps({
   name: {
-    type: String,
-    default: '',
-    required: false
-  },
-  description: {
     type: String,
     default: '',
     required: false

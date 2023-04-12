@@ -28,7 +28,8 @@ module.exports = {
                     '/v-if',
                     '/methods',
                     '/event',
-                    '/component'
+                    '/component',
+                    '/slot'
                 ],
                 initialOpenGroupIndex: 1
             }
