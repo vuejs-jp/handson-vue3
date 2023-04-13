@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - migrate-vitepress # TODO: 検証後削除
     paths:
       - '.github/workflows/vitepress.yml'
       - 'docs/**'
