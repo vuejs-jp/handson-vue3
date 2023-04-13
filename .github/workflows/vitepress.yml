@@ -16,10 +16,6 @@ on:
       - 'docs/**'
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: docs
-
 permissions:
   pages: write
   id-token: write
@@ -32,6 +28,9 @@ jobs:
   build:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -41,9 +40,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: docs/package-lock.json
       - run: npm ci
-        working-directory: docs
       - run: npm run build --if-present
-        working-directory: docs
       - run: echo 'handson.vuejs-jp.org' > CNAME
         working-directory: docs/.vitepress/dist
       - uses: actions/upload-artifact@v3
