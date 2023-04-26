@@ -70,4 +70,41 @@
 
 1. ブラウザに「You did it!」等と表示されていれば、無事にプロジェクトの作成が成功しています。
 
+## プロジェクトの確認
+
+プロジェクト新規作成後、以下のようなディレクトリ構造になります。
+
+    ```
+    vue3-lab
+    ├── README.md
+    ├── index.html
+    ├── node_modules
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+    │   └── favicon.ico
+    ├── src
+    │   ├── App.vue
+    │   ├── assets
+    │   │   ├── base.css
+    │   │   ├── logo.svg
+    │   │   └── main.css
+    │   ├── components
+    │   │   ├── HelloWorld.vue
+    │   │   ├── TheWelcome.vue
+    │   │   ├── WelcomeItem.vue
+    │   │   └── icons
+    │   │       ├── IconCommunity.vue
+    │   │       ├── IconDocumentation.vue
+    │   │       ├── IconEcosystem.vue
+    │   │       ├── IconSupport.vue
+    │   │       └── IconTooling.vue
+    │   └── main.js
+    └── vite.config.js
+
+    6 directories, 19 files
+    ```
+
+これらのファイルがcreate-vueコマンドで作成されます。
+
    ![Vite App](./images/vite-app.png)
