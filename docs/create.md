@@ -27,7 +27,7 @@
   ```
   Need to install the following packages:
     create-vue@3
-  Ok to proceed? (y) -> y 
+  Ok to proceed? (y) -> y
   ```
 
   ::: tip ヒント
