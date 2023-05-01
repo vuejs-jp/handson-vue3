@@ -105,6 +105,6 @@
     6 directories, 19 files
     ```
 
-これらのファイルがcreate-vueコマンドで作成されます。
+これらのファイルが create-vue コマンドで作成されます。
 
    ![Vite App](./images/vite-app.png)
