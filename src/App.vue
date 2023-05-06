@@ -19,8 +19,8 @@
           :image="item.image"
           :name="item.name"
           :price="item.price">
-          <template #description>
-            <span class="description">{{ item.description }}</span>
+          <template #body>
+            {{ item.description }}
           </template>
         </Card>
       </div>
@@ -134,4 +134,5 @@ body {
 .selected-item {
   background: #e3f2fd;
 }
+
 </style>

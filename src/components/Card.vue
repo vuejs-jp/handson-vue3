@@ -6,7 +6,7 @@
   </div>
   <div class="description">
     <h2>{{ name }}</h2>
-    <p><slot name="description" /></p>
+    <p><slot name="body" /></p>
     <span>¥<span class="price">{{ pricePrefix(price) }}</span></span>
   </div>
 </template>
