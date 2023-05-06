@@ -257,7 +257,7 @@ defineProps({
           :name="item.name"
           :price="item.price">
           <template #body>
-            <span class="description">{{ item.description }}</span>
+            <span>{{ item.description }}</span>
           </template>
         </Card>
       </div>
@@ -266,16 +266,30 @@ defineProps({
 </template>
 ```
 
-#### App.vue / style
+#### Card.vue / style
 
-```vue{3-5}
+```vue{10-12}
 <style>
 /* 省略 */
-.description {
-  font-style: italic;
+.item > div.description > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  line-height: 25px;
 }
+
+.item > div.description > p > span{
+  color: red;
+}
+
+.item > div.description > span {
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+}
+/* 省略 */
 </style>
 ```
 
-`description` をスロットで渡す時に `span` 要素で囲み、クラスを付与してスタイルの定義も行いました。確認してみると `font-style: italic` が適用されています。このように、`Card` コンポーネントを修正しなくても、親コンポーネントでスロットコンテンツの中身を変更できるため、再利用しやすく、柔軟性の高いコンポーネントになったと思います。
+`description` をスロットで渡す時に `span` 要素で囲み、クラスを付与してスタイルの定義も行いました。確認してみると `color: red` が適用されています。このように、`Card` コンポーネントを修正しなくても、親コンポーネントでスロットコンテンツの中身を変更できるため、再利用しやすく、柔軟性の高いコンポーネントになったと思います。
 
