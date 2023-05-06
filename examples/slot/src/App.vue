@@ -21,7 +21,9 @@
           :name="item.name"
           :description="item.description"
           :price="item.price">
-          <template #body>{{ item.description }}</template>
+          <template #body>
+            <p>{{ item.description }}</p>
+          </template>
         </Card>
       </div>
     </template>

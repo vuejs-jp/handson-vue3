@@ -20,7 +20,7 @@
           :name="item.name"
           :price="item.price">
           <template #body>
-            {{ item.description }}
+            <p>{{ item.description }}</p>
           </template>
         </Card>
       </div>
