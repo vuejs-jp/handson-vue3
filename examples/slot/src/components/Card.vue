@@ -58,10 +58,6 @@ function pricePrefix(price) {
   line-height: 25px;
 }
 
-.item > div.description > p > span{
-  color: red;
-}
-
 .item > div.description > span {
   display: block;
   margin-top: 10px;
