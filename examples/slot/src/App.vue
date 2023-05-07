@@ -19,7 +19,6 @@
           :id="item.id"
           :image="item.image"
           :name="item.name"
-          :description="item.description"
           :price="item.price">
           <template #body>
             <p>{{ item.description }}</p>
