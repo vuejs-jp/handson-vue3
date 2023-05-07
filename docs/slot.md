@@ -235,3 +235,124 @@ defineProps({
 ::: tip +1 チャレンジ
 ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
 :::
+
+## スロットにコンポーネントを定義する
+
+### スロットに複数要素を定義する
+
+カードに表示する内容で、商品詳細ページのリンクを追加したいと考えたとします。`slot` には複数の HTML 要素を定義することもできるので、`a` 要素を追加してリンクを設定してみましょう。
+
+商品ごとにリンクが異なっていたり、そもそも商品詳細ページがない商品もあるかもしれません。そのような時でも、`slot` で柔軟に対応が可能です。まず、商品リストの定義にリンクを追加します。
+
+#### App.vue / script
+
+```vue{15}
+<script setup>
+import { ref } from 'vue'
+import Card from './components/Card.vue'
+
+const items = ref([
+  {
+    id: 1,
+    name: 'アボカドディップバケット',
+    description:
+      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+    price: 480,
+    image: '/images/item1.jpg',
+    soldOut: false,
+    selected: false,
+    link: 'https://handson.vuejs-jp.org/'
+  },
+  //省略
+])
+</script>
+```
+
+今回はダミーでハンズオンのリンクを設定しています。次に、スロットコンテンツの修正をします。
+
+#### App.vue / template
+
+```vue{11}
+<template>
+<!-- 省略-->
+        <Card
+          :id="item.id"
+          :image="item.image"
+          :name="item.name"
+          :description="item.description"
+          :price="item.price">
+          <template #body>
+            <p>{{ item.description }}</p>
+            <a v-if="item.link" href="item.link">リンク</a>
+          </template>
+        </Card>
+<!-- 省略-->
+</template>
+```
+
+`a` 要素へは商品詳細ページのリンクを設定しますが、`v-if` を使用して、詳細ページのリンク情報が設定されていない場合は表示されないようにしています。
+
+### スロットコンテンツをコンポーネント化する
+
+スロットコンテンツへは、HTML 要素だけでなく、コンポーネントも定義することが可能です。試しにスロットコンテンツをコンポーネント化して、表示されるか確認してみましょう。
+
+まずは `CardBody.vue` を新規で作成して、`props` の定義も行います。
+
+#### CardBody.vue
+
+```vue
+<template>
+  <p>{{ description }}</p>
+  <a v-if="link" :href="link">リンク</a>
+</template>
+
+<script setup>
+defineProps({
+  description: {
+    type: String,
+    default: '',
+    required: false
+  },
+  link: {
+    type: String,
+    default: '',
+    required: false
+  },
+});
+</script>
+```
+
+コンポーネントの作成ができたので、スロットコンテンツを置き換えます。また、`CardBody` コンポーネントを `import` することを忘れないようにしましょう。
+
+#### App.vue
+
+```vue{10-12,21}
+<template>
+<!-- 省略-->
+        <Card
+          :id="item.id"
+          :image="item.image"
+          :name="item.name"
+          :description="item.description"
+          :price="item.price">
+          <template #body>
+            <CardBody
+              :description="item.description"
+              :link="item.link"/>
+          </template>
+        </Card>
+<!-- 省略-->
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import Card from './components/Card.vue'
+import CardBody from './components/CardBody.vue';
+
+//省略
+</script>
+```
+
++1 チャレンジでは、スロットコンテンツへの複数要素の定義と、コンポーネントの定義を行い、レンダリングされることが確認できたと思います。
+
+以上のように、スロットを使用することでコンポーネントを利用する際に柔軟に対応することが可能となります。
