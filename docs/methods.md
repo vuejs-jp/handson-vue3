@@ -68,10 +68,7 @@ JavaScript がもともと持っている `toLocaleString()` 関数を用いて�
 
 ---
 
-::: tip +1 チャレンジ
-ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
-:::
-
+::: details +1 チャレンジ ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
 ## 算出プロパティとの違い
 
 Vue.js には関数の他に、算出プロパティがあります。算出プロパティは `computed` を使って関数と同様に定義します。以降、関数との違いについて説明していきます。
@@ -82,6 +79,7 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
 
 確認の準備として、商品数を表示する関数を定義していきます。
 
+template
 ```html
 <template>
   <header class="header">
@@ -92,6 +90,7 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
   <!-- 省略 -->
 <template>
 ```
+script
 ```html
 <script setup>
 // 省略
@@ -117,6 +116,7 @@ function stockQuantity() {
 
 ここに[v-else や v-else-if の使い方](https://handson.vuejs-jp.org/v-if.html#v-else-%E3%82%84-v-else-if-%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)のコードを参考に、入荷のボタンを追加してみます。
 
+template
 ```html
 <div v-if="!item.soldOut">
   <!-- 省略 -->
@@ -125,6 +125,7 @@ function stockQuantity() {
   売り切れです<button type="button" @click="stockItem(item)">入荷</button>
 </div>
 ```
+script
 ```html
 <script setup>
 // 省略
@@ -151,6 +152,7 @@ function stockItem(item) {
 
 関数で商品数を表示しましたが、算出プロパティでも `computed` を使って商品数を表示することができます。
 
+template
 ```html
 <script setup>
 import { ref, computed } from 'vue'
@@ -163,6 +165,7 @@ const stockQuantityComputed = computed(function() {
 
 処理の内容は 関数で商品数を取得した `stockQuantity()` と同じです。それでは作成した `stockQuantityComputed` を `template` で使用してみましょう。
 
+template
 ```html
 <template>
   <header class="header">
@@ -175,12 +178,14 @@ const stockQuantityComputed = computed(function() {
 ```
 
 商品数には 3 が表示され、入荷ボタンをクリックすると 4 に更新されます。
+:::
 
 ::: tip ヒント
 関数で定義したものは JavaScript のまさに関数ですが、`computed` を使うことで、JavaScript のオブジェクトで定義したプロパティと同じように扱うことができる算出プロパティとして定義されます。そのため、`computed` で定義された算出プロパティを `template` で使う際には `()` は不要です。
 :::
 
-#### 関数と算出プロパティの違い
+::: details +1 チャレンジ ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
+## 関数と算出プロパティの違い
 
 関数でも算出プロパティでも最終的に同じ値を取得することが可能ですが、2 つの違いはどこにあるのでしょうか。
 
@@ -192,11 +197,15 @@ const stockQuantityComputed = computed(function() {
 
 実際に値の更新タイミングを確認するために、現在時刻を表示する処理を追加していきます。
 
+
+template
 ```html
 <!-- 省略 -->
   <div>商品数：{{ stockQuantity() }}</div>
   <div>現在時刻：{{ getDate() }}</div>
 ```
+
+script
 ```html
 <script setup>
 // 省略
@@ -217,11 +226,15 @@ function getDate() {
 
 次に算出プロパティに現在時刻を取得する処理を追加してみましょう。
 
+
+template
 ```html
 <!-- 省略 -->
   <div>現在時刻：{{ getDate() }}</div>
   <div>現在時刻(computed)：{{ getDateComputed }}</div>
 ```
+
+script
 ```html
 <script setup>
 // 省略
@@ -234,6 +247,9 @@ const getDateComputed = computed(function() {
 関数で定義されていた `getDate()` では、入荷ボタンをクリックすると更新されましたが、`computed` を使って定義された算出プロパティ `getDateComputed` は更新されません。この算出プロパティの値の更新タイミングは `items` が更新された場合であり、`items` を扱っていないと自動的に値が更新されないことが理由です。
 
 以上のように、関数と算出プロパティでは更新のタイミングが違うので注意が必要です。
+:::
+
+
 
 ::: tip ヒント
 毎回自動的に更新がされるため、関数の方が便利そうです。しかし、これには注意が必要です。例えば、巨大な配列をループして多くの計算が必要な処理があったとします。関数で定義した場合 `template` が更新される度に、このループ処理が実行されてしまいます。しかし、算出プロパティで定義していた場合はキャッシュが効いているので実行されません。

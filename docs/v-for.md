@@ -72,13 +72,11 @@ v-for を使った template タグは DOM 要素としてレンダリングさ�
 
 ---
 
-::: tip +1 チャレンジ
-ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
-:::
-
+::: details +1 チャレンジ ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
 ## v-for の index と注意点
 以下のように、 `v-for` で配列のインデックスを取り出せます。
 
+template
 ```html
 <div id="app">
   <ul>
@@ -87,6 +85,7 @@ v-for を使った template タグは DOM 要素としてレンダリングさ�
 </div>
 ```
 
+script
 ```js
 const tasks = ref([
   'タスクA',
@@ -101,14 +100,17 @@ const tasks = ref([
 ・ 1 , タスクB
 ・ 2 , タスクC
 ```
+:::
 
-::: tip ヒント
+::: danger 注意
 `v-for` の `key` に `v-for` の `index` を使うことはできますが、要素の再利用や並び替え時に問題が発生するため非推奨です。
 :::
 
+::: details +1 チャレンジ ここまでの学習が完了した人は、以下の内容にも挑戦してみましょう。
 ## オブジェクトの v-for
 データの取り出し元に、オブジェクトを使うことも可能です。以下の例では、オブジェクトの `key` と `value` を順番に取り出して表示しています。
 
+template
 ```html
 <div id="app">
   <ul>
@@ -117,6 +119,7 @@ const tasks = ref([
 </div>
 ```
 
+script
 ```js
 const tasks = ref({
     taskA: 'タスクA',
@@ -134,6 +137,7 @@ const tasks = ref({
 
 オブジェクトの `key` と `value` に加えて `index` を表示することもできます。
 
+template
 ```html
 <div id="app">
   <ul>
@@ -142,6 +146,7 @@ const tasks = ref({
 </div>
 ```
 
+script
 ```js
 const tasks = ref({
     taskA: 'タスクA',
@@ -156,3 +161,5 @@ const tasks = ref({
 ・ 1 , taskB , タスクB
 ・ 2 , taskC , タスクC
 ```
+:::
+
