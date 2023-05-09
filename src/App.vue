@@ -23,11 +23,13 @@
       </div>
     </template>
   </main>
+  <Footer/>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 import Card from './components/Card.vue'
+import Footer from './components/Footer.vue'
 
 const items = ref([
   {
@@ -72,28 +74,35 @@ const items = ref([
   }
 ])
 
+provide('items', items)
 </script>
 
 <style>
+html {
+  height: calc(100% - 40px);
+}
+
 body {
   font-family: sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 #app {
-  width: 90%;
-  margin: 0 5%;
+  height: 100%;
+  margin-top: 40px;
   text-align: center;
   color: #242424;
 }
 
 .header {
+  margin: 0 5%;
+  width: 90%;
   display: flex;
   align-content: center;
   align-items: center;
-  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -112,6 +121,8 @@ body {
 }
 
 .main {
+  margin: 0 5%;
+  width: 90%;
   display: grid;
   grid-template-columns: 3fr 3fr 3fr 3fr;
   column-gap: 24px;
