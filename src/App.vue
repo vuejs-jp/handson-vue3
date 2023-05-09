@@ -134,5 +134,4 @@ body {
 .selected-item {
   background: #e3f2fd;
 }
-
 </style>
