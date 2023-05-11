@@ -44,7 +44,7 @@ v18.16.0
 ::: warning 注意
 表示されるバージョンはインストールするタイミングによって異なります。
 
-[Vue アプリケーションの作成-前提条件](https://ja.vuejs.org/guide/quick-start.html#creating-a-vue-application)より、Node.jsのバージョンは16.0より最新バージョンをインストールする必要があります。
+[Vue アプリケーションの作成-前提条件](https://ja.vuejs.org/guide/quick-start.html#creating-a-vue-application)より、 Node.js のバージョンは 16.0 より最新バージョンをインストールする必要があります。
 :::
 
 ### セットアップ
