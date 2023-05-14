@@ -5,13 +5,13 @@
 Vue.js ではテンプレート、ロジック、そしてスタイルを 1 つのファイルにまとめることで、単一ファイルコンポーネント（`Single File Components`、略称 `SFC`）として利用することができます。`SFC` は `<script setup>` 内で `import` することで、テンプレートで直接使用することが可能となります。
 
 ```vue{2,6}
-<template>
-  <MyComponent />
-</template>
-
 <script setup>
 import MyComponent from './MyComponent.vue'
 </script>
+
+<template>
+  <MyComponent />
+</template>
 ```
 
 現在は商品を表示しているだけですが、ヘッダーの情報が増えたり、フッターなどのコンテンツを足していくと `template` のコードはどんどん肥大化していきます。それだけでなく、例えば商品に複数写真を表示、個数によって表示金額の変更、といった機能を追加していくと `script` のコードも肥大化していきます。肥大化するとコードの見通しも悪くなり、メンテナンスも大変になってきます。そのような状況に陥らないために、商品をコンポーネントに変更してみましょう。
@@ -62,6 +62,16 @@ src
 #### Card.vue
 
 ```vue
+<script setup>
+/**
+ * 価格を3桁ごとのカンマ付きで返す
+ * @param {number} price 価格
+ */
+function pricePrefix(price) {
+  return price.toLocaleString()
+}
+</script>
+
 <template>
   <div class="thumbnail">
     <img
@@ -74,16 +84,6 @@ src
     <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
   </div>
 </template>
-
-<script setup>
-/**
- * 価格を3桁ごとのカンマ付きで返す
- * @param {number} price 価格
- */
-function pricePrefix(price) {
-  return price.toLocaleString()
-}
-</script>
 
 <style>
 .item > div.thumbnail > img {
