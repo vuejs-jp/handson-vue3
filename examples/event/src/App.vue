@@ -1,36 +1,3 @@
-// region template
-<template>
-  <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
-    <h1>Vue.js ハンズオン</h1>
-  </header>
-  <main class="main">
-    <template
-      v-for="item in items"
-      :key="item.id">
-      <div
-        v-if="!item.soldOut"
-        class="item"
-        :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
-        <div class="thumbnail">
-          <img
-            :src="item.image"
-            alt="">
-        </div>
-        <div class="description">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
-        </div>
-      </div>
-    </template>
-  </main>
-</template>
-// endregion template
-
 // region script
 <script setup>
 import { ref } from 'vue'
@@ -87,6 +54,39 @@ function pricePrefix(price) {
 }
 </script>
 // endregion script
+
+// region template
+<template>
+  <header class="header">
+    <img
+      src="/images/logo.svg"
+      alt="">
+    <h1>Vue.js ハンズオン</h1>
+  </header>
+  <main class="main">
+    <template
+      v-for="item in items"
+      :key="item.id">
+      <div
+        v-if="!item.soldOut"
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @click="item.selected = !item.selected">
+        <div class="thumbnail">
+          <img
+            :src="item.image"
+            alt="">
+        </div>
+        <div class="description">
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.description }}</p>
+          <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+        </div>
+      </div>
+    </template>
+  </main>
+</template>
+// endregion template
 
 // region style
 <style>
