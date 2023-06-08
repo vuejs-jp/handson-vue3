@@ -1,46 +1,17 @@
 {
-  "name": "handson-vue3-examples",
-  "version": "1.1.1",
+  "name": "event",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "dev:methods": "npm run dev -w=methods",
-    "dev:rendering": "npm run dev -w=rendering",
-    "dev:event": "npm run dev -w=event",
-    "dev:overview": "npm run dev -w=overview",
-    "dev:v-for": "npm run dev -w=v-for",
-    "dev:v-if": "npm run dev -w=v-if",
-    "dev:component": "npm run dev -w=component",
     "build": "vite build",
-    "preview": "vite preview --port 4173",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "textlint": "textlint --format pretty-error",
-    "textlint:docs": "textlint --format pretty-error docs/**"
+    "preview": "vite preview --port 4173"
   },
   "dependencies": {
     "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "1.1.0",
     "@vitejs/plugin-vue": "^3.0.1",
-    "@vue/eslint-config-prettier": "7.0.0",
-    "eslint": "8.5.0",
-    "eslint-plugin-vue": "8.4.1",
-    "prettier": "2.5.1",
-    "textlint": "12.1.0",
-    "textlint-filter-rule-allowlist": "4.0.0",
-    "textlint-rule-preset-vuejs-jp": "github:vuejs-jp/textlint-rule-preset-vuejs-jp",
     "vite": "^3.0.1"
-  },
-  "workspaces": [
-    "examples/*"
-  ],
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ],
-  "volta": {
-    "node": "18.6.0"
   }
 }
