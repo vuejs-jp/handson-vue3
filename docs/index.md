@@ -29,12 +29,14 @@ Vue.js 3 ハンズオンへようこそ😀　このハンズオンは、初め�
 誤りやよりよい改善を見つけた方は、[Issues](https://github.com/vuejs-jp/handson-vue3-examples/issues) または [Pull requests](https://github.com/vuejs-jp/handson-vue3-examples/pulls) を作成してください。
 
 - [MIYAKE Kazuyuki](https://github.com/k-miyake)
-- [NAKATA Kazuhiro](https://github.com/nalpan)
+- [nalpan](https://github.com/nalpan)
 - [ISHIBASHI Yuuki](https://github.com/YuukiIshibashi)
 - [happylifetaka](https://github.com/happylifetaka)
 - [OKI Yoshiya](https://github.com/448jp)
 - [KAWAGUCHI Kazuya](https://github.com/kazupon)
 - [KAMENOUE Takao](https://github.com/totocalcio)
+- [HIROTAKA Ishiwata](https://github.com/watasan1012)
+- [shiyuu](https://github.com/shiyuu33)
 - Photo by <a href="https://unsplash.com/@jtylernix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tyler Nix</a>, <a href="https://unsplash.com/@visionary_imaging?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">matthew reyes</a>, <a href="https://unsplash.com/@amysaysamy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Amy Flak</a>, <a href="https://unsplash.com/@rabkina?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Elena Rabkina</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## ライセンス
