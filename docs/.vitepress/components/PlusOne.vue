@@ -1,10 +1,3 @@
-<template>
-  <div class="plusone_wrapper">
-    <div class="plusone_sign">{{ name }}</div>
-    <div class="plusone_content">{{ content }}</div>
-  </div>
-</template>
-
 <script setup lang="ts">
 defineProps({
   name: {
@@ -19,6 +12,13 @@ defineProps({
   },
 });
 </script>
+
+<template>
+  <div class="plusone_wrapper">
+    <div class="plusone_sign">{{ name }}</div>
+    <div class="plusone_content">{{ content }}</div>
+  </div>
+</template>
 
 <style scoped>
 .plusone_wrapper {
