@@ -154,7 +154,7 @@ function alertDialog() {
 `keyup` イベントにキーコード `enter` を `.`（ドット）でつなげて、`alert` メソッドを記述しました。`input` タグにフォーカスし、キーボードの `Enter` を押すと `alert` メソッドが実行されます。また、`click` イベントと同様に `keyup` イベントも `v-on` ディレクティブの省略が可能です。
 
 ```html
-<input @keyup.enter="alert" />
+<input @keyup.enter="alertDialog" />
 ```
 
 ### 使用可能なキーコード
