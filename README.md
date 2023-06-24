@@ -1,5 +1,6 @@
 # Vue.js 3 ハンズオン Lv.2
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Vue.js 3 ハンズオン Lv.2 用アプリケーションの概要
 
