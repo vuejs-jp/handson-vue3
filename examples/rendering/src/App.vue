@@ -1,3 +1,17 @@
+// #region script
+<script setup>
+import { ref } from 'vue'
+const item = ref({
+    id: 1,
+    name: 'アボカドディップバケット',
+    description:
+      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+    price: 480,
+    image: '/images/item1.jpg'
+})
+</script>
+// #endregion script
+
 // region template
 <template>
   <header class="header">
@@ -22,20 +36,6 @@
   </main>
 </template>
 // endregion template
-
-// #region script
-<script setup>
-import { ref } from 'vue'
-const item = ref({
-    id: 1,
-    name: 'アボカドディップバケット',
-    description:
-      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-    price: 480,
-    image: '/images/item1.jpg'
-})
-</script>
-// #endregion script
 
 // region style
 <style>

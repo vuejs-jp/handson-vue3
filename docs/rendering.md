@@ -1,5 +1,9 @@
 # data を定義し、商品をレンダリングする
 
+## 本章の概要とゴール
+本章では、作成したアプリケーションに JavaScript、HTML、CSS を追加して商品を表示するページを作っていきます。
+本章を実践すると、1 つの商品を表示するページが作成でき、Vue.js ではどのようにページがレンダリングされるのかが理解できます。
+
 ## VS Code の起動
 
 まず、VS Code で先ほど作成したプロジェクトを開きましょう。プロジェクトの開き方は 2 通りありますので、使いやすい方で起動して下さい。
@@ -51,14 +55,14 @@ Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキスト�
 :::
 
 ```vue
-<template>
-  <div>{{ message }}</div>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 const message = ref('Welcome to Vue Handson!')
 </script>
+
+<template>
+  <div>{{ message }}</div>
+</template>
 ```
 
 ```js
