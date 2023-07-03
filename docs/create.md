@@ -57,7 +57,7 @@
   npm run dev
   ```
 
-1. `npm run dev` の実行が完了したら、ブラウザで [http://localhost:5173/](http://localhost:5173/) にアクセスします。
+1. `npm run dev` の実行が完了したら、ブラウザで `http://localhost:5173/` にアクセスします。
 
 1. ブラウザに「You did it!」等と表示されていれば、無事にプロジェクトの作成が成功しています。
 
