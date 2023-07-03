@@ -24,30 +24,21 @@
 
 1. コマンドを実行すると、ターミナルにいくつかの質問が表示されます。このハンズオンでは以下のように選択します。
 
-  ```
-  Need to install the following packages:
-    create-vue@3
-  Ok to proceed? (y) -> y
-  ```
-
   ::: tip ヒント
-  y を入力し、enter / return キーで確定ができます。
+  矢印キーでアンダースコアを移動させることで項目を選択します。
+  enter / return キーで項目を確定できます。
   :::
 
   ```
   Vue.js - The Progressive JavaScript Framework
-    Add TypeScript? … No / Yes -> No
-    Add JSX Support? … No / Yes -> No
-    Add Vue Router for Single Page Application development? … No / Yes -> No
-    Add Pinia for state management? … No / Yes -> No
-    Add Vitest for Unit Testing? … No / Yes -> No
-    Add Cypress for both Unit and End-to-End testing? … No / Yes -> No
-    Add ESLint for code quality? … No / Yes -> No
+  ? Add TypeScript? › No / Yes -> No
+  ? Add JSX Support? › No / Yes -> No
+  ? Add Vue Router for Single Page Application development? › No / Yes -> No
+  ? Add Pinia for state management? › No / Yes -> No
+  ? Add Vitest for Unit Testing? › No / Yes -> No
+  ? Add Cypress for both Unit and End-to-End testing? › No / Yes -> No
+  ? Add ESLint for code quality? › No / Yes -> No
   ```
-
-  ::: tip ヒント
-  矢印キーで移動、enter / return キーで確定ができます。
-  :::
 
 ## プロジェクトの起動
 
@@ -66,7 +57,7 @@
   npm run dev
   ```
 
-1. `npm run dev` の実行が完了したら、ブラウザで `http://localhost:5173/` にアクセスします。
+1. `npm run dev` の実行が完了したら、ブラウザで [http://localhost:5173/](http://localhost:5173/) にアクセスします。
 
 1. ブラウザに「You did it!」等と表示されていれば、無事にプロジェクトの作成が成功しています。
 
