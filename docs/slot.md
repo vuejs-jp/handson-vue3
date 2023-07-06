@@ -282,7 +282,7 @@ const items = ref([
           :price="item.price">
           <template #body>
             <p>{{ item.description }}</p>
-            <a v-if="item.link" href="item.link">リンク</a>
+            <a v-if="item.link" :href="item.link">リンク</a>
           </template>
         </Card>
 <!-- 省略-->
