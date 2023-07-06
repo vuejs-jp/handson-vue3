@@ -295,7 +295,7 @@ const items = ref([
 
 スロットコンテンツへは、HTML 要素だけでなく、コンポーネントも定義することが可能です。スロットコンテンツをコンポーネント化して、表示されるか確認してみましょう。
 
-まずは `components`配下に `CardBody.vue` を新規で作成して、`props` の定義も行います。`props` では `description` と `link` を受け付けます。
+まずは `components` 配下に `CardBody.vue` を新規で作成して、`props` の定義も行います。`props` では `description` と `link` を受け付けます。
 
 #### CardBody.vue
 
