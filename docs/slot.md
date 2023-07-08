@@ -272,7 +272,7 @@ const items = ref([
 
 #### App.vue / template
 
-```vue{11}
+```vue{10}
 <template>
 <!-- 省略-->
         <Card
