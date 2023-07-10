@@ -325,7 +325,15 @@ defineProps({
 
 #### App.vue
 
-```vue{10-12,21}
+```vue{4,18-20}
+<script setup>
+import { ref } from 'vue'
+import Card from './components/Card.vue'
+import CardBody from './components/CardBody.vue';
+
+//省略
+</script>
+
 <template>
 <!-- 省略-->
         <Card
@@ -342,14 +350,6 @@ defineProps({
         </Card>
 <!-- 省略-->
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import Card from './components/Card.vue'
-import CardBody from './components/CardBody.vue';
-
-//省略
-</script>
 ```
 
 以上で、スロットコンテンツへのコンポーネントの定義が完了です。
