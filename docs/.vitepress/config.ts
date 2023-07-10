@@ -51,6 +51,10 @@ export default defineConfig({
           {
             text: '商品をコンポーネント化する',
             link: '/component'
+          },
+          {
+            text: 'コンポーネントにスロットを使用する',
+            link: '/slot'
           }
         ]
       }

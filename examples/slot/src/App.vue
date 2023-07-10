@@ -1,3 +1,4 @@
+// region script
 <script setup>
 import { ref } from 'vue'
 import Card from './components/Card.vue'
@@ -46,7 +47,9 @@ const items = ref([
 ])
 
 </script>
+// endregion script
 
+// region template
 <template>
   <header class="header">
     <img
@@ -67,7 +70,6 @@ const items = ref([
           :id="item.id"
           :image="item.image"
           :name="item.name"
-          :description="item.description"
           :price="item.price">
           <template #body>
             <p>{{ item.description }}</p>
@@ -77,7 +79,9 @@ const items = ref([
     </template>
   </main>
 </template>
+// endregion template
 
+// region style
 <style>
 body {
   font-family: sans-serif;
@@ -136,3 +140,4 @@ body {
   background: #e3f2fd;
 }
 </style>
+// endregion style

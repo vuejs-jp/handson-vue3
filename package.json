@@ -10,6 +10,7 @@
     "dev:v-for": "npm run dev -w=v-for",
     "dev:v-if": "npm run dev -w=v-if",
     "dev:component": "npm run dev -w=component",
+    "dev:slot": "npm run dev -w=slot",
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",

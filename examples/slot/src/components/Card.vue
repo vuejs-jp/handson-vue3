@@ -1,16 +1,3 @@
-<template>
-  <div class="thumbnail">
-    <img
-      :src="image"
-      alt="">
-  </div>
-  <div class="description">
-    <h2>{{ name }}</h2>
-    <slot name="body" />
-    <span>¥<span class="price">{{ pricePrefix(price) }}</span></span>
-  </div>
-</template>
-
 <script setup>
 defineProps({
   name: {
@@ -38,6 +25,19 @@ function pricePrefix(price) {
   return price.toLocaleString()
 }
 </script>
+
+<template>
+  <div class="thumbnail">
+    <img
+      :src="image"
+      alt="">
+  </div>
+  <div class="description">
+    <h2>{{ name }}</h2>
+    <slot name="body" />
+    <span>¥<span class="price">{{ pricePrefix(price) }}</span></span>
+  </div>
+</template>
 
 <style>
 .item > div.thumbnail > img {
