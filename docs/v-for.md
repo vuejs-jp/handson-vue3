@@ -63,7 +63,7 @@ const tasks = ref([
 
 <<< @/../examples/v-for/src/App.vue#template{9-24}
 
-同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は [Vue.jsドキュメントガイド 状態の維持](https://v3.ja.vuejs.org/guide/list.html#%E7%8A%B6%E6%85%8B%E3%81%AE%E7%B6%AD%E6%8C%81 "Vue.jsドキュメントガイド 状態の維持")を参照してください。 
+同時に指定している `key` 属性は、 `v-for` で取り出した各要素を一意（ユニーク）にするために推奨されているものです。一意にすることで、 Vue.js が要素の再利用や並び替えをする手助けになります。 詳細は [Vue.jsドキュメントガイド key による状態管理](https://ja.vuejs.org/guide/essentials/list.html#maintaining-state-with-key "Vue.jsドキュメントガイド key による状態管理")を参照してください。
 
 ::: tip ヒント
 v-for を使った template タグは DOM 要素としてレンダリングされません。
