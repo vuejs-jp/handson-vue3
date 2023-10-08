@@ -79,7 +79,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 <button type="button" @click="イベント時の処理">***</button>
 ```
 
-- [イベントに関する詳細](https://v3.ja.vuejs.org/guide/events.html)
+- [イベントに関する詳細](https://ja.vuejs.org/guide/essentials/event-handling.html)
 
 ### click イベントの実装
 
