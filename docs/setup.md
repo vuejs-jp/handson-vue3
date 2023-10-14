@@ -2,7 +2,8 @@
 
 ## 前提とする環境
 
-- エディタ: Visual Studio Code（以下、VS Code）, Volar（VS Code の拡張機能）
+- エディタ: Visual Studio Code（以下、VS Code）
+  - VS Code の拡張機能：Vue Language Features (Volar)
 - 開発言語: JavaScript
 - 利用するツール: Node.js
 
@@ -85,8 +86,8 @@ VS Code を既にお使いの場合はこのセクションは飛ばしてくだ
 1. インストーラーの指示に従ってインストールします
    - インストールの詳細は [公式ドキュメント](https://code.visualstudio.com/docs/setup/setup-overview) を確認してください
 
-### Volar (Vue Language Features) 拡張機能のインストール
+### Vue Language Features (Volar) 拡張機能のインストール
 
-Volar は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[Volar の GitHub リポジトリ](https://github.com/johnsoncodehk/volar/) を参照してください。
+`Vue Language Features (Volar)` は Vue.js の開発をサポートする VS Code の拡張機能です。`.vue` ファイルのシンタックスハイライトやインテリセンスによる補完ができるようになります。詳細は、[language-tools の GitHub リポジトリ](https://github.com/vuejs/language-tools) を参照してください。
 
 Volar をインストールするには、VS Code が入っているマシンで、 [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Vue.volar) にアクセスし Install ボタンをクリックします。
