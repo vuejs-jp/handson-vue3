@@ -6,7 +6,7 @@
 
 1. アプリケーションを作成するディレクトリを決めておきます（この例では `vue3-lab` としています）。`create-vue` でプロジェクトを作成すると、決めたディレクトリの配下にファイル群が生成されます。
 
-1. ターミナルで、プロジェクトのディレクトリを作成する親ディレクトリに移動します。もし、ホームディレクトリの直下にプロジェクトを作成するのであれば、ターミナルで以下のコマンドを使って移動しておきます。
+2. ターミナルで、プロジェクトのディレクトリを作成する親ディレクトリに移動します。もし、ホームディレクトリの直下にプロジェクトを作成するのであれば、ターミナルで以下のコマンドを使って移動しておきます。
 
   ```sh
   cd ~
@@ -16,13 +16,22 @@
   ホームディレクトリとは、ユーザー固有のファイルやフォルダを保存できる領域であり、通常ユーザー名でディレクトリが作成されています。
   :::
 
-1. `create-vue` でプロジェクトを新規作成します。ターミナルで以下のコマンドを実行します（コマンド実行後はそのまま待機しておいてください）。プロジェクトのディレクトリは `create-vue` によって自動的に作成されます。
+3. `create-vue` でプロジェクトを新規作成します。ターミナルで以下のコマンドを実行します（コマンド実行後はそのまま待機しておいてください）。プロジェクトのディレクトリは `create-vue` によって自動的に作成されます。
 
   ```sh
-  npm init vue@3 vue3-lab
+  npm create vue@latest vue3-lab
   ```
 
-1. コマンドを実行すると、ターミナルにいくつかの質問が表示されます。このハンズオンでは以下のように選択します。
+4. コマンドを実行すると、ターミナルにいくつかの質問が表示されます。このハンズオンでは以下のように選択します。
+
+  下記のメッセージが表示された場合は `y` と入力して `enter / return` キーを押します。
+  ```
+  Need to install the following packages:
+  create-vue@latest
+  Ok to proceed? (y) -> y
+  ```
+
+  以降の質問には、基本的に `No` を選択して進めます。
 
   ::: tip ヒント
   矢印キーでアンダースコアを移動させることで項目を選択します。
@@ -36,7 +45,12 @@
   ? Add Vue Router for Single Page Application development? › No / Yes -> No
   ? Add Pinia for state management? › No / Yes -> No
   ? Add Vitest for Unit Testing? › No / Yes -> No
-  ? Add Cypress for both Unit and End-to-End testing? › No / Yes -> No
+  ? Add an End-to-End Testing Solution? › - Use arrow-keys. Return to submit.
+  ❯ No
+  Cypress
+  Nightwatch
+  Playwright
+  -> No
   ? Add ESLint for code quality? › No / Yes -> No
   ```
 
@@ -51,15 +65,15 @@
   npm install
   ```
 
-1. `npm install` の処理が完了したら `npm run dev` でプロジェクトを起動します。
+2. `npm install` の処理が完了したら `npm run dev` でプロジェクトを起動します。
 
   ```sh
   npm run dev
   ```
 
-1. `npm run dev` の実行が完了したら、ブラウザで `http://localhost:5173/` にアクセスします。
+3. `npm run dev` の実行が完了したら、ブラウザで `http://localhost:5173/` にアクセスします。
 
-1. ブラウザに「You did it!」等と表示されていれば、無事にプロジェクトの作成が成功しています。
+4. ブラウザに「You did it!」等と表示されていれば、無事にプロジェクトの作成が成功しています。
 
 ## プロジェクトの確認
 
