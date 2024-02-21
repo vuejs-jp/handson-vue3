@@ -1,7 +1,8 @@
 {
   "name": "handson-vue3-examples-docs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "",
+  "type": "module",
   "main": "index.ts",
   "scripts": {
     "dev": "vitepress dev .",
@@ -11,10 +12,10 @@
   "author": "Vue.js 日本ユーザーグループ",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-beta.5",
+    "vitepress": "^1.0.0-rc.20",
     "vue": "^3.3.4"
   },
   "volta": {
-    "node": "18.16.1"
+    "node": "18.18.1"
   }
 }
