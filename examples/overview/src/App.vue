@@ -3,7 +3,8 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
-// endregion script // region template
+// endregion script
+// region template
 <template>
   <header>
     <img

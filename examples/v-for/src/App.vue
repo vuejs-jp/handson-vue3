@@ -45,7 +45,8 @@ const items = ref<Item[]>([
   }
 ])
 </script>
-// endregion script // region template
+// endregion script
+// region template
 <template>
   <header class="header">
     <img src="/images/logo.svg" alt="" />
