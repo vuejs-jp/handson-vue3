@@ -79,7 +79,8 @@ const items = ref<Item[]>([
     </template>
   </main>
 </template>
-// endregion template // region style
+// endregion template
+// region style
 <style>
 body {
   font-family: sans-serif;

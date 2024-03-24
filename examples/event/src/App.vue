@@ -85,7 +85,8 @@ function pricePrefix(price: number): string {
     </template>
   </main>
 </template>
-// endregion template // region style
+// endregion template
+// region style
 <style>
 body {
   font-family: sans-serif;

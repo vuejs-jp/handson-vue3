@@ -22,7 +22,8 @@ import TheWelcome from './components/TheWelcome.vue'
     <TheWelcome />
   </main>
 </template>
-// endregion template // region style
+// endregion template
+// region style
 <style scoped>
 header {
   line-height: 1.5;

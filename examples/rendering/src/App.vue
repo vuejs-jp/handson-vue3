@@ -38,7 +38,8 @@ const item = ref<Item>({
     </div>
   </main>
 </template>
-// endregion template // region style
+// endregion template
+// region style
 <style>
 body {
   font-family: sans-serif;
