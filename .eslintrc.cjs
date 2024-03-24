@@ -1,16 +1,14 @@
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-    'vue/setup-compiler-macros': true
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser'
   },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/eslint-config-prettier'
-  ],
+  root: true,
+  env: { node: true },
+  plugins: ['@typescript-eslint'],
+  extends: ['plugin:vue/vue3-recommended', '@vue/eslint-config-prettier'],
   rules: {
     'vue/html-closing-bracket-newline': [
       'error',

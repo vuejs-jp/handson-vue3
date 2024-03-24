@@ -138,7 +138,7 @@ Vue.js でイベントリスナーを登録するには `v-on` というディ�
 ```
 
 ```vue
-<script setup>
+<script setup lang="ts">
 // ...省略
 
 function alertDialog() {

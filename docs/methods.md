@@ -1,6 +1,7 @@
 # 関数で価格にカンマを入れる
 
 ## 本章の概要とゴール
+
 本章では、データに格納した価格の数値は変更せず、関数を使って価格をカンマ付きの表示にするようプログラムを改修していきます。
 本章を実践すると、関数を使ってデータを操作・加工することができるようになります。
 
@@ -90,26 +91,25 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
   </header>
   <div>商品数：{{ stockQuantity() }}</div>
   <!-- 省略 -->
-<template>
+  <template></template
+></template>
 ```
+
 ```html
-<script setup>
-// 省略
+<script setup lang="ts">
+  // 省略
 
-/**
- * 価格を3桁ごとのカンマ付きで返す
- * @param {number} price 価格
- */
-function pricePrefix(price) {
-  return price.toLocaleString()
-}
+  /** 価格を3桁ごとのカンマ付きで返す */
+  function pricePrefix(price: number): string {
+    return price.toLocaleString()
+  }
 
-/**
- * 在庫のある商品数を返す
- */
-function stockQuantity() {
-  return items.value.filter(item => item.soldOut === false ).length
-}
+  /**
+   * 在庫のある商品数を返す
+   */
+  function stockQuantity(): number {
+    return items.value.filter((item) => item.soldOut === false).length
+  }
 </script>
 ```
 
@@ -125,23 +125,24 @@ function stockQuantity() {
   売り切れです<button type="button" @click="stockItem(item)">入荷</button>
 </div>
 ```
-```html
-<script setup>
-// 省略
-/**
- * 在庫のある商品数を返す
- */
-function stockQuantity() {
-  return items.value.filter(item => item.soldOut === false ).length
-}
 
-/**
- * 商品の在庫状況を変更する
- * @param {object} 商品情報
- */
-function stockItem(item) {
-  item.soldOut = false
-}
+```html
+<script setup lang="ts">
+  // 省略
+  /**
+   * 在庫のある商品数を返す
+   */
+  function stockQuantity(): number {
+    return items.value.filter((item) => item.soldOut === false).length
+  }
+
+  /**
+   * 商品の在庫状況を変更する
+   * @param {object} 商品情報
+   */
+  function stockItem(item: Item) {
+    item.soldOut = false
+  }
 </script>
 ```
 
@@ -152,12 +153,12 @@ function stockItem(item) {
 関数で商品数を表示しましたが、算出プロパティでも `computed` を使って商品数を表示することができます。
 
 ```html
-<script setup>
-import { ref, computed } from 'vue'
-// 省略
-const stockQuantityComputed = computed(function() {
-  return items.value.filter(item => item.soldOut === false ).length
-})
+<script setup lang="ts">
+  import { ref, computed } from 'vue'
+  // 省略
+  const stockQuantityComputed = computed(
+    () => items.value.filter((item) => item.soldOut === false).length
+  )
 </script>
 ```
 
@@ -185,6 +186,7 @@ const stockQuantityComputed = computed(function() {
 関数でも算出プロパティでも最終的に同じ値を取得することが可能ですが、2 つの違いはどこにあるのでしょうか。
 
 #### キャッシュの違いについて
+
 大きな違いとして 算出プロパティにはキャッシュ機能があるため、値の更新タイミングが異なります。
 
 - 関数 : `template` が更新された時
@@ -194,22 +196,23 @@ const stockQuantityComputed = computed(function() {
 
 ```html
 <!-- 省略 -->
-  <div>商品数：{{ stockQuantity() }}</div>
-  <div>現在時刻：{{ getDate() }}</div>
+<div>商品数：{{ stockQuantity() }}</div>
+<div>現在時刻：{{ getDate() }}</div>
 ```
-```html
-<script setup>
-// 省略
-function stockItem(item) {
-  item.soldOut = false
-}
 
-/**
- * 現在時刻を取得する
- */
-function getDate() {
-  return Date.now()
-}
+```html
+<script setup lang="ts">
+  // 省略
+  function stockItem(item: Item) {
+    item.soldOut = false
+  }
+
+  /**
+   * 現在時刻を取得する
+   */
+  function getDate(): number {
+    return Date.now()
+  }
 </script>
 ```
 
@@ -219,15 +222,14 @@ function getDate() {
 
 ```html
 <!-- 省略 -->
-  <div>現在時刻：{{ getDate() }}</div>
-  <div>現在時刻(computed)：{{ getDateComputed }}</div>
+<div>現在時刻：{{ getDate() }}</div>
+<div>現在時刻(computed)：{{ getDateComputed }}</div>
 ```
+
 ```html
-<script setup>
-// 省略
-const getDateComputed = computed(function() {
-  return Date.now()
-})
+<script setup lang="ts">
+  // 省略
+  const getDateComputed = computed(() => Date.now())
 </script>
 ```
 

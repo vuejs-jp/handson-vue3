@@ -1,31 +1,34 @@
 // #region script
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
-const item = ref({
-    id: 1,
-    name: 'アボカドディップバケット',
-    description:
-      '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
-    price: 480,
-    image: '/images/item1.jpg'
+
+interface Item {
+  id: number
+  name: string
+  description: string
+  price: number
+  image: string
+}
+
+const item = ref<Item>({
+  id: 1,
+  name: 'アボカドディップバケット',
+  description:
+    '刻んだ野菜をアボカドと混ぜてディップに。こんがり焼いたバゲットとお召し上がりください。',
+  price: 480,
+  image: '/images/item1.jpg'
 })
 </script>
-// #endregion script
-
-// region template
+// #endregion script // region template
 <template>
   <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
+    <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
     <div class="item">
       <div class="thumbnail">
-        <img
-          :src="item.image"
-          alt="">
+        <img :src="item.image" alt="" />
       </div>
       <div class="description">
         <h2>{{ item.name }}</h2>
@@ -35,9 +38,7 @@ const item = ref({
     </div>
   </main>
 </template>
-// endregion template
-
-// region style
+// endregion template // region style
 <style>
 body {
   font-family: sans-serif;

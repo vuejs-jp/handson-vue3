@@ -1,9 +1,19 @@
 // region script
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import Card from './components/Card.vue'
 
-const items = ref([
+interface Item {
+  id: number
+  name: string
+  description: string
+  price: number
+  image: string
+  soldOut: boolean
+  selected: boolean
+}
+
+const items = ref<Item[]>([
   {
     id: 1,
     name: 'アボカドディップバケット',
@@ -45,22 +55,15 @@ const items = ref([
     selected: false
   }
 ])
-
 </script>
-// endregion script
-
-// region template
+// endregion script // region template
 <template>
   <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
+    <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template
-      v-for="item in items"
-      :key="item.id">
+    <template v-for="item in items" :key="item.id">
       <div
         v-if="!item.soldOut"
         class="item"
@@ -79,9 +82,7 @@ const items = ref([
     </template>
   </main>
 </template>
-// endregion template
-
-// region style
+// endregion template // region style
 <style>
 body {
   font-family: sans-serif;

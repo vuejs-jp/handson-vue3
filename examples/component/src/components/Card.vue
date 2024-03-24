@@ -1,41 +1,20 @@
-<script setup>
-defineProps({
-  name: {
-    type: String,
-    default: '',
-    required: false
-  },
-  description: {
-    type: String,
-    default: '',
-    required: false
-  },
-  price: {
-    type: Number,
-    default: null,
-    required: false
-  },
-  image: {
-    type: String,
-    default: '',
-    required: false
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  name: string
+  description: string
+  price: number
+  image: string
+}>()
 
-/**
- * 価格を3桁ごとのカンマ付きで返す
- * @param {number} price 価格
- */
-function pricePrefix(price) {
+/** 価格を3桁ごとのカンマ付きで返す */
+function pricePrefix(price: number): string {
   return price.toLocaleString()
 }
 </script>
 
 <template>
   <div class="thumbnail">
-    <img
-      :src="image"
-      alt="">
+    <img :src="image" alt="" />
   </div>
   <div class="description">
     <h2>{{ name }}</h2>

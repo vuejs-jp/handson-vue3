@@ -11,7 +11,7 @@
     "dev:v-if": "npm run dev -w=v-if",
     "dev:component": "npm run dev -w=component",
     "dev:slot": "npm run dev -w=slot",
-    "build": "vite build",
+    "build": "vue-tsc && vite build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "textlint": "textlint --format pretty-error",
@@ -22,15 +22,21 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "1.1.0",
+    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
     "@vitejs/plugin-vue": "^3.0.1",
     "@vue/eslint-config-prettier": "7.0.0",
-    "eslint": "8.5.0",
-    "eslint-plugin-vue": "8.4.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^8.4.1",
     "prettier": "2.5.1",
     "textlint": "12.1.0",
     "textlint-filter-rule-allowlist": "4.0.0",
     "textlint-rule-preset-vuejs-jp": "github:vuejs-jp/textlint-rule-preset-vuejs-jp",
-    "vite": "^3.0.1"
+    "typescript": "^5.4.3",
+    "vite": "^5.1.6",
+    "vue-tsc": "^2.0.7"
   },
   "workspaces": [
     "examples/*"

@@ -1,8 +1,18 @@
 // region script
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
-const items = ref([
+interface Item {
+  id: number
+  name: string
+  description: string
+  price: number
+  image: string
+  soldOut: boolean
+  selected: boolean
+}
+
+const items = ref<Item[]>([
   {
     id: 1,
     name: 'アボカドディップバケット',
@@ -45,37 +55,26 @@ const items = ref([
   }
 ])
 
-/**
- * 価格を3桁ごとのカンマ付きで返す
- * @param {number} price 価格
- */
-function pricePrefix(price) {
+/** 価格を3桁ごとのカンマ付きで返す */
+function pricePrefix(price: number): string {
   return price.toLocaleString()
 }
 </script>
-// endregion script
-
-// region template
+// endregion script // region template
 <template>
   <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
+    <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template
-      v-for="item in items"
-      :key="item.id">
+    <template v-for="item in items" :key="item.id">
       <div
         v-if="!item.soldOut"
         class="item"
         :class="{ 'selected-item': item.selected }"
         @click="item.selected = !item.selected">
         <div class="thumbnail">
-          <img
-            :src="item.image"
-            alt="">
+          <img :src="item.image" alt="" />
         </div>
         <div class="description">
           <h2>{{ item.name }}</h2>
@@ -86,9 +85,7 @@ function pricePrefix(price) {
     </template>
   </main>
 </template>
-// endregion template
-
-// region style
+// endregion template // region style
 <style>
 body {
   font-family: sans-serif;

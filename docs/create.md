@@ -31,7 +31,8 @@
   Ok to proceed? (y) -> y
   ```
 
-  以降の質問には、基本的に `No` を選択して進めます。
+  以降の質問には、基本的に `No` を選択して進めます。\
+  TypeScript だけは `Yes` を選択しましょう。
 
   ::: tip ヒント
   矢印キーでアンダースコアを移動させることで項目を選択します。
@@ -40,7 +41,7 @@
 
   ```
   Vue.js - The Progressive JavaScript Framework
-  ? Add TypeScript? › No / Yes -> No
+  ? Add TypeScript? › No / Yes -> Yes
   ? Add JSX Support? › No / Yes -> No
   ? Add Vue Router for Single Page Application development? › No / Yes -> No
   ? Add Pinia for state management? › No / Yes -> No
@@ -86,6 +87,9 @@
   ├── node_modules
   ├── package-lock.json
   ├── package.json
+  ├── tsconfig.app.json
+  ├── tsconfig.json
+  ├── tsconfig.build.json
   ├── public
   │   └── favicon.ico
   ├── src
@@ -104,8 +108,9 @@
   │   │       ├── IconEcosystem.vue
   │   │       ├── IconSupport.vue
   │   │       └── IconTooling.vue
-  │   └── main.js
-  └── vite.config.js
+  │   ├── main.ts
+  │   └── vite-env.d.ts
+  └── vite.config.ts
 
   6 directories, 19 files
   ```

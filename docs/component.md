@@ -1,6 +1,7 @@
 # 商品をコンポーネント化する
 
 ## 本章の概要とゴール
+
 本章では、1 つ 1 つの商品を表示するコードをコンポーネントとして分離し、再利用できるようにプログラムを改修していきます。
 本章を実践すると、プログラムの一部を再利用できるコンポーネントとして切り出したり、 `props` を使ってコンポーネントに必要な情報を渡すことができるようになります。
 
@@ -9,7 +10,7 @@
 Vue.js ではテンプレート、ロジック、そしてスタイルを 1 つのファイルにまとめることで、単一ファイルコンポーネント（`Single File Components`、略称 `SFC`）として利用することができます。`SFC` は `<script setup>` 内で `import` することで、テンプレートで直接使用することが可能となります。
 
 ```vue{2,6}
-<script setup>
+<script setup lang="ts">
 import MyComponent from './MyComponent.vue'
 </script>
 
@@ -33,18 +34,19 @@ import MyComponent from './MyComponent.vue'
 <<< @/../examples/event/src/App.vue#script
 
 ## 一部をモジュールとして切り出す
+
 モジュールとして切り出す時、どの範囲で切り出すか迷うかもしれません。そのような場合は、再利用可能という観点で考えてみてもよいかもしれません。今回の場合、商品の部分は、`v-for` の中で何度も呼ばれているので、この範囲で切り出してみるのが良さそうです。
 
 ### コンポーネントの作成
 
-`Card` コンポーネントとして切り出しますが、`src` ディレクトリの下に新たに `components` ディレクトリを作成し、そこに `Card.vue` ファイルを作成します。今後コンポーネントを新たに作っていく場合は、`components`  ディレクトリに格納していくとよいでしょう。作成後は下記のようなディレクトリ構成になっていると思います。
+`Card` コンポーネントとして切り出しますが、`src` ディレクトリの下に新たに `components` ディレクトリを作成し、そこに `Card.vue` ファイルを作成します。今後コンポーネントを新たに作っていく場合は、`components` ディレクトリに格納していくとよいでしょう。作成後は下記のようなディレクトリ構成になっていると思います。
 
 ```
 src
 ┣━ components
 ┃  ┗━ Card.vue
 ┣━ App.vue
-┗━ main.js
+┗━ main.ts
 ```
 
 次にいよいよモジュールを切り出す作業に入ります。以下のハイライト部分を `Card.vue` に移します。また、`pricePrefix()` や関連する `style` も一緒に移します。
@@ -66,26 +68,23 @@ src
 #### Card.vue
 
 ```vue
-<script setup>
-/**
- * 価格を3桁ごとのカンマ付きで返す
- * @param {number} price 価格
- */
-function pricePrefix(price) {
+<script setup lang="ts">
+/** 価格を3桁ごとのカンマ付きで返す */
+function pricePrefix(price: number): string {
   return price.toLocaleString()
 }
 </script>
 
 <template>
   <div class="thumbnail">
-    <img
-      :src="item.image"
-      alt="">
+    <img :src="item.image" alt="" />
   </div>
   <div class="description">
     <h2>{{ item.name }}</h2>
     <p>{{ item.description }}</p>
-    <span>¥<span class="price">{{ pricePrefix(item.price) }}</span></span>
+    <span
+      >¥<span class="price">{{ pricePrefix(item.price) }}</span></span
+    >
   </div>
 </template>
 
@@ -118,6 +117,7 @@ function pricePrefix(price) {
 ```
 
 ## Card コンポーネントを使用する
+
 切り出しができたので、作成したコンポーネントを `App.vue` で使えるようにしましょう。
 
 #### App.vue / template
@@ -146,7 +146,7 @@ function pricePrefix(price) {
 #### App.vue / script
 
 ```vue{3}
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import Card from './components/Card.vue'
 
@@ -185,42 +185,24 @@ import Card from './components/Card.vue'
 #### Card.vue / script
 
 ```vue{2-23}
-<script setup>
-defineProps({
-  name: {
-    type: String,
-    default: '',
-    required: false
-  },
-  description: {
-    type: String,
-    default: '',
-    required: false
-  },
-  price: {
-    type: Number,
-    default: 0,
-    required: false
-  },
-  image: {
-    type: String,
-    default: '',
-    required: false
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  name: string
+  description: string
+  price: number
+  image: string
+}>()
 
 // 省略
 
 </script>
 ```
 
-`defineProps` の中に受け取る `props` を書いていきます。`type` は型、`default` は初期値、`required` は必須要素を表しています。
-
 ::: tip ヒント
 `defineProps` とこのあと紹介する `defineEmits` は `<script setup> ` 内でのみ使用可能なコンパイラマクロとなっているため、`import` する必要はありません。
 :::
 
-### App.vueから値を渡す準備をする
+### App.vue から値を渡す準備をする
 
 `Card.vue` の `defineProps` で定義した値を `template` 内で渡していきます。
 
@@ -260,6 +242,7 @@ defineProps({
 `Card` コンポーネントでは `pricePrefix` 関数を使用しています。このように、同じコンポーネント内で処理が完結している場合はよいですが、呼び出されている親のコンポーネントの関数を実行したい時があります。今回は例として、`Card` コンポーネントに「売り切れ」のボタンを作成し、クリックすると非表示になる、という処理を追加してみます。
 
 ### Card コンポーネントで emits の定義をする
+
 Vue.js では `emits` オプションが使えます。`emits` オプションは、子のコンポーネント内で親のコンポーネントに発行できるイベントを定義できます。
 
 今回では子のコンポーネントで「売り切れ」のイベントを発行して、親のコンポーネントで `items` を書き換える、という流れになります。現状では `Card` コンポーネントは渡された情報を表示するのみで、どの `item` か特定できる情報がないので、`id` も渡すように修正します。`defineProps` も忘れず修正しましょう。
@@ -278,22 +261,14 @@ Vue.js では `emits` オプションが使えます。`emits` オプション�
 #### Card.vue / script
 
 ```vue{3-7}
-<script setup>
-defineProps({
-  id: {
-    type: Number,
-    default: null,
-    required: false
-  },
-  name: {
-    type: String,
-    default: '',
-    required: false
-  },
-
-  // 省略
-
-})
+<script setup lang="ts">
+defineProps<{
+  id: number
+  name: string
+  description: string
+  price: number
+  image: string
+}>()
 
 // 省略
 
@@ -303,15 +278,15 @@ defineProps({
 `<script setup>` の中で `emits` を使用するためには `defineEmits` の API を使用します。`defineProps` と同様に `<script setup>` の中で自動的に使えるようになっているため、`import` は不要です。
 
 ```vue{9}
-<script setup>
+<script setup lang="ts">
 
 // 省略
 
-function pricePrefix(price) {
+function pricePrefix(price: number): string {
   return price.toLocaleString()
 }
 
-const emit = defineEmits(['sold-out'])
+const emit = defineEmits<{ 'sold-out': [id: number] }>()
 </script>
 ```
 
@@ -345,11 +320,11 @@ const emit = defineEmits(['sold-out'])
 `Card` コンポーネントには `sold-out` の `emits` を受け取った場合に `changeSoldOut` が実行されるように設定しました。次に、実行される `changeSoldOut` を定義します。
 
 ```vue{5-8}
-<script setup>
+<script setup lang="ts">
 
 // 省略
 
-function changeSoldOut(id) {
+function changeSoldOut(id: number) {
   const pickElm = items.value.find(item => item.id == id)
   pickElm.soldOut = true
 }

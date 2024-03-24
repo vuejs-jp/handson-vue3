@@ -4,8 +4,8 @@
 
 - エディタ: Visual Studio Code（以下、VS Code）
   - VS Code の拡張機能：Vue Language Features (Volar)
-- 開発言語: JavaScript
-- 利用するツール: Node.js
+- 開発言語: TypeScript
+- 利用するツール: Node.js, Vite
 
 ## ターミナルの準備
 

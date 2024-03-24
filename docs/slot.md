@@ -5,26 +5,24 @@
 ```vue
 <template>
   <header class="header">
-    <img
-      src="/images/logo.svg"
-      alt="">
+    <img src="/images/logo.svg" alt="" />
     <h1>Vue.js ハンズオン</h1>
   </header>
   <main class="main">
-    <template
-      v-for="item in items"
-      :key="item.id">
+    <template v-for="item in items" :key="item.id">
       <div
         v-if="!item.soldOut"
         class="item"
         :class="{ 'selected-item': item.selected }"
-        @click="item.selected = !item.selected">
+        @click="item.selected = !item.selected"
+      >
         <Card
           :id="item.id"
           :image="item.image"
           :name="item.name"
           :description="item.description"
-          :price="item.price"/>
+          :price="item.price"
+        />
       </div>
     </template>
   </main>
@@ -40,6 +38,7 @@
 Vue.js のスロットでは、親コンポーネントから子コンポーネントにコンテンツを渡してレンダリングすることが可能です。スロットを使用すると、コンポーネントの `props` の修正に手を入れることなく、表示するコンテンツを変更できるため、コンポーネントの再利用性と柔軟性が高まります。スロットには、**スロットコンテンツ**と**スロットアウトレット**という仕組みがあるので、説明していきます。
 
 #### スロットコンテンツ
+
 スロットコンテンツとは、子コンポーネントへ渡すコンテンツのことを指します。
 
 コンテンツを渡す方法は、親コンポーネントで子コンポーネントを呼び出し、子コンポーネントの要素へレンダリングしたいコンテンツを定義します。スロットコンテンツとして、プレーンテキスト、HTML 要素、他のコンポーネントなど、さまざまな種類を渡すことができます。
@@ -137,8 +136,7 @@ Vue.js のスロットでは、親コンポーネントから子コンポーネ�
 つまり、 `<slot name="default" />` と同じ意味になります。もちろん親コンポーネントでも `<template #default>` と記述することが可能です。
 :::
 
-
-## Cardコンポーネントでスロットを利用する
+## Card コンポーネントでスロットを利用する
 
 実際に `Card` コンポーネントにスロットを実装していきましょう。
 
@@ -182,7 +180,7 @@ Vue.js のスロットでは、親コンポーネントから子コンポーネ�
 
 ## スロットを利用し、コンテンツを表示する
 
- `App.vue` の修正が終わったら、次は `Card` コンポーネントを修正します。
+`App.vue` の修正が終わったら、次は `Card` コンポーネントを修正します。
 
 ### スロットを利用し、テキストを挿入する
 
@@ -208,24 +206,13 @@ Vue.js のスロットでは、親コンポーネントから子コンポーネ�
 #### Card.vue / script
 
 ```vue
-<script setup>
-defineProps({
-  name: {
-    type: String,
-    default: '',
-    required: false
-  },
-  price: {
-    type: Number,
-    default: null,
-    required: false
-  },
-  image: {
-    type: String,
-    default: '',
-    required: false
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  id: number,
+  image: string,
+  name: string,
+  price: number
+}>()
 //省略
 </script>
 ```
@@ -245,7 +232,7 @@ defineProps({
 #### App.vue / script
 
 ```vue{15}
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import Card from './components/Card.vue'
 
@@ -298,7 +285,7 @@ const items = ref([
 #### CardBody.vue
 
 ```vue
-<script setup>
+<script setup lang="ts">
 defineProps({
   description: {
     type: String,
@@ -309,8 +296,8 @@ defineProps({
     type: String,
     default: '',
     required: false
-  },
-});
+  }
+})
 </script>
 
 <template>
@@ -324,7 +311,7 @@ defineProps({
 #### App.vue
 
 ```vue{4,18-20}
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import Card from './components/Card.vue'
 import CardBody from './components/CardBody.vue';
