@@ -91,8 +91,7 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
   </header>
   <div>商品数：{{ stockQuantity() }}</div>
   <!-- 省略 -->
-  <template></template
-></template>
+</template>
 ```
 
 ```vue
