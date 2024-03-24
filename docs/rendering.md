@@ -1,6 +1,7 @@
 # data を定義し、商品をレンダリングする
 
 ## 本章の概要とゴール
+
 本章では、作成したアプリケーションに JavaScript、HTML、CSS を追加して商品を表示するページを作っていきます。
 本章を実践すると、1 つの商品を表示するページが作成でき、Vue.js ではどのようにページがレンダリングされるのかが理解できます。
 
@@ -22,7 +23,6 @@ code .
 
 ![vscode](./images/vscode.png)
 
-
 ## 画像ファイルの配置
 
 次に、ハンズオンで使う商品の画像を用意しましょう。ハンズオン用の画像ファイル（[vue3-lab-handson-images.zip](./vue3-lab-handson-images.zip 'vue3-lab-handson.zip')）をダウンロードおよび解凍します。
@@ -33,15 +33,15 @@ code .
 
 ここからは、デフォルトで生成された Vue のプロジェクトを独自のコードに置き換えていきます。まず、今後のステップで利用しない不要なコードやファイルを削除していきましょう。
 
-まず、`src/main.js` から今回は利用しない不要な css ファイルの import 削除します。
+まず、`src/main.ts` から今回は利用しない不要な css ファイルの import 削除します。
 
-変更前（`src/main.js`）
+変更前（`src/main.ts`）
 
-<<< @/../examples/overview/src/main.js
+<<< @/../examples/overview/src/main.ts
 
-変更後（`src/main.js`）
+変更後（`src/main.ts`）
 
-<<< @/../examples/rendering/src/main.js
+<<< @/../examples/rendering/src/main.ts
 
 次に、今後のステップで利用しないファイルをディレクトリごと削除します。削除する対象は以下のディレクトリです。
 
@@ -55,7 +55,7 @@ Vue.js では、`{{ }}` のような `Mustache` 構文を使ってテキスト�
 :::
 
 ```vue
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 const message = ref('Welcome to Vue Handson!')
 </script>
@@ -114,6 +114,7 @@ mustache とは口髭を指す英語で、二重中括弧 `{{ }}` が口髭の�
 <PlusOne />
 
 ## 商品の内容を変更
+
 商品の内容を変更し、表示に反映されることを確認してみましょう。商品名 `name`、概要文 `description`、価格 `price` をそれぞれ適当に変更します。
 
 変更前（script）
@@ -123,15 +124,15 @@ mustache とは口髭を指す英語で、二重中括弧 `{{ }}` が口髭の�
 変更後（script）
 
 ```vue
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 const item = ref({
-    id: 1,
-    name: 'アボカドソースバケット',
-    description:
-      '刻んだ野菜をアボカドと混ぜ、優しい味のソースに。こんがり焼いたバゲットとお召し上がりください。',
-    price: 320,
-    image: '/images/item1.jpg'
+  id: 1,
+  name: 'アボカドソースバケット',
+  description:
+    '刻んだ野菜をアボカドと混ぜ、優しい味のソースに。こんがり焼いたバゲットとお召し上がりください。',
+  price: 320,
+  image: '/images/item1.jpg'
 })
 </script>
 ```
