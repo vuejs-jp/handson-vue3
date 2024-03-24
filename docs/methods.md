@@ -95,21 +95,21 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
 ></template>
 ```
 
-```html
+```vue
 <script setup lang="ts">
-  // 省略
+// 省略
 
-  /** 価格を3桁ごとのカンマ付きで返す */
-  function pricePrefix(price: number): string {
-    return price.toLocaleString()
-  }
+/** 価格を3桁ごとのカンマ付きで返す */
+function pricePrefix(price: number): string {
+  return price.toLocaleString()
+}
 
-  /**
-   * 在庫のある商品数を返す
-   */
-  function stockQuantity(): number {
-    return items.value.filter((item) => item.soldOut === false).length
-  }
+/**
+ * 在庫のある商品数を返す
+ */
+function stockQuantity(): number {
+  return items.value.filter((item) => item.soldOut === false).length
+}
 </script>
 ```
 
@@ -126,23 +126,23 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
 </div>
 ```
 
-```html
+```vue
 <script setup lang="ts">
-  // 省略
-  /**
-   * 在庫のある商品数を返す
-   */
-  function stockQuantity(): number {
-    return items.value.filter((item) => item.soldOut === false).length
-  }
+// 省略
+/**
+ * 在庫のある商品数を返す
+ */
+function stockQuantity(): number {
+  return items.value.filter((item) => item.soldOut === false).length
+}
 
-  /**
-   * 商品の在庫状況を変更する
-   * @param {object} 商品情報
-   */
-  function stockItem(item: Item) {
-    item.soldOut = false
-  }
+/**
+ * 商品の在庫状況を変更する
+ * @param {object} 商品情報
+ */
+function stockItem(item: Item) {
+  item.soldOut = false
+}
 </script>
 ```
 
@@ -152,13 +152,13 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
 
 関数で商品数を表示しましたが、算出プロパティでも `computed` を使って商品数を表示することができます。
 
-```html
+```vue
 <script setup lang="ts">
-  import { ref, computed } from 'vue'
-  // 省略
-  const stockQuantityComputed = computed(
-    () => items.value.filter((item) => item.soldOut === false).length
-  )
+import { ref, computed } from 'vue'
+// 省略
+const stockQuantityComputed = computed(
+  () => items.value.filter((item) => item.soldOut === false).length
+)
 </script>
 ```
 
@@ -200,19 +200,19 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
 <div>現在時刻：{{ getDate() }}</div>
 ```
 
-```html
+```vue
 <script setup lang="ts">
-  // 省略
-  function stockItem(item: Item) {
-    item.soldOut = false
-  }
+// 省略
+function stockItem(item: Item) {
+  item.soldOut = false
+}
 
-  /**
-   * 現在時刻を取得する
-   */
-  function getDate(): number {
-    return Date.now()
-  }
+/**
+ * 現在時刻を取得する
+ */
+function getDate(): number {
+  return Date.now()
+}
 </script>
 ```
 
@@ -226,10 +226,10 @@ Vue.js には関数の他に、算出プロパティがあります。算出プ�
 <div>現在時刻(computed)：{{ getDateComputed }}</div>
 ```
 
-```html
+```vue
 <script setup lang="ts">
-  // 省略
-  const getDateComputed = computed(() => Date.now())
+// 省略
+const getDateComputed = computed(() => Date.now())
 </script>
 ```
 
